@@ -1,0 +1,19 @@
+.itemName {
+    grid-column: 1;
+    align-self: center;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.textarea {
+    font-family: 'Helvetica', sans-serif;
+    border: 1px solid #258FFB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 7px;
+    height: 42px;
+    outline: none;
+    width: 100%;
+}

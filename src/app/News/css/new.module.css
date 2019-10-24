@@ -1,0 +1,99 @@
+.newListHead {
+    display: grid;
+    grid-template-columns: 1fr 40px 29px;
+    padding: 24px 25px;
+    border-bottom: 1px solid #E7EAEE;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    transition: all 0.3s;
+}
+
+.newListHead button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 29px;
+    height: 30px;
+    align-self: center;
+    justify-self: start;
+}
+
+.burgerMenu {
+    display: none;
+}
+
+.newsItems {
+    margin-top: 79px;
+}
+
+.newsTitle {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-column-gap: 10px;
+    padding: 19px 0;
+    position: relative;
+}
+
+.newBody {
+    padding: 0 24px;
+}
+
+.timePublication {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 8px;
+    grid-row-gap: 20px;
+
+    max-width: 310px;
+    margin: 32px 0;
+}
+
+.date {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+}
+
+.time {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+}
+
+.push {
+    grid-column: 1/3;
+    grid-row: 2;
+    align-self: end;
+}
+
+.submit {
+    padding-bottom: 24px;
+}
+
+.time_block {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+}
+
+@media screen and (max-width: 768px) {
+    .newListHead {
+        position: fixed;
+        grid-template-columns: 1fr 34px 34px 29px;
+    }
+
+    .burgerMenu {
+        display: block;
+    }
+
+    .timePublication {
+        max-width: none;
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,363 @@
+.user:hover {
+    background: #E7EAEE;
+}
+
+.user span {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+.userWrap {
+    display: grid;
+    grid-template-columns: 40px 1fr 25px;
+    grid-template-rows: 20px 20px;
+    grid-column-gap: 16px;
+
+    position: relative;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.userWrap:hover .accountPreview {
+    display: block;
+}
+
+span.avatar {
+    background: #258FFB;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.avatar {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.name {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: bold;
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.company {
+    font-size: 12px;
+    line-height: 16px;
+
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: center;
+}
+
+.accountPreview {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 16px;
+
+    box-shadow: 0px 4px 12px rgba(204, 207, 219, 0.5);
+    border-radius: 4px;
+    background: #FFFFFF;
+    padding-bottom: 4px;
+    z-index: 10;
+}
+
+.accountPreview div {
+    display: grid;
+    grid-template-columns: 24px auto;
+    grid-template-rows: 24px 24px;
+
+    padding: 16px 30px 16px 16px;
+}
+
+.accountPreview li {
+    padding: 2px 16px;
+    transition: all 0.3s;
+}
+
+.accountPreview li:hover {
+    background: #258FFB;
+}
+
+.accountPreview li:hover a {
+    color: #FFFFFF;
+}
+
+.accountPreview li a {
+    font-size: 15px;
+    line-height: 30px;
+    color: #333333;
+    padding: 4px 0;
+    text-decoration: none;
+}
+
+.accountPreview img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.accountPreview .name {
+    grid-column: 2/end;
+    grid-row: 1/2;
+    align-self: center;
+
+    padding-left: 5px;
+}
+
+.accountPreview .email {
+    grid-column: 2/end;
+    grid-row: 2/3;
+    align-self: center;
+
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 5px;
+}
+
+.closeMenu {
+    display: none;
+}
+
+.menuItems ul {
+    margin-top: 8px;
+}
+
+.menuItems ul li {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-column-gap: 16px;
+
+    padding: 5px 16px 5px 16px;
+    position: relative;
+}
+
+.menuItems ul li > img {
+    grid-column: 1/2;
+    align-self: start;
+    justify-self: center;
+    padding-top: 3px;
+}
+
+.menuItems ul li > div {
+    grid-column: 2/end;
+}
+
+.menuItems ul li > div a {
+    display: grid;
+    grid-template-columns: 1fr 25px 25px;
+    grid-column-gap: 5px;
+
+    font-size: 15px;
+    line-height: 27px;
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+
+.menuItems ul li > div a p {
+    grid-column: 1/2;
+    align-self: center;
+    justify-self: start;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.menuItems ul li > div a span {
+    grid-column: 2/3;
+    align-self: center;
+    justify-self: center;
+}
+
+.menuItems ul li > div a svg {
+    grid-column: 3/4;
+    align-self: center;
+    justify-self: center;
+}
+
+.dropdown {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+    transition: all 0.3s;
+}
+
+.menuItems ul li.openSubmenu > div a svg.dropdown {
+    transform: rotate(180deg);
+}
+
+.menuItems ul li > div {
+    height: 27px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.menuItems ul li.openSubmenu > div {
+    height: auto;
+}
+
+.openSubmenu svg {
+    fill: #258FFB;
+}
+
+.openSubmenu .badgest p, .openSubmenu .badgest span {
+    color: #258FFB;
+}
+
+@media screen and (max-width: 1280px) {
+    .accountPreview div {
+        grid-template-columns: 24px 156px;
+    }
+
+    .menuItems ul li {
+        padding: 0 16px;
+        margin-bottom: 10px;
+        height: 36px;
+    }
+
+    .menuItems ul li > div {
+        grid-column: 1/end;
+
+        position: absolute;
+        display: none;
+        z-index: 10;
+        left: 44px;
+        top: 0;
+        height: auto;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 12px rgba(204, 207, 219, 0.5);
+        border-radius: 4px;
+    }
+
+    .menuItems ul li > svg {
+        align-self: center;
+    }
+
+    .menuItems ul li.openSubmenu > div {
+        top: -5px;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .menuItems ul li > div a {
+        display: flex;
+        line-height: 36px;
+        padding: 0 16px;
+    }
+
+    .menuItems ul li > div a:hover, .openSubmenu .badgest:hover p, .openSubmenu .badgest:hover span {
+        background: #258FFB;
+        color: #FFFFFF;
+    }
+
+    .menuItems ul li:hover {
+        background: #E7EAEE;
+    }
+
+    .menuItems ul li:hover > div {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .user {
+        display: grid;
+        grid-template-columns: 1fr 25px;
+        padding-right: 16px;
+    }
+
+    .userWrap {
+        grid-column: 1/2;
+    }
+
+    .accountPreview {
+        z-index: 11;
+    }
+
+    .closeMenu {
+        grid-column: 2/3;
+        grid-row: 1/end;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .menuItems ul li {
+        margin-bottom: 0;
+        height: 26px;
+        padding: 5px 16px 5px 16px;
+    }
+
+    .menuItems ul li.openSubmenu {
+        height: auto;
+    }
+
+    .menuItems ul li > div {
+        grid-column: 2/end;
+
+        position: static;
+        display: block;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .menuItems ul li > div a {
+        display: grid;
+        grid-template-columns: 1fr 25px 25px;
+        grid-column-gap: 5px;
+
+        font-size: 16px;
+        line-height: 34px;
+        padding: 0;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    .menuItems ul li.openSubmenu {
+        height: auto;
+    }
+
+    .menuItems ul li > svg {
+        align-self: start;
+        padding-top: 8px;
+    }
+
+    .menuItems ul li:hover {
+        background: #F4F5F7;
+    }
+
+    .menuItems ul li > div a:hover, .openSubmenu .badgest:hover p, .openSubmenu .badgest:hover span {
+        color: #333333;
+        background: #F4F5F7;
+    }
+
+    .menuItems ul li.openSubmenu .badgest p, .menuItems ul li.openSubmenu .badgest span {
+        color: #258FFB;
+    }
+}

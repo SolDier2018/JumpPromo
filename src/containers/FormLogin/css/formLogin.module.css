@@ -1,0 +1,52 @@
+.login {
+    background: #F4F5F7;
+    height: 100vh;
+}
+
+.h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    margin: 0 0 24px 0;
+}
+
+.loginWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 272px;
+    width: 100%;
+    text-align: center;
+}
+
+.loginWrapper button {
+    width: 100%;
+}
+
+.loginWrapper .formField {
+    margin-bottom: 13px;
+}
+
+.recovPassword {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #258FFB;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.recovPassword:focus {
+    outline: 3px solid rgba(37, 143, 251, 0.3);
+}
+
+.noValidForm {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #EC393D;
+    text-align: left;
+}

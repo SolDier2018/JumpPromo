@@ -1,0 +1,54 @@
+.link {
+    display: grid;
+    grid-template-columns: 1fr minmax(24px, 50px);
+    grid-template-rows: repeat(2, auto);
+
+    padding: 8px 24px;
+    text-decoration: none;
+    color: #333333;
+    transition: all 0.2s;
+}
+
+.link:hover {
+    background: #258FFB;
+    color: #FFFFFF;
+}
+
+.link * {
+    pointer-events: none;
+}
+
+.link p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 48px;
+    -webkit-line-clamp: 2;
+    -webkil-box-orient: vertical;
+}
+
+.link span {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.title {
+    grid-row: 1;
+    align-self: start;
+
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.description {
+    grid-column: 1/3;
+    grid-row: 2;
+
+    font-size: 15px;
+    line-height: 24px;
+}

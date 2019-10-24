@@ -1,0 +1,13 @@
+.label {
+    display: block;
+}
+
+.select {
+    padding: 8px 0 8px 12px;
+    border: 1px solid #E7EAEE;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 15px;
+    height: 40px;
+}

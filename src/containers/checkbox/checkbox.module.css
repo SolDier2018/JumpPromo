@@ -1,0 +1,31 @@
+.inputCheckbox {
+    display: none;
+}
+
+.labelCheckbox {
+    position: relative;
+    padding-left: 24px;
+    cursor: pointer;
+}
+
+.labelCheckbox:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #E7EAEE;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.inputCheckbox[type="checkbox"]:checked + .labelCheckbox:before {
+    background: #258FFB;
+    background-image: url("../../ui/img/check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    border: none;
+}

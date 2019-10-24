@@ -1,0 +1,48 @@
+.detailsHeadWrap {
+    grid-template-columns: 30px 1fr 40px;
+    padding: 27px 25px;
+    border-bottom: 1px solid #E7EAEE;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    z-index: 1;
+}
+
+.toOrderList {
+    grid-column: 1/2;
+    align-self: center;
+    justify-self: start;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+.detailsHeadName {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    grid-column: 2/3;
+    align-self: center;
+    justify-self: start;
+}
+
+.burgerMenu {
+    grid-column: 3/4;
+    align-self: center;
+    justify-self: end;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .detailsHeadWrap {
+        display: grid;
+    }
+}

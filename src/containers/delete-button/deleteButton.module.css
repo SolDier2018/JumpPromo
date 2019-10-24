@@ -1,0 +1,39 @@
+.editTitle {
+    background: #F4F5F7;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.active {
+    position: relative;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    width: 100px;
+    height: 33px;
+    background: #258FFB;
+    font-size: 15px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.delete:hover {
+    background: #0A81FA;
+}
+
+@media screen and (max-width: 768px) {
+    .editTitle {
+        background: transparent;
+    }
+}

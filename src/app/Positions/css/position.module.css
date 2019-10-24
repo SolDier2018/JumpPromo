@@ -1,0 +1,280 @@
+.listHead {
+    display: grid;
+    grid-template-columns: 1fr 40px 29px;
+    padding: 24px 25px;
+    border-bottom: 1px solid #E7EAEE;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    transition: all 0.3s;
+}
+
+.listHead button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 29px;
+    height: 30px;
+
+    align-self: center;
+    justify-self: start;
+}
+
+.listHead p {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+
+    align-self: center;
+}
+
+.positionItems {
+    margin-top: 79px;
+}
+
+.positionDetailsTitle {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    grid-column-gap: 10px;
+    padding: 19px 0;
+
+    position: relative;
+}
+
+.editTitle {
+    background: #F4F5F7;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.description {
+    line-height: 24px;
+}
+
+.delete {
+    display: none;
+    position: absolute;
+    right: 25px;
+    bottom: -20px;
+
+    width: 100px;
+    height: 33px;
+    background: #258FFB;
+    font-size: 15px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.delete:hover {
+    background: #0A81FA;
+}
+
+.descriptionText {
+    position: relative;
+    transition: all 0.2s;
+}
+
+.positionContent {
+    display: grid;
+    grid-template-columns: 164px 116px;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 8px;
+    grid-row-gap: 15px;
+
+    line-height: 24px;
+    margin-top: 10px;
+}
+
+.positionContent label {
+    display: block;
+}
+
+
+.category {
+    grid-column: 1/3;
+    grid-row: 1;
+}
+
+.price {
+    grid-column: 1/2;
+    grid-row: 2;
+}
+
+.currency {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.priceFrom {
+    grid-column: 1/3;
+    grid-row: 3;
+}
+
+.edit {
+    border: 1px solid #258FFB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 7px;
+}
+
+.controlElements {
+    display: none;
+    margin: 10px 0 0 0;
+
+    grid-template-columns: 108px 50px;
+}
+
+.descriptionText.edit + .controlElements {
+    display: grid;
+}
+
+.save {
+    grid-column: 1;
+    align-self: center;
+}
+
+.closeEdit {
+    grid-column: 2;
+    align-self: center;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 720px;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 8px;
+    z-index: 2;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.popupShadow {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333333;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.popup input, .popup textarea {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    line-height: 19px;
+    border: 1px solid #E7EAEE;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    padding: 8px 0 8px 12px;
+}
+
+.popup button {
+    margin-right: 10px;
+}
+
+
+.popup input:focus, .popup textarea:focus {
+    border: 3px solid rgba(37, 143, 251, 0.3);
+    outline: none;
+}
+
+.popup textarea {
+    height: 80px;
+}
+
+.popup p {
+    margin-bottom: 24px;
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.fieldWrap {
+    margin-bottom: 14px;
+}
+
+.buttonCreate {
+    width: 92px;
+}
+
+.fieldContainer {
+    display: grid;
+    grid-template-columns: 164px 116px;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 8px;
+    grid-row-gap: 15px;
+}
+
+.buttonWrap {
+    margin-top: 40px;
+}
+
+.closePopup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.burgerMenu {
+    grid-column: 4;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .positionContent, .fieldContainer {
+        grid-template-columns: 1fr 116px;
+    }
+
+    .popup {
+        height: 100vh;
+        transform: none;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+    }
+
+    .closePopup {
+        padding-top: 24px;
+    }
+
+    .buttonWrap {
+        margin-top: 26px;
+    }
+
+    .listHead {
+        position: fixed;
+        grid-template-columns: 1fr 34px 34px 29px;
+    }
+
+    .burgerMenu {
+        display: block;
+    }
+
+}
+

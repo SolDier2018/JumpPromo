@@ -1,0 +1,140 @@
+.orderItems {
+    margin-top: 128px;
+}
+
+.itemTitle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 24px 0;
+}
+
+.itemName {
+    grid-column: 1/2;
+    align-self: center;
+    text-overflow: clip;
+    white-space: inherit;
+}
+
+.itemTime {
+    grid-column: 2/end;
+    justify-self: end;
+}
+
+.userContacts {
+    display: grid;
+    grid-template-columns: minmax(100px, 130px) auto;
+    grid-template-rows: 24px 24px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.userName {
+    grid-column: 1/end;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: start;
+}
+
+.userPhone {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: start;
+    text-decoration: none;
+    color: #333333;
+}
+
+.userEmail {
+    grid-column: 2/end;
+    grid-row: 2/3;
+    align-self: center;
+    justify-self: start;
+    text-decoration: none;
+    color: #333333;
+}
+
+.userOrder {
+    padding: 25px 0;
+}
+
+.userOrderItems {
+    line-height: 24px;
+}
+
+.userOrderItems li {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.userOrderItems li p {
+    grid-column: 1/2;
+    align-self: start;
+    justify-self: start;
+}
+
+.userOrderItems li span {
+    grid-column: 2/end;
+    align-self: start;
+    justify-self: end;
+}
+
+.userComment {
+    display: grid;
+    grid-template-columns: minmax(150px, 568px) 1fr;
+    grid-template-rows: 24px auto;
+    margin-top: 24px;
+    line-height: 24px;
+}
+
+.userCommentTitle {
+    grid-column: 1/end;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: start;
+}
+
+.userCommentText {
+    grid-column: 1/2;
+    grid-row: 2/end;
+    align-self: center;
+    justify-self: start;
+}
+
+.orderStatus {
+    margin-top: 24px;
+    max-width: 236px;
+}
+
+.contentMenuFilter {
+    padding: 12px;
+    border-bottom: 1px solid #E7EAEE;
+    position: absolute;
+    top: 79px;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+}
+
+.contentMenuFilter a {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: #333333;
+}
+
+.contentMenuFilter a svg {
+    margin-right: 4px;
+}
+
+.contentMenuFilter a p {
+    font-size: 12px;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .orderStatus {
+        max-width: none;
+        width: 100%;
+    }
+}

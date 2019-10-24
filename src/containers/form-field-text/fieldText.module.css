@@ -1,0 +1,58 @@
+.textarea {
+    font-family: 'Helvetica', sans-serif;
+    border: 1px solid #258FFB;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 7px;
+    font-size: 15px;
+    line-height: 24px;
+    width: 100%;
+    outline: none;
+}
+
+.controlElements {
+    display: grid;
+    grid-template-columns: 108px 50px;
+}
+
+.save {
+    grid-column: 1;
+    align-self: center;
+    outline: none;
+}
+
+.closeEdit {
+    grid-column: 2;
+    align-self: center;
+    outline: none
+}
+
+.save {
+    width: 108px;
+    height: 40px;
+    background: #258FFB;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.save:hover {
+    background: #0A81FA;
+}
+
+.closeEdit {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .textarea {
+        height: 100px;
+    }
+}
