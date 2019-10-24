@@ -24,7 +24,8 @@ class Menu extends React.Component {
                     label: 'Обзор',
                     path: '/review',
                     icon: review,
-                    submenu: []
+                    submenu: [],
+                    count: ''
                 },
                 {
                     label: 'Заказы',
@@ -39,27 +40,38 @@ class Menu extends React.Component {
                             label: 'Категории',
                             path: '/categories'
                         }
-                    ]
+                    ],
+                    count: 2
                 },
                 {
                     label: 'Новости',
                     path: '/news',
                     icon: news,
-                    submenu: []
+                    submenu: [],
+                    count: ''
                 },
                 {
                     label: 'Клиенты',
                     path: 'clientele',
                     icon: clients,
-                    submenu: []
+                    submenu: [],
+                    count: ''
                 }
-            ]
+            ],
+            selected: 'Обзор'
         };
         this.closeMenu = this.closeMenu.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     closeMenu() {
         openMenu(false);
+    }
+
+    handleClick(value) {
+        this.setState({
+            selected: value
+        });
     }
 
     render() {
@@ -109,6 +121,9 @@ class Menu extends React.Component {
                                             label={e.label}
                                             submenu={e.submenu}
                                             icon={e.icon}
+                                            count={e.count}
+                                            active={e.label === this.state.selected}
+                                            onClick={(value) => this.handleClick(value)}
                                         />
                                     )
                                 })

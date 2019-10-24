@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment, createRef} from 'react';
 import {Link} from "react-router-dom";
+import {openMenu} from '../../../utils/openMenu';
 
 import style from '../css/menu.module.css';
 
@@ -8,39 +9,38 @@ class MenuItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            to: props.to,
-            label: props.label,
-            submenu: props.submenu,
-            icon: props.icon,
-            active: false
+          openMenu: false
         };
-        this.toggleClass = this.toggleClass.bind(this);
+        this.selectPage = this.selectPage.bind(this);
+        this.clickSubMenu = this.clickSubMenu.bind(this);
+        this.refLink = createRef();
     }
 
-    toggleClass() {
-        const curentState = this.state.active;
-        this.setState({
-            active: !curentState
-        });
+    selectPage() {
+        this.props.onClick(this.refLink.current.innerText);
+        openMenu(this.state.openMenu);
     }
 
+    clickSubMenu() {
+        openMenu(this.state.openMenu);
+    }
 
     render() {
+
+        const {to, label, submenu, icon, count, active} = this.props;
         
         return (
-                <li
-                    className={this.state.active ? style.openSubmenu : null}
-                    onClick={this.toggleClass}
-                >
-                    <img src={this.state.icon} alt=""/>
+            <Fragment>
+                <li className={active ? style.openSubmenu : ''}>
+                    <img src={icon} alt=""/>
 
                     <div>
 
-                        <Link to={this.state.to} className={style.badgest}>
-                            <p>{this.state.label}</p>
-                            <span>2</span>
+                        <Link to={to} className={style.badgest} onClick={this.selectPage} >
+                            <p ref={this.refLink}>{label}</p>
+                            <span>{count}</span>
                             {
-                                this.state.submenu.length === 0
+                                submenu.length === 0
                                     ? ''
                                     : <svg width="10" height="6" viewBox="0 0 10 6" fill="#333333"
                                            xmlns="http://www.w3.org/2000/svg" className={style.dropdown}>
@@ -52,9 +52,9 @@ class MenuItem extends Component {
                         </Link>
 
                         {
-                            this.state.submenu.map((s) => {
+                            submenu.map((s) => {
                                 return (
-                                    <Link to={s.path} key={s.path}>
+                                    <Link to={s.path} key={s.path} onClick={this.clickSubMenu}>
                                         <p>{s.label}</p>
                                         <span></span>
                                     </Link>
@@ -64,6 +64,7 @@ class MenuItem extends Component {
 
                     </div>
                 </li>
+            </Fragment>
         );
     }
 }
