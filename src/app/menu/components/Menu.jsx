@@ -8,6 +8,7 @@ import review from '../../../ui/img/review.svg';
 import orders from '../../../ui/img/orders.svg';
 import news from '../../../ui/img/news.svg';
 import clients from '../../../ui/img/clients.svg';
+import {openMenu} from '../../../utils/openMenu';
 
 import style from '../css/menu.module.css';
 
@@ -53,12 +54,12 @@ class Menu extends React.Component {
                     submenu: []
                 }
             ]
-
-        }
+        };
+        this.closeMenu = this.closeMenu.bind(this);
     }
 
     closeMenu() {
-        document.getElementsByClassName('menu')[0].className = 'menu';
+        openMenu(false);
     }
 
     render() {
