@@ -12,7 +12,7 @@ class ItemLink extends Component {
 
 
     onClick() {
-        return(
+        return (
             this.props.click(true)
         )
     }
@@ -24,13 +24,21 @@ class ItemLink extends Component {
         return (
             <Link to={to} className={style.link} onClick={this.onClick}>
 
-                <p className={style.title} style={{whiteSpace: noWrap ? 'nowrap' : 'normal', gridColumn: attr === '' ? '1/3' : '1', fontWeight: fontWeight ? 'bold' : 'normal'}}>
+                <p
+                    className={style.title}
+                    style={{
+                        whiteSpace: noWrap ? 'nowrap' : 'normal',
+                        gridColumn: attr === '' ? '1/3' : '1',
+                        fontWeight: fontWeight || fontWeight === undefined ? 'bold' : 'normal'
+                    }}
+                >
                     {title}
                 </p>
 
                 <span>{attr}</span>
 
-                <p className={style.description} style={{whiteSpace: noWrap ? 'nowrap' : 'normal', gridColumn: attr === '' ? '1/3' : '1'}}>
+                <p className={style.description}
+                   style={{whiteSpace: noWrap ? 'nowrap' : 'normal', gridColumn: attr === '' ? '1/3' : '1'}}>
                     {description}
                 </p>
 

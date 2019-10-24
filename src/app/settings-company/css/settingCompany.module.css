@@ -12,6 +12,59 @@
     margin-bottom: 16px;
 }
 
+.fileInput {
+    display: grid;
+    grid-template-columns: 40px auto 30px;
+    grid-template-rows: 20px 20px;
+    grid-column-gap: 10px;
+}
+
+.fileInput img {
+    grid-column: 1;
+    grid-row: 1/3;
+    align-self: center;
+}
+
+.fileInput p {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.fileInput div {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+}
+
+.fileInput label {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #258FFB;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.fileInput input {
+    display: none;
+}
+
+.closeFileValue {
+    grid-column: 3;
+    grid-row: 2;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
 @media screen and (max-width: 768px) {
     .fieldWrap {
         max-width: none;
