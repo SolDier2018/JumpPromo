@@ -232,6 +232,10 @@ span.avatar {
         height: 36px;
     }
 
+    .menuItems ul li > img {
+        padding-top: 8px;
+    }
+
     .menuItems ul li > div {
         grid-column: 1/end;
 
@@ -359,5 +363,9 @@ span.avatar {
 
     .menuItems ul li.openSubmenu .badgest p, .menuItems ul li.openSubmenu .badgest span {
         color: #258FFB;
+    }
+
+    .menuItems ul li > img {
+        padding-top: 3px;
     }
 }

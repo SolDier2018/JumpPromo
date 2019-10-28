@@ -23,9 +23,11 @@ class DeleteButton extends Component {
     componentDidUpdate(prevProps, prevState, snapshot) {}
 
     componentWillUnmount() {
-        document.addEventListener('click', this.handleClickOut, true);
+        document.addEventListener('click', this.handleClickOut, false);
+        this.setState({
+            editable: false
+        });
     }
-
 
     handleClickOut(e) {
         const buttonBlock = this.refButton.current;

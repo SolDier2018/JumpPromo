@@ -116,7 +116,7 @@ class Menu extends React.Component {
                             {
                                 this.state.menu.map((e) => {
                                     return(
-                                        <MenuItem
+                                    <MenuItem
                                             key={e.label}
                                             to={e.path}
                                             label={e.label}

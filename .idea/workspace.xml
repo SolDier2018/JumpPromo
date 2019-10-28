@@ -3,39 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="95bad319-0ad7-4cd4-8a93-8463e9a59ce6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Clientele/components/ClientsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Clientele/components/ClientsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Login/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Login/components/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/News/components/NewsDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/News/components/NewsDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/News/components/NewsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/News/components/NewsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Orders/components/OrdersList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Orders/components/OrdersList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Orders/css/orders.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Orders/css/orders.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Positions/components/PositionDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Positions/components/PositionDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Positions/components/PositionList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Positions/components/PositionList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Positions/components/Positions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Positions/components/Positions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Positions/components/addPosition.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Positions/components/addPosition.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Review/components/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Review/components/Review.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Review/css/review.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Review/css/review.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/menu/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/menu/components/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/profile/components/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/components/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/settings-company/components/settingCompany.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/settings-company/components/settingCompany.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Сategories/components/CategoriesDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Сategories/components/CategoriesDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Сategories/components/CategoriesList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Сategories/components/CategoriesList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/FormLogin/containers/FormLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/FormLogin/containers/FormLogin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/FormLogin/css/formLogin.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/FormLogin/css/formLogin.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/FormRecoverPassword/containers/FormRecoverPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/FormRecoverPassword/containers/FormRecoverPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/checkbox/Checkbox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/checkbox/Checkbox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/menu/css/menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/menu/css/menu.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/detailsHead/detailsHead.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/detailsHead/detailsHead.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/form-field-text/form-field-text.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/form-field-text/form-field-text.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/form-field-title/form-field-title.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/form-field-title/form-field-title.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/input/Input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/listHead/listHead.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/listHead/listHead.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/listHead/listHead.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/listHead/listHead.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/button/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button/button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/openDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/openDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/openMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/openMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/formater.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formater.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/hideListHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/hideListHead.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,14 +22,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/menu/components/Menu.jsx">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/hideListHead.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+            <state relative-caret-position="306">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#533#1694#0" />
+                <element signature="e#0#60#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/News/components/NewsDetails.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,6 +88,7 @@
       <find>loaded</find>
       <find>ref</find>
       <find>getSnapshotBeforeUpdate</find>
+      <find>popup</find>
     </findStrings>
     <replaceStrings>
       <replace>fillRule</replace>
@@ -112,8 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/Login/components/RecoverPassword.jsx" />
-        <option value="$PROJECT_DIR$/src/app/Login/index.js" />
         <option value="$PROJECT_DIR$/src/containers/FormRecoverPassword/index.js" />
         <option value="$PROJECT_DIR$/src/router.js" />
         <option value="$PROJECT_DIR$/src/app/Login/css/login.module.css" />
@@ -129,7 +120,6 @@
         <option value="$PROJECT_DIR$/src/app/menu/components/menuLink.jsx" />
         <option value="$PROJECT_DIR$/src/app/menu/components/menuItem.jsx" />
         <option value="$PROJECT_DIR$/src/app/Positions/components/PositionDetails.jsx" />
-        <option value="$PROJECT_DIR$/src/utils/formater.js" />
         <option value="$PROJECT_DIR$/src/containers/form-field-text/form-field-text.jsx" />
         <option value="$PROJECT_DIR$/src/app/Positions/components/addPosition.jsx" />
         <option value="$PROJECT_DIR$/src/ui/button/button.jsx" />
@@ -147,8 +137,6 @@
         <option value="$PROJECT_DIR$/src/containers/FormLogin/css/formLogin.module.css" />
         <option value="$PROJECT_DIR$/src/containers/FormLogin/containers/FormLogin.jsx" />
         <option value="$PROJECT_DIR$/src/app/Orders/css/orders.module.css" />
-        <option value="$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx" />
-        <option value="$PROJECT_DIR$/src/utils/hideListHead.js" />
         <option value="$PROJECT_DIR$/src/containers/listHead/listHead.module.css" />
         <option value="$PROJECT_DIR$/src/containers/listHead/listHead.jsx" />
         <option value="$PROJECT_DIR$/src/app/Positions/components/PositionList.jsx" />
@@ -163,6 +151,11 @@
         <option value="$PROJECT_DIR$/src/app/News/components/NewsList.jsx" />
         <option value="$PROJECT_DIR$/src/app/Clientele/components/ClientsList.jsx" />
         <option value="$PROJECT_DIR$/src/app/menu/components/Menu.jsx" />
+        <option value="$PROJECT_DIR$/src/app/menu/css/menu.module.css" />
+        <option value="$PROJECT_DIR$/src/app/Positions/css/position.module.css" />
+        <option value="$PROJECT_DIR$/src/utils/formater.js" />
+        <option value="$PROJECT_DIR$/src/utils/hideListHead.js" />
+        <option value="$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx" />
       </list>
     </option>
   </component>
@@ -195,21 +188,6 @@
               <item name="jump_promo_react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jump_promo_react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jump_promo_react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jump_promo_react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jump_promo_react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="menu" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -279,12 +257,12 @@
       <updated>1570774072597</updated>
       <workItem from="1570774074169" duration="4090000" />
       <workItem from="1570786676030" duration="142283000" />
-      <workItem from="1571825924737" duration="53151000" />
+      <workItem from="1571825924737" duration="57027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199524000" />
+    <option name="totallyTimeSpent" value="203400000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -307,7 +285,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="RNConsole" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.21343446" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.2112676" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.15926327" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -343,23 +321,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/Сategories/components/addCategories.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Сategories/css/categories.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Clientele/components/tabs/tabs.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -493,16 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/menu/components/menuItem.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/input/Input.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -601,32 +552,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/News/components/NewsDetails.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Orders/css/orders.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="112" column="12" lean-forward="true" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-            <element signature="e#1266#1934#0" />
-            <element signature="e#2494#3162#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -644,13 +573,6 @@
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/hideListHead.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -705,13 +627,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/formater.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -775,13 +690,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/formater.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/Positions/css/position.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="254" column="22" selection-start-line="254" selection-start-column="22" selection-end-line="254" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/menu/css/menu.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="368" column="22" selection-start-line="368" selection-start-column="22" selection-end-line="368" selection-end-column="22" />
+          <folding>
+            <element signature="e#3586#4702#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/menu/components/menuItem.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/menu/components/Menu.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+        <state relative-caret-position="535">
+          <caret line="112" column="42" lean-forward="true" selection-start-line="112" selection-start-column="42" selection-end-line="112" selection-end-column="42" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
             <element signature="e#533#1694#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/hideListHead.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/News/components/NewsDetails.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
           </folding>
         </state>
       </provider>

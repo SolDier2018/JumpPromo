@@ -2,7 +2,6 @@ export function scroll() {
     let prevPos = window.scrollY;
     window.addEventListener('scroll', function () {
         const scrollTop = window.scrollY;
-        console.log(scrollTop);
         const direction = prevPos - scrollTop > 0 ? 'up' : 'down';
         prevPos = scrollTop;
 
@@ -14,7 +13,9 @@ export function scroll() {
                 break;
             case "up":
                 document.getElementsByClassName('content_menu-wrap')[0].className = 'content_menu-wrap';
-                break
+                break;
+            default:
+                break;
         }
     });
 }

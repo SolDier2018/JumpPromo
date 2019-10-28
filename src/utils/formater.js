@@ -12,7 +12,7 @@ export function nl2br (text) {
     const lines = text.trim().split('\n') || [];
 
     return lines.map((line, index) => (
-        <Fragment>
+        <Fragment key={'key_' + index}>
             {line} <br key={'key_' + index} />
         </Fragment>
     ));
