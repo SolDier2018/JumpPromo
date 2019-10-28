@@ -51,7 +51,8 @@ class PositionDetails extends React.Component {
                     <div className={style.description}>
                         <FormFieldText
                             title={'Описание'}
-                            value={'Эриксоновский гипноз зеркально вызывает стресс, следовательно тенденция к конформизму связана с менее низким интеллектом.'}
+                            value={`Эриксоновский гипноз зеркально вызывает стресс,
+                            следовательно тенденция к конформизму связана с менее низким интеллектом.`}
                             onChange={(text) => console.log('---', text)}/>
                     </div>
 

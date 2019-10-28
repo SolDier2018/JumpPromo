@@ -10,6 +10,7 @@ import news from '../../../ui/img/news.svg';
 import clients from '../../../ui/img/clients.svg';
 import {openMenu} from '../../../utils/openMenu';
 
+import close from '../../../ui/img/close_menu.svg';
 import style from '../css/menu.module.css';
 
 
@@ -58,7 +59,8 @@ class Menu extends React.Component {
                     count: ''
                 }
             ],
-            selected: 'Обзор'
+            selected: 'Обзор',
+            openMenu: false
         };
         this.closeMenu = this.closeMenu.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -75,6 +77,7 @@ class Menu extends React.Component {
     }
 
     render() {
+
         return (
             <Fragment>
 
@@ -94,18 +97,16 @@ class Menu extends React.Component {
                             </div>
                             <ul>
                                 <li>
-                                    <Link to={'/profile'}>Профиль</Link>
+                                    <Link to={'/profile'} onClick={() => {openMenu(this.state.openMenu)}}>Профиль</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/setting-company'}>Настройка компании</Link>
+                                    <Link to={'/setting-company'} onClick={() => {openMenu(this.state.openMenu)}}>Настройка компании</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <button type="button" id="js-close_menu" className={style.closeMenu} onClick={this.closeMenu}>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M0.777763 11.6667C0.348208 12.0962 0.348208 12.7927 0.777763 13.2222C1.20732 13.6518 1.90376 13.6518 2.33332 13.2222L6.99998 8.55555L11.6667 13.2222C12.0962 13.6518 12.7927 13.6518 13.2222 13.2222C13.6518 12.7927 13.6518 12.0962 13.2222 11.6667L8.55554 7L13.2222 2.33333C13.6518 1.90378 13.6518 1.20733 13.2222 0.777775C12.7927 0.34822 12.0962 0.348219 11.6667 0.777774L6.99998 5.44444L2.33332 0.777778C1.90376 0.348223 1.20732 0.348225 0.777763 0.777779C0.348208 1.20733 0.348208 1.90378 0.777763 2.33333L5.44443 7L0.777763 11.6667Z" fill="#333333"/>
-                        </svg>
+                        <img src={close} alt=""/>
                     </button>
                 </div>
 

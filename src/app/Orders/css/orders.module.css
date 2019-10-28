@@ -115,15 +115,17 @@
     background: #FFFFFF;
 }
 
-.contentMenuFilter a {
+.contentMenuFilter button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
-
-    text-decoration: none;
     color: #333333;
 }
 
-.contentMenuFilter a svg {
+.contentMenuFilter button svg {
     margin-right: 4px;
 }
 
@@ -136,5 +138,9 @@
     .orderStatus {
         max-width: none;
         width: 100%;
+    }
+
+    .contentMenuFilter {
+        position: fixed;
     }
 }

@@ -7,6 +7,7 @@ import ListHead from '../../../containers/listHead/listHead';
 import AddPosition from './addPosition';
 import {openMenu} from "../../../utils/openMenu";
 import {openDetails} from "../../../utils/openDetails";
+import {scroll} from '../../../utils/hideListHead';
 
 class PositionList extends React.Component {
 
@@ -17,12 +18,12 @@ class PositionList extends React.Component {
             showPopup: false,
             height: 79
         };
-
+        scroll();
         this.closePopup = this.closePopup.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
+        if (prevState.menuOpen !== prevProps.menuOpen) {
             openMenu(this.state.menuOpen)
         }
     }
@@ -32,20 +33,25 @@ class PositionList extends React.Component {
             showPopup: false
         })
     }
+
     render() {
         return (
             <Fragment>
                 <div className='content_menu'>
                     <div className={'scroll-wrapper'}>
-                        <ListHead
-                            label={'Позиции'}
-                            add={true}
-                            search={true}
-                            defaultState={this.state.showPopup}
-                            onClick={(e) => this.setState({showPopup: e})}
-                            toTheHeight={(value)=> this.setState({height: value})}
-                            menuOpen={(value) => {this.setState({menuOpen: value})}}
-                        />
+                        <div className="content_menu-wrap">
+                            <ListHead
+                                label={'Позиции'}
+                                add={true}
+                                search={true}
+                                defaultState={this.state.showPopup}
+                                onClick={(e) => this.setState({showPopup: e})}
+                                toTheHeight={(value) => this.setState({height: value})}
+                                menuOpen={(value) => {
+                                    this.setState({menuOpen: value})
+                                }}
+                            />
+                        </div>
 
                         <div className={style.positionItems} style={{marginTop: this.state.height}}>
                             <IlemLink
@@ -54,12 +60,15 @@ class PositionList extends React.Component {
                                 attr={'01:23'}
                                 description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, iste neque. Ab ad architecto eius ipsam laudantium placeat quis suscipit.'}
                                 noWrap={true}
-                                click={(value) => {openDetails(value)}}
+                                click={(value) => {
+                                    openDetails(value)
+                                }}
                             />
+
                         </div>
                     </div>
                 </div>
-                {this.state.showPopup && <AddPosition onClose={this.closePopup} />}
+                {this.state.showPopup && <AddPosition onClose={this.closePopup}/>}
             </Fragment>
         )
     }

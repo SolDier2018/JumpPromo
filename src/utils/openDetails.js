@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function openDetails(value) {
     if(value) {
         document.getElementsByClassName('item_details')[0].className = 'item_details loaded';

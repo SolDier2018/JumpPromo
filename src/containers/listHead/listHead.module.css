@@ -1,10 +1,3 @@
-.listHeadWrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
 .listHead {
     background: #FFFFFF;
     display: flex;
@@ -42,13 +35,39 @@
 .search {
     padding: 8px;
     border-bottom: 1px solid #E7EAEE;
+    background: #FFFFFF;
+}
+
+.contentMenuFilter {
+    padding: 12px;
+    border-bottom: 1px solid #E7EAEE;
+    background: #FFFFFF;
+}
+
+.contentMenuFilter button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #333333;
+}
+
+.contentMenuFilter button svg {
+    margin-right: 4px;
+}
+
+.contentMenuFilter a p {
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.hideHead {
+    transform: translateY(-179px);
 }
 
 @media screen and (max-width: 768px) {
-    .listHeadWrap {
-        position: fixed;
-    }
-
     .burgerMenu {
         display: block;
     }

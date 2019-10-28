@@ -23,7 +23,7 @@ class SettingCompany extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
+        if (prevState.menuOpen !== prevProps.menuOpen) {
             openMenu(this.state.menuOpen)
         }
     }
@@ -31,7 +31,6 @@ class SettingCompany extends Component {
     fileValue(value) {
         const file = value;
         const filePath = value.split("\\").pop();
-        console.log(filePath);
         this.setState({
             fileValue: filePath,
             filePath: file
@@ -48,12 +47,16 @@ class SettingCompany extends Component {
     render() {
         return (
             <div className={style.contentItem}>
-                <ListHead
-                    label={'Настройка компании'}
-                    add={false}
-                    search={false}
-                    menuOpen={(value) => {this.setState({menuOpen: value})}}
-                />
+                <div className="content_menu-wrap">
+                    <ListHead
+                        label={'Настройка компании'}
+                        add={false}
+                        search={false}
+                        menuOpen={(value) => {
+                            this.setState({menuOpen: value})
+                        }}
+                    />
+                </div>
                 <div className={style.body}>
                     <form action="">
                         <div className={style.fieldWrap + ' ' + style.fileInput}>
@@ -63,13 +66,19 @@ class SettingCompany extends Component {
                                 id={'logo'}
                                 label={this.state.fileValue === '' ? 'Загрузить' : this.state.fileValue}
                                 type={'file'}
-                                onChange={(value) => {this.fileValue(value)}}
+                                onChange={(value) => {
+                                    this.fileValue(value)
+                                }}
                             />
                             {this.state.fileValue === ''
                                 ? ''
-                                : <button type={'button'} className={style.closeFileValue} onClick={this.closeFileValue}>
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M0.777763 11.6667C0.348208 12.0962 0.348208 12.7927 0.777763 13.2222C1.20732 13.6518 1.90376 13.6518 2.33332 13.2222L6.99998 8.55555L11.6667 13.2222C12.0962 13.6518 12.7927 13.6518 13.2222 13.2222C13.6518 12.7927 13.6518 12.0962 13.2222 11.6667L8.55554 7L13.2222 2.33333C13.6518 1.90378 13.6518 1.20733 13.2222 0.777775C12.7927 0.34822 12.0962 0.348219 11.6667 0.777774L6.99998 5.44444L2.33332 0.777778C1.90376 0.348223 1.20732 0.348225 0.777763 0.777779C0.348208 1.20733 0.348208 1.90378 0.777763 2.33333L5.44443 7L0.777763 11.6667Z" fill="#EC393D"/>
+                                :
+                                <button type={'button'} className={style.closeFileValue} onClick={this.closeFileValue}>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" clipRule="evenodd"
+                                              d="M0.777763 11.6667C0.348208 12.0962 0.348208 12.7927 0.777763 13.2222C1.20732 13.6518 1.90376 13.6518 2.33332 13.2222L6.99998 8.55555L11.6667 13.2222C12.0962 13.6518 12.7927 13.6518 13.2222 13.2222C13.6518 12.7927 13.6518 12.0962 13.2222 11.6667L8.55554 7L13.2222 2.33333C13.6518 1.90378 13.6518 1.20733 13.2222 0.777775C12.7927 0.34822 12.0962 0.348219 11.6667 0.777774L6.99998 5.44444L2.33332 0.777778C1.90376 0.348223 1.20732 0.348225 0.777763 0.777779C0.348208 1.20733 0.348208 1.90378 0.777763 2.33333L5.44443 7L0.777763 11.6667Z"
+                                              fill="#EC393D"/>
                                     </svg>
                                 </button>
                             }
@@ -79,7 +88,9 @@ class SettingCompany extends Component {
                                 id={'name_company'}
                                 label={'Название компании'}
                                 type={'text'}
-                                onChange={(value) => {console.log(value)}}
+                                onChange={(value) => {
+                                    console.log(value)
+                                }}
                             />
                         </div>
                         <div className={style.fieldWrap}>
@@ -87,7 +98,9 @@ class SettingCompany extends Component {
                                 id={'percent'}
                                 label={'Процент кэшбека'}
                                 type={'text'}
-                                onChange={(value) => {console.log(value)}}
+                                onChange={(value) => {
+                                    console.log(value)
+                                }}
                             />
                         </div>
                         <div className={style.fieldWrap}>

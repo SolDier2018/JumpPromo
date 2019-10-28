@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 import FormFieldTitle from '../../../containers/form-field-title/form-field-title';
 import ButtonDelete from '../../../containers/delete-button/delete-button';

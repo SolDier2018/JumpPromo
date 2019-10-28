@@ -37,6 +37,9 @@
     text-decoration: none;
     display: inline-block;
     margin-top: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .recovPassword:focus {
@@ -49,4 +52,10 @@
     line-height: 16px;
     color: #EC393D;
     text-align: left;
+}
+
+.successfully p {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
 }

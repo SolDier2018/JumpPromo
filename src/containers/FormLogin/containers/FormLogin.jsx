@@ -16,6 +16,7 @@ class FormLogin extends Component {
             passwordValid: false
         };
         this.recoverPassword = this.recoverPassword.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
 
@@ -27,11 +28,28 @@ class FormLogin extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+        const regEmail = /^\w+@\w+\.\w{2,4}$/i;
+        !regEmail.test(this.state.email)
+            ? this.setState({
+                emailValid: true
+            })
+            : this.setState({
+                emailValid: false
+            });
+
+        this.state.password.length < 6
+            ? this.setState({
+                passwordValid: true
+            })
+            : this.setState({
+                passwordValid: false
+            })
+
     }
     
     render() {
 
-        const {emailValid, passwordValid} = this.props;
+        const {emailValid, passwordValid} = this.state;
 
         return (
             <div className={style.login}>
@@ -63,12 +81,9 @@ class FormLogin extends Component {
 
                         </div>
 
-                        <Button
-                            name={'Войти'}
-                            type={'submit'}
-                        />
+                        <Button name={'Войти'} type={'submit'}/>
                     </form>
-                    <a href={'#'} className={style.recovPassword} onClick={this.recoverPassword}>Не помню пароль</a>
+                    <button type={'button'} className={style.recovPassword} onClick={this.recoverPassword}>Не помню пароль</button>
                 </div>
             </div>
         );

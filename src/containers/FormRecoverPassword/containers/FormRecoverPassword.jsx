@@ -14,7 +14,8 @@ class FormRecoverPassword extends Component {
             error: false,
             email: '',
             successfully: false,
-            login: true
+            login: true,
+            emailValid: false
         };
         this.rememberPassword = this.rememberPassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -30,6 +31,15 @@ class FormRecoverPassword extends Component {
 
     onSubmit(e) {
         e.preventDefault();
+        const regEmail = /^\w+@\w+\.\w{2,4}$/i;
+        !regEmail.test(this.state.email)
+            ? this.setState({
+                emailValid: true
+            })
+            : this.setState({
+                emailValid: false,
+                successfully: true
+            });
     }
 
     render() {
@@ -54,7 +64,7 @@ class FormRecoverPassword extends Component {
                             <form action="" onSubmit={this.onSubmit}>
                                 <div className={style.formField}>
                                     <Input
-                                        error={this.state.error}
+                                        error={this.state.emailValid}
                                         placeholder={'Эл. почта'}
                                         type={'text'}
                                         onChange={(value) => {
@@ -63,14 +73,14 @@ class FormRecoverPassword extends Component {
                                             });
                                         }}
                                     />
-                                    {this.state.error ? <p className={style.noValidForm}>Введите email</p> : ''}
+                                    {this.state.emailValid ? <p className={style.noValidForm}>Неверный email</p> : ''}
                                 </div>
                                 <Button
                                     name={'Восстановить'}
                                     type={'submit'}
                                 />
                             </form>
-                            <a href={'#'} className={style.recovPassword} onClick={this.rememberPassword}>Вспомнил пароль</a>
+                            <button type={'button'} className={style.recovPassword} onClick={this.rememberPassword}>Вспомнил пароль</button>
                         </Fragment>}
 
                 </div>

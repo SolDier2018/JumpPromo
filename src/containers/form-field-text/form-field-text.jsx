@@ -40,6 +40,7 @@ class FormFieldText extends Component {
     }
 
     render() {
+
         return (
             <Fragment>
                 {

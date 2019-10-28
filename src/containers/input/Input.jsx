@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 import style from './input.module.css';
 
@@ -31,6 +31,7 @@ class Input extends Component {
                     className={this.props.error ? style.inputError : style.input}
                     placeholder={this.props.placeholder}
                     onChange={this.Change}
+                    autoComplete={'on'}
                 />
             </div>
         );

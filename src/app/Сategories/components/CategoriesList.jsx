@@ -5,9 +5,9 @@ import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
 import {openMenu} from "../../../utils/openMenu";
 import {openDetails} from '../../../utils/openDetails';
+import {scroll} from "../../../utils/hideListHead";
 
 import style from '../css/categories.module.css';
-
 
 class CategoriesList extends Component {
 
@@ -17,13 +17,13 @@ class CategoriesList extends Component {
             showPopup: false,
             menuOpen: false
         };
-
+        scroll();
         this.showPopup = this.showPopup.bind(this);
         this.closePopup = this.closePopup.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
+        if (prevState.menuOpen !== prevProps.menuOpen) {
             openMenu(this.state.menuOpen)
         }
     }
@@ -48,14 +48,18 @@ class CategoriesList extends Component {
 
                     <div className='scroll-wrapper'>
 
-                        <ListHead
-                            label={'Категории'}
-                            add={true}
-                            search={false}
-                            defaultState={this.state.showPopup}
-                            onClick={(e) => this.setState({showPopup: e})}
-                            menuOpen={(value) => {this.setState({menuOpen: value})}}
-                        />
+                        <div className="content_menu-wrap">
+                            <ListHead
+                                label={'Категории'}
+                                add={true}
+                                search={false}
+                                defaultState={this.state.showPopup}
+                                onClick={(e) => this.setState({showPopup: e})}
+                                menuOpen={(value) => {
+                                    this.setState({menuOpen: value})
+                                }}
+                            />
+                        </div>
 
                         <div className={style.categoriesItems}>
 
@@ -71,7 +75,9 @@ class CategoriesList extends Component {
                                             description={''}
                                             noWrap={true}
                                             fontWeight={false}
-                                            click={(value) => {openDetails(value)}}
+                                            click={(value) => {
+                                                openDetails(value)
+                                            }}
                                         />
                                     </li>
                                     <li className={style.summaryItem}>
@@ -81,7 +87,9 @@ class CategoriesList extends Component {
                                             description={''}
                                             noWrap={true}
                                             fontWeight={false}
-                                            click={(value) => {openDetails(value)}}
+                                            click={(value) => {
+                                                openDetails(value)
+                                            }}
                                         />
                                     </li>
                                 </ul>

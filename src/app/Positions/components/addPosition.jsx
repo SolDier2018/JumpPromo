@@ -70,7 +70,11 @@ class AddPosition extends Component {
                     </div>
                     <div className={style.buttonWrap}>
                         <Button type={'submit'} name={'Создать'} transparent={false} />
-                        <Button type={'button'} name={'Отмена'} transparent={true} />
+                        <Button
+                            type={'button'}
+                            name={'Отмена'}
+                            transparent={true}
+                        />
                     </div>
                 </div>
             </Fragment>

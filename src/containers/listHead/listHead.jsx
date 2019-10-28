@@ -21,7 +21,7 @@ class ListHead extends Component {
     showSearch() {
         this.setState((state) => ({
             showSearch: !state.showSearch
-        }), ()=>{
+        }), () => {
             this.props.toTheHeight(this.refContainer.current.offsetHeight);
         });
     }
@@ -34,7 +34,7 @@ class ListHead extends Component {
 
     render() {
 
-        const {label, add, search, defaultState, onClick} = this.props;
+        const {label, add, search, defaultState, onClick, filter} = this.props;
 
         return (
             <div ref={this.refContainer} className={style.listHeadWrap}>
@@ -76,17 +76,31 @@ class ListHead extends Component {
                         </button>
                     </div>
                 </div>
-                {this.state.showSearch && 
-                    <div className={style.search}>
-                        <Input
-                            placeholder={'Найти'}
-                            type={'search'}
-                            onChange={(value) => {
-                                this.setState({search: value})
-                            }}
-                        />
-                    </div>}
-                
+                {this.state.showSearch &&
+                <div className={style.search}>
+                    <Input
+                        placeholder={'Найти'}
+                        type={'search'}
+                        onChange={(value) => {
+                            this.setState({search: value})
+                        }}
+                    />
+                </div>}
+
+                {filter &&
+                <div className={style.contentMenuFilter}>
+                    <button type={'button'}>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="#333333"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" clipRule="evenodd"
+                                  d="M2 4.99999H14V5.99999H2V4.99999ZM4 7.99999H12V8.99999H4V7.99999ZM10 11H6V12H10V11Z"
+                                  fill=""/>
+                        </svg>
+                        <p>Не обработанные</p>
+                    </button>
+                </div>}
+
+
             </div>
         );
     }

@@ -17,7 +17,7 @@ class FormFieldTitle extends Component {
         const value = this.state.value;
         const prevValue = this.state.prevValue;
 
-        if (value !== this.state.prevValue) {
+        if (value !== prevValue) {
             this.props.onChange(value);
             this.setState({prevValue: value, editable: false});
         }

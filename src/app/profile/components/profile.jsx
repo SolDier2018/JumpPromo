@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 import Head from '../../../containers/listHead/listHead';
 import Input from '../../../containers/input/Input';
@@ -13,11 +13,11 @@ class Profile extends Component {
         super(props);
         this.state = {
             menuOpen: false
-        }
+        };
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
+        if (prevState.menuOpen !== prevProps.menuOpen) {
             openMenu(this.state.menuOpen)
         }
     }
@@ -25,12 +25,16 @@ class Profile extends Component {
     render() {
         return (
             <div className={style.contentItem}>
-                <Head
-                    label={'Профиль'}
-                    add={false}
-                    search={false}
-                    menuOpen={(value) => {this.setState({menuOpen: value})}}
-                />
+                <div className="content_menu-wrap">
+                    <Head
+                        label={'Профиль'}
+                        add={false}
+                        search={false}
+                        menuOpen={(value) => {
+                            this.setState({menuOpen: value})
+                        }}
+                    />
+                </div>
                 <div className={style.body}>
                     <form action="">
                         <div className={style.fieldWrap}>
@@ -74,6 +78,34 @@ class Profile extends Component {
                             />
                         </div>
 
+                        <div className={style.fieldWrap}>
+                            <Button
+                                type={'submit'}
+                                name={'Сохранить'}
+                                transparent={false}
+                            />
+                        </div>
+                        <div className={style.fieldWrap}>
+                            <Button
+                                type={'submit'}
+                                name={'Сохранить'}
+                                transparent={false}
+                            />
+                        </div>
+                        <div className={style.fieldWrap}>
+                            <Button
+                                type={'submit'}
+                                name={'Сохранить'}
+                                transparent={false}
+                            />
+                        </div>
+                        <div className={style.fieldWrap}>
+                            <Button
+                                type={'submit'}
+                                name={'Сохранить'}
+                                transparent={false}
+                            />
+                        </div>
                         <div className={style.fieldWrap}>
                             <Button
                                 type={'submit'}

@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 import style from './button.module.css';
 
@@ -9,10 +9,10 @@ class Button extends Component {
         this.state = {
             type: props.type,
             name: props.name,
-            transparent: props.transparent
+            transparent: props.transparent,
+            click: false
         };
     }
-
 
     render() {
 

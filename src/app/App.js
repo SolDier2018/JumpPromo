@@ -1,10 +1,9 @@
 import React from 'react';
-import {Route, BrowserRouter as Router} from 'react-router-dom';
+import {Router} from 'react-router-dom';
 import {createBrowserHistory} from "history";
 import routes from '../router';
 
 import {Menu} from './menu';
-
 import '../index.css';
 
 const history = createBrowserHistory();
