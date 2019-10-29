@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95bad319-0ad7-4cd4-8a93-8463e9a59ce6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/menu/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/menu/components/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/menu/css/menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/menu/css/menu.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/components/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/components/profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formater.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formater.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/hideListHead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/hideListHead.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="252">
+              <caret line="19" column="74" lean-forward="true" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
               <folding>
                 <element signature="e#0#60#0" expanded="true" />
               </folding>
@@ -48,6 +44,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
               <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/profile/components/profile.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -144,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/app/Review/css/review.module.css" />
         <option value="$PROJECT_DIR$/src/app/Review/components/Review.jsx" />
         <option value="$PROJECT_DIR$/src/app/Orders/components/OrdersList.jsx" />
-        <option value="$PROJECT_DIR$/src/app/profile/components/profile.jsx" />
         <option value="$PROJECT_DIR$/src/app/settings-company/components/settingCompany.jsx" />
         <option value="$PROJECT_DIR$/src/app/App.js" />
         <option value="$PROJECT_DIR$/src/app/Сategories/components/CategoriesList.jsx" />
@@ -155,6 +162,7 @@
         <option value="$PROJECT_DIR$/src/app/Positions/css/position.module.css" />
         <option value="$PROJECT_DIR$/src/utils/formater.js" />
         <option value="$PROJECT_DIR$/src/utils/hideListHead.js" />
+        <option value="$PROJECT_DIR$/src/app/profile/components/profile.jsx" />
         <option value="$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx" />
       </list>
     </option>
@@ -257,12 +265,12 @@
       <updated>1570774072597</updated>
       <workItem from="1570774074169" duration="4090000" />
       <workItem from="1570786676030" duration="142283000" />
-      <workItem from="1571825924737" duration="57027000" />
+      <workItem from="1571825924737" duration="59104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203400000" />
+    <option name="totallyTimeSpent" value="205477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -285,7 +293,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="RNConsole" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.21343446" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.15926327" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49946696" visible="true" weight="0.18959913" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -593,16 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/profile/components/profile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/Orders/components/OrdersList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -752,10 +750,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/profile/components/profile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/delete-button/delete-button.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state relative-caret-position="252">
+          <caret line="19" column="74" lean-forward="true" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>

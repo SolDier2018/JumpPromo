@@ -85,34 +85,6 @@ class Profile extends Component {
                                 transparent={false}
                             />
                         </div>
-                        <div className={style.fieldWrap}>
-                            <Button
-                                type={'submit'}
-                                name={'Сохранить'}
-                                transparent={false}
-                            />
-                        </div>
-                        <div className={style.fieldWrap}>
-                            <Button
-                                type={'submit'}
-                                name={'Сохранить'}
-                                transparent={false}
-                            />
-                        </div>
-                        <div className={style.fieldWrap}>
-                            <Button
-                                type={'submit'}
-                                name={'Сохранить'}
-                                transparent={false}
-                            />
-                        </div>
-                        <div className={style.fieldWrap}>
-                            <Button
-                                type={'submit'}
-                                name={'Сохранить'}
-                                transparent={false}
-                            />
-                        </div>
 
                     </form>
                 </div>

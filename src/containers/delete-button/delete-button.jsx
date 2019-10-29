@@ -13,20 +13,11 @@ class DeleteButton extends Component {
         this.handleClickOut = this.handleClickOut.bind(this);
         this.refButton = createRef();
         this.buttonDelete = createRef();
-    }
-
-    getSnapshotBeforeUpdate(prevProps, prevState) {
         document.addEventListener('click', this.handleClickOut, false);
-        return null;
     }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {}
 
     componentWillUnmount() {
-        document.addEventListener('click', this.handleClickOut, false);
-        this.setState({
-            editable: false
-        });
+        document.removeEventListener('click', this.handleClickOut, false);
     }
 
     handleClickOut(e) {
