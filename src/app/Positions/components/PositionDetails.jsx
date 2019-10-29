@@ -44,7 +44,7 @@ class PositionDetails extends React.Component {
                 <div className="item_details-wrap">
 
                     <div className={style.positionDetailsTitle}>
-                        <FormFieldTextarea value={'Ремонт коммерческого транспорта'} onChange={(text) => console.log('---', text)} />
+                        <FormFieldTextarea value={'Ремонт коммерческого транспорта'} onChange={(text) => {}} />
                         <DeleteButton />
                     </div>
 
@@ -53,7 +53,7 @@ class PositionDetails extends React.Component {
                             title={'Описание'}
                             value={`Эриксоновский гипноз зеркально вызывает стресс,
                             следовательно тенденция к конформизму связана с менее низким интеллектом.`}
-                            onChange={(text) => console.log('---', text)}/>
+                            onChange={(text) => {}}/>
                     </div>
 
                     <div className={style.positionContent}>

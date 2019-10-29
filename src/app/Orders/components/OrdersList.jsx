@@ -53,7 +53,7 @@ class OrdersList extends React.Component {
                             odit optio pariatur placeat porro quis quo quos repellendus reprehenderit similique sint
                             tenetur totam unde veniam! Quo, soluta?.`}
                             noWrap={true}
-                            click={(value) => {openDetails(value)}}
+                            click={(details) => {openDetails(details)}}
                         />
                         <Link
                             to={'#'}

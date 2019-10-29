@@ -34,7 +34,6 @@ class NewsList extends Component {
         });
     }
 
-
     render() {
         return (
             <Fragment>

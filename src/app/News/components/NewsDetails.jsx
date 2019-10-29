@@ -71,6 +71,7 @@ class NewsDetails extends Component {
                                 id={'date'}
                                 label={'Время публикации'}
                                 type={'date'}
+                                onChange={(value) => console.log(value)}
                             />
 
                         </div>
@@ -80,6 +81,7 @@ class NewsDetails extends Component {
                                 id={'time'}
                                 label={''}
                                 type={'time'}
+                                onChange={(value) => console.log(value)}
                             />
 
                         </div>

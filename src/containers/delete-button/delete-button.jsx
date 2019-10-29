@@ -1,4 +1,6 @@
 import React, {Component, Fragment, createRef} from 'react';
+import ReactDOM from 'react-dom';
+
 import style from "./deleteButton.module.css";
 
 class DeleteButton extends Component {
@@ -10,6 +12,7 @@ class DeleteButton extends Component {
             editable: false,
             background: props.background
         };
+
         this.handleClickOut = this.handleClickOut.bind(this);
         this.refButton = createRef();
         this.buttonDelete = createRef();
@@ -21,13 +24,12 @@ class DeleteButton extends Component {
     }
 
     handleClickOut(e) {
-        const buttonBlock = this.refButton.current;
+        const domNode = ReactDOM.findDOMNode(this);
 
-        if (!e.path.includes(buttonBlock)) {
-            const deleteButton = this.buttonDelete.current;
-            if (!e.path.includes(deleteButton)) {
-                this.setState({editable: false})
-            }
+        if (!domNode || !domNode.contains(e.target)) {
+            this.setState({
+                editable: false
+            });
         }
     }
 

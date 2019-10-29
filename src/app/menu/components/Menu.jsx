@@ -11,6 +11,7 @@ import clients from '../../../ui/img/clients.svg';
 import {openMenu} from '../../../utils/openMenu';
 
 import close from '../../../ui/img/close_menu.svg';
+import user from '../../../ui/img/icon_user.svg';
 import style from '../css/menu.module.css';
 
 
@@ -91,7 +92,7 @@ class Menu extends React.Component {
                         </svg>
                         <div className={style.accountPreview}>
                             <div className=''>
-                                <img src="./img/icon_user.svg" alt=""/>
+                                <img src={user} alt=""/>
                                 <p className={style.name}>Евгений Головатый</p>
                                 <p className={style.email}>example@example.com</p>
                             </div>
