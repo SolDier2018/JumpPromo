@@ -1,19 +1,6 @@
-import React, {Fragment} from 'react';
+import pageContainer from '../../../core/HOC/pageContainer';
 
 import OrdersList from './OrdersList';
 import OrderDetails from './OrderDetails';
 
-class Orders extends React.Component {
-    render() {
-        return(
-            <Fragment>
-                <div className={'contentGrid'}>
-                    <OrdersList />
-                    <OrderDetails />
-                </div>
-            </Fragment>
-        )
-    }
-}
-
-export default Orders;
+export default pageContainer(OrdersList, OrderDetails);

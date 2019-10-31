@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 
 import NewsTitle from '../../../containers/form-field-title/form-field-title';
 
@@ -23,18 +23,22 @@ class NewsDetails extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
+        if (prevState.menuOpen !== prevProps.menuOpen) {
             openMenu(this.state.menuOpen)
         }
     }
 
     render() {
         return (
-            <div className="item_details">
+            <Fragment>
                 <DetailsHead
                     title={'Новость'}
-                    menuOpen={(value) => {this.setState({menuOpen: value})}}
-                    hideDetails={(value) => {openDetails(value)}}
+                    menuOpen={(value) => {
+                        this.setState({menuOpen: value})
+                    }}
+                    hideDetails={(value) => {
+                        openDetails(value)
+                    }}
                 />
 
                 <div className={'item_details-wrap'}>
@@ -106,8 +110,7 @@ class NewsDetails extends Component {
 
                     </div>
                 </div>
-
-            </div>
+            </Fragment>
         );
     }
 }

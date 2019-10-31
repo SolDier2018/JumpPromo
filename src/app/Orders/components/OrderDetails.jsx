@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 import DetailsHead from '../../../containers/detailsHead/detailsHead';
 import Select from '../../../containers/select/Select';
@@ -24,18 +24,22 @@ class OrderDetails extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
+        if (prevState.menuOpen !== prevProps.menuOpen) {
             openMenu(this.state.menuOpen)
         }
     }
 
     render() {
-        return(
-            <div className="item_details">
+        return (
+            <Fragment>
                 <DetailsHead
                     title={'Заказ'}
-                    menuOpen={(value) => {this.setState({menuOpen: value})}}
-                    hideDetails={(value) => {openDetails(value)}}
+                    menuOpen={(value) => {
+                        this.setState({menuOpen: value})
+                    }}
+                    hideDetails={(value) => {
+                        openDetails(value)
+                    }}
                 />
                 <div className="item_details-wrap">
                     <div className={style.itemTitle}>
@@ -96,11 +100,11 @@ class OrderDetails extends React.Component {
                         </div>
 
                         <div className={style.orderStatus}>
-                            <Select option={this.state.status} label={'Статус'} />
+                            <Select option={this.state.status} label={'Статус'}/>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Fragment>
         )
     }
 }

@@ -1,17 +1,6 @@
-import React from 'react';
+import pageContainer from '../../../core/HOC/pageContainer';
 
-import {ClientsList} from './ClientsList';
-import {ClientsDetails} from './ClientsDetails';
+import ClientsList from './ClientsList';
+import ClientsDetails from './ClientsDetails';
 
-class Clientele extends React.Component {
-    render() {
-        return(
-            <div className={'contentGrid'}>
-                <ClientsList />
-                <ClientsDetails/>
-            </div>
-        )
-    }
-}
-
-export default Clientele;
+export default pageContainer(ClientsList, ClientsDetails);

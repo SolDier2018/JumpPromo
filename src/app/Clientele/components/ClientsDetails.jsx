@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 
 import DetailsHead from '../../../containers/detailsHead/detailsHead';
 import Tabs from './tabs/tabs';
@@ -26,8 +26,7 @@ class ClientsDetails extends Component {
 
     render() {
         return (
-            <div className="item_details">
-
+            <Fragment>
                 <DetailsHead
                     title={'Клиент'}
                     menuOpen={(value) => {this.setState({menuOpen: value})}}
@@ -51,11 +50,10 @@ class ClientsDetails extends Component {
                     <div className={style.clientInfoTabs}>
                         <Tabs/>
                     </div>
-
                 </div>
-            </div>
+            </Fragment>
         );
     }
 }
 
-export {ClientsDetails};
+export default ClientsDetails;

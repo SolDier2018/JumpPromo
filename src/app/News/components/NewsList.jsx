@@ -37,34 +37,30 @@ class NewsList extends Component {
     render() {
         return (
             <Fragment>
-                <div className='content_menu'>
-                    <div className='scroll-wrapper'>
-                        <div className="content_menu-wrap">
-                            <ListHead
-                                label={'Новости'}
-                                add={true}
-                                search={true}
-                                defaultState={this.state.showPopup}
-                                onClick={(e) => this.setState({showPopup: e})}
-                                toTheHeight={(value) => this.setState({height: value})}
-                                menuOpen={(value) => {
-                                    this.setState({menuOpen: value})
-                                }}
-                            />
-                        </div>
-                        <div className={style.newsItems} style={{marginTop: this.state.height}}>
-                            <Link
-                                to={'#'}
-                                title={'Бочковое моторное масло Shell защитит ваш авто'}
-                                attr={'01:23'}
-                                description={'Преимущества бочкового масла перед обычным: - Контроль качества и состав чего то там'}
-                                noWrap={false}
-                                click={(value) => {
-                                    openDetails(value)
-                                }}
-                            />
-                        </div>
-                    </div>
+                <div className="content_menu-wrap">
+                    <ListHead
+                        label={'Новости'}
+                        add={true}
+                        search={true}
+                        defaultState={this.state.showPopup}
+                        onClick={(e) => this.setState({showPopup: e})}
+                        toTheHeight={(value) => this.setState({height: value})}
+                        menuOpen={(value) => {
+                            this.setState({menuOpen: value})
+                        }}
+                    />
+                </div>
+                <div className={style.newsItems} style={{marginTop: this.state.height}}>
+                    <Link
+                        to={'#'}
+                        title={'Бочковое моторное масло Shell защитит ваш авто'}
+                        attr={'01:23'}
+                        description={'Преимущества бочкового масла перед обычным: - Контроль качества и состав чего то там'}
+                        noWrap={false}
+                        click={(value) => {
+                            openDetails(value)
+                        }}
+                    />
                 </div>
                 {this.state.showPopup && <AddNews onClose={this.closePopup}/>}
             </Fragment>

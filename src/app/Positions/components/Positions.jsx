@@ -1,17 +1,6 @@
-import React from 'react';
+import pageContainer from '../../../core/HOC/pageContainer';
 
 import PositionList from './PositionList';
 import PositionDetails from './PositionDetails';
 
-class Positions extends React.Component {
-    render() {
-        return(
-            <div className={'contentGrid'}>
-                <PositionList />
-                <PositionDetails />
-            </div>
-        )
-    }
-}
-
-export default Positions;
+export default pageContainer(PositionList, PositionDetails);

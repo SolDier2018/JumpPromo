@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 import FormFieldTextarea from '../../../containers/form-field-title/form-field-title';
 import DeleteButton from '../../../containers/delete-button/delete-button';
@@ -24,28 +24,31 @@ class PositionDetails extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
+        if (prevState.menuOpen !== prevProps.menuOpen) {
             openMenu(this.state.menuOpen)
         }
     }
 
 
     render() {
-        return(
-
-            <div className="item_details">
-
+        return (
+            <Fragment>
                 <DetailsHead
                     title={'Позиция'}
-                    menuOpen={(value) => {this.setState({menuOpen: value})}}
-                    hideDetails={(value) => {openDetails(value)}}
+                    menuOpen={(value) => {
+                        this.setState({menuOpen: value})
+                    }}
+                    hideDetails={(value) => {
+                        openDetails(value)
+                    }}
                 />
 
                 <div className="item_details-wrap">
 
                     <div className={style.positionDetailsTitle}>
-                        <FormFieldTextarea value={'Ремонт коммерческого транспорта'} onChange={(text) => {}} />
-                        <DeleteButton />
+                        <FormFieldTextarea value={'Ремонт коммерческого транспорта'} onChange={(text) => {
+                        }}/>
+                        <DeleteButton/>
                     </div>
 
                     <div className={style.description}>
@@ -53,13 +56,14 @@ class PositionDetails extends React.Component {
                             title={'Описание'}
                             value={`Эриксоновский гипноз зеркально вызывает стресс,
                             следовательно тенденция к конформизму связана с менее низким интеллектом.`}
-                            onChange={(text) => {}}/>
+                            onChange={(text) => {
+                            }}/>
                     </div>
 
                     <div className={style.positionContent}>
 
                         <div className={style.category}>
-                            <Select option={this.state.category} label={'Категория'} />
+                            <Select option={this.state.category} label={'Категория'}/>
                         </div>
 
                         <div className={style.price}>
@@ -67,7 +71,7 @@ class PositionDetails extends React.Component {
                         </div>
 
                         <div className={style.currency}>
-                            <Select option={this.state.currency} label={'Валюта'} />
+                            <Select option={this.state.currency} label={'Валюта'}/>
                         </div>
 
                         <div className={style.priceFrom}>
@@ -80,7 +84,7 @@ class PositionDetails extends React.Component {
 
                     </div>
                 </div>
-            </div>
+            </Fragment>
         )
     }
 }

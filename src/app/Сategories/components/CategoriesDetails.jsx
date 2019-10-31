@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 
 import FormFieldTitle from '../../../containers/form-field-title/form-field-title';
 import ButtonDelete from '../../../containers/delete-button/delete-button';
@@ -33,7 +33,7 @@ class CategoriesDetails extends Component {
 
     render() {
         return (
-            <div className="item_details">
+            <Fragment>
                 <DetailsHead
                     title={'Категория'}
                     menuOpen={(value) => {this.setState({menuOpen: value})}}
@@ -57,7 +57,7 @@ class CategoriesDetails extends Component {
 
                     </div>
                 </div>
-            </div>
+            </Fragment>
         );
     }
 }
