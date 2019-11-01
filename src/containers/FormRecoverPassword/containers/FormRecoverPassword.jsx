@@ -78,6 +78,7 @@ class FormRecoverPassword extends Component {
                                 <Button
                                     name={'Восстановить'}
                                     type={'submit'}
+                                    onClick={() => {console.log('Отправка формы');}}
                                 />
                             </form>
                             <button type={'button'} className={style.recovPassword} onClick={this.rememberPassword}>Вспомнил пароль</button>

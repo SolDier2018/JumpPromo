@@ -1,8 +1,11 @@
 import React, {Component, createRef} from 'react';
-
-import Input from '../../containers/input/Input';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {menuOpen} from '../../redux/actions';
 
 import style from './listHead.module.css';
+
+import Input from '../../containers/input/Input';
 
 class ListHead extends Component {
 
@@ -28,13 +31,15 @@ class ListHead extends Component {
 
     openMenu() {
         return (
-            this.props.menuOpen(true)
+            this.props.menuOpen()
         )
     }
 
     render() {
 
         const {label, add, search, defaultState, onClick, filter} = this.props;
+
+        console.log(this.props.menuOpen);
 
         return (
             <div ref={this.refContainer} className={style.listHeadWrap}>
@@ -67,6 +72,7 @@ class ListHead extends Component {
                                 </button>
                             )
                         }
+
                         <button type="button" className={style.burgerMenu} onClick={this.openMenu}>
                             <svg width="16" height="8" viewBox="0 0 16 8" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -74,8 +80,10 @@ class ListHead extends Component {
                                       fill="#333333"/>
                             </svg>
                         </button>
+
                     </div>
                 </div>
+
                 {this.state.showSearch &&
                 <div className={style.search}>
                     <Input
@@ -100,10 +108,19 @@ class ListHead extends Component {
                     </button>
                 </div>}
 
-
             </div>
         );
     }
 }
 
-export default ListHead;
+function mapStateToProps(state) {
+    return {
+        menuOpen: state.menuOpen
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({menuOpen}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListHead);

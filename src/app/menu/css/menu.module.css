@@ -143,7 +143,7 @@ span.avatar {
     position: relative;
 }
 
-.menuItems ul li > img {
+.menuItems ul li > object {
     grid-column: 1/2;
     align-self: start;
     justify-self: center;
@@ -219,6 +219,10 @@ span.avatar {
 
 .openSubmenu .badgest p, .openSubmenu .badgest span {
     color: #258FFB;
+}
+
+.svg svg {
+    fill: #258FFB;
 }
 
 @media screen and (max-width: 1280px) {

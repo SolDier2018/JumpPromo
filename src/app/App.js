@@ -1,24 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Router} from 'react-router-dom';
 import {createBrowserHistory} from "history";
 import routes from '../router';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 import {Menu} from './menu';
 import '../index.css';
+import {menuOpen} from "../redux/actions";
 
 const history = createBrowserHistory();
 
-function App() {
-    return (
-        <Router history={history}>
-            <div className="wrapper">
-                <div className="menu">
-                    <Menu/>
+class App extends Component {
+    render() {
+        return (
+            <Router history={history}>
+                <div className="wrapper">
+                    <div className={'menu'}>
+                        <Menu/>
+                    </div>
+                    {routes()}
                 </div>
-                {routes()}
-            </div>
-        </Router>
-    );
+            </Router>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        menuOpen: state.menuOpen
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({menuOpen}, dispatch)
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

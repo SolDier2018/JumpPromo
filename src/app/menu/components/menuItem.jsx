@@ -14,6 +14,7 @@ class MenuItem extends Component {
         this.selectPage = this.selectPage.bind(this);
         this.clickSubMenu = this.clickSubMenu.bind(this);
         this.refLink = createRef();
+        this.refObjectSvg = createRef();
     }
 
     selectPage() {
@@ -27,15 +28,15 @@ class MenuItem extends Component {
 
     render() {
 
-        const {to, label, submenu, icon, count, active} = this.props;
+        const {to, label, submenu, icon, count, active, iconActive} = this.props;
         
         return (
             <Fragment>
                 <li className={active ? style.openSubmenu : ''}>
-                    <img src={icon} alt=""/>
+
+                     <img src={active ? iconActive : icon} alt=""/>
 
                     <div>
-
                         <Link to={to} className={style.badgest} onClick={this.selectPage} >
                             <p ref={this.refLink}>{label}</p>
                             <span>{count}</span>
@@ -50,7 +51,6 @@ class MenuItem extends Component {
                                     </svg>
                             }
                         </Link>
-
                         {
                             submenu.map((s) => {
                                 return (
@@ -61,7 +61,6 @@ class MenuItem extends Component {
                                 )
                             })
                         }
-
                     </div>
                 </li>
             </Fragment>

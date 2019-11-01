@@ -5,9 +5,13 @@ import {Link} from 'react-router-dom';
 import MenuItem from './menuItem';
 
 import review from '../../../ui/img/review.svg';
+import reviewActive from '../../../ui/img/reviewActive.svg';
 import orders from '../../../ui/img/orders.svg';
+import ordersActive from '../../../ui/img/ordersActive.svg';
 import news from '../../../ui/img/news.svg';
+import newsActive from '../../../ui/img/newsActive.svg';
 import clients from '../../../ui/img/clients.svg';
+import clientsActive from '../../../ui/img/clientsActive.svg';
 import {openMenu} from '../../../utils/openMenu';
 
 import close from '../../../ui/img/close_menu.svg';
@@ -26,6 +30,7 @@ class Menu extends React.Component {
                     label: 'Обзор',
                     path: '/review',
                     icon: review,
+                    iconActive: reviewActive,
                     submenu: [],
                     count: ''
                 },
@@ -33,6 +38,7 @@ class Menu extends React.Component {
                     label: 'Заказы',
                     path: '/orders',
                     icon: orders,
+                    iconActive: ordersActive,
                     submenu: [
                         {
                             label: 'Позиции',
@@ -49,6 +55,7 @@ class Menu extends React.Component {
                     label: 'Новости',
                     path: '/news',
                     icon: news,
+                    iconActive: newsActive,
                     submenu: [],
                     count: ''
                 },
@@ -56,6 +63,7 @@ class Menu extends React.Component {
                     label: 'Клиенты',
                     path: 'clientele',
                     icon: clients,
+                    iconActive: clientsActive,
                     submenu: [],
                     count: ''
                 }
@@ -123,6 +131,7 @@ class Menu extends React.Component {
                                             label={e.label}
                                             submenu={e.submenu}
                                             icon={e.icon}
+                                            iconActive={e.iconActive}
                                             count={e.count}
                                             active={e.label === this.state.selected}
                                             onClick={(value) => this.handleClick(value)}

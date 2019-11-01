@@ -74,6 +74,7 @@ class AddPosition extends Component {
                             type={'button'}
                             name={'Отмена'}
                             transparent={true}
+                            onClick={this.closePopup}
                         />
                     </div>
                 </div>

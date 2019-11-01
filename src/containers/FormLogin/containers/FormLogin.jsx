@@ -81,7 +81,11 @@ class FormLogin extends Component {
 
                         </div>
 
-                        <Button name={'Войти'} type={'submit'}/>
+                        <Button
+                            name={'Войти'}
+                            type={'submit'}
+                            onClick={() => {console.log('Отправка формы');}}
+                        />
                     </form>
                     <button type={'button'} className={style.recovPassword} onClick={this.recoverPassword}>Не помню пароль</button>
                 </div>

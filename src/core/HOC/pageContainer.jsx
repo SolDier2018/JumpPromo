@@ -1,20 +1,18 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
-export default function a (ContentList, ContentDetails) {
+export default function a(ContentList, ContentDetails) {
     return function (props) {
         return (
-            <Fragment>
-                <div className="contentGrid">
-                    <div className="content_menu">
-                        <div className="scroll-wrapper">
-                            <ContentList {...props} />
-                        </div>
-                    </div>
-                    <div className="item_details">
-                        <ContentDetails {...props} />
+            <div className="contentGrid">
+                <div className="content_menu">
+                    <div className="scroll-wrapper">
+                        <ContentList {...props} />
                     </div>
                 </div>
-            </Fragment>
+                <div className="item_details">
+                    <ContentDetails {...props} />
+                </div>
+            </div>
         )
     }
 }
