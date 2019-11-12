@@ -9,24 +9,9 @@ import Input from "../../../containers/input/Input";
 import Checkbox from "../../../containers/checkbox/Checkbox";
 import Button from "../../../ui/button/button";
 import DetailsHead from "../../../containers/detailsHead/detailsHead";
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from "../../../utils/openDetails";
 
 
 class NewsDetails extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            menuOpen: false
-        }
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
-    }
 
     render() {
         return (
@@ -36,9 +21,7 @@ class NewsDetails extends Component {
                     menuOpen={(value) => {
                         this.setState({menuOpen: value})
                     }}
-                    hideDetails={(value) => {
-                        openDetails(value)
-                    }}
+                    hideDetails={(value) => {}}
                 />
 
                 <div className={'item_details-wrap'}>

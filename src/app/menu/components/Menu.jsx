@@ -1,5 +1,7 @@
 import React, {Fragment} from 'react';
-
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {menuOpen} from "../../../redux/actions";
 import {Link} from 'react-router-dom';
 
 import MenuItem from './menuItem';
@@ -12,11 +14,11 @@ import news from '../../../ui/img/news.svg';
 import newsActive from '../../../ui/img/newsActive.svg';
 import clients from '../../../ui/img/clients.svg';
 import clientsActive from '../../../ui/img/clientsActive.svg';
-import {openMenu} from '../../../utils/openMenu';
 
 import close from '../../../ui/img/close_menu.svg';
 import user from '../../../ui/img/icon_user.svg';
 import style from '../css/menu.module.css';
+
 
 
 class Menu extends React.Component {
@@ -68,24 +70,21 @@ class Menu extends React.Component {
                     count: ''
                 }
             ],
-            selected: 'Обзор',
-            openMenu: false
+            selected: 'Обзор'
         };
-        this.closeMenu = this.closeMenu.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
-    closeMenu() {
-        openMenu(false);
-    }
-
     handleClick(value) {
+        this.props.menuOpen(false);
         this.setState({
             selected: value
         });
     }
 
     render() {
+
+        const {menuOpen, openMenu} = this.props;
 
         return (
             <Fragment>
@@ -106,15 +105,15 @@ class Menu extends React.Component {
                             </div>
                             <ul>
                                 <li>
-                                    <Link to={'/profile'} onClick={() => {openMenu(this.state.openMenu)}}>Профиль</Link>
+                                    <Link to={'/profile'} onClick={this.closeMenu}>Профиль</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/setting-company'} onClick={() => {openMenu(this.state.openMenu)}}>Настройка компании</Link>
+                                    <Link to={'/setting-company'} onClick={this.closeMenu}>Настройка компании</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <button type="button" id="js-close_menu" className={style.closeMenu} onClick={this.closeMenu}>
+                    <button type="button" id="js-close_menu" className={style.closeMenu} onClick={() => {menuOpen(!openMenu)}}>
                         <img src={close} alt=""/>
                     </button>
                 </div>
@@ -147,4 +146,14 @@ class Menu extends React.Component {
     }
 }
 
-export default Menu;
+function mapStateToProps(store) {
+    return {
+        openMenu: store.menuOpen
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({menuOpen}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

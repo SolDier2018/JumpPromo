@@ -234,6 +234,9 @@ span.avatar {
         padding: 0 16px;
         margin-bottom: 10px;
         height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .menuItems ul li > img {
@@ -246,7 +249,7 @@ span.avatar {
         position: absolute;
         display: none;
         z-index: 10;
-        left: 44px;
+        left: 52px;
         top: 0;
         height: auto;
         background: #FFFFFF;
@@ -318,6 +321,9 @@ span.avatar {
         margin-bottom: 0;
         height: 26px;
         padding: 5px 16px 5px 16px;
+        display: grid;
+        align-items: unset;
+        justify-content: unset;
     }
 
     .menuItems ul li.openSubmenu {
@@ -370,6 +376,8 @@ span.avatar {
     }
 
     .menuItems ul li > img {
-        padding-top: 3px;
+        padding-top: 5px;
+        align-self: start;
+        justify-self: center;
     }
 }

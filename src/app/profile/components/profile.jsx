@@ -5,22 +5,8 @@ import Input from '../../../containers/input/Input';
 import Button from '../../../ui/button/button';
 
 import style from '../css/profile.module.css';
-import {openMenu} from "../../../utils/openMenu";
 
 class Profile extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            menuOpen: false
-        };
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
-    }
 
     render() {
         return (

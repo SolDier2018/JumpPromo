@@ -4,8 +4,6 @@ import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
 
 import style from '../css/cliente.module.css';
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from "../../../utils/openDetails";
 import {scroll} from "../../../utils/hideListHead";
 
 class ClientsList extends Component {
@@ -17,12 +15,6 @@ class ClientsList extends Component {
             height: 79
         };
         scroll();
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
     }
 
     render() {
@@ -48,9 +40,7 @@ class ClientsList extends Component {
                         attr={''}
                         description={'+7 912 345-67-89 · example@example.ru'}
                         noWrap={true}
-                        click={(value) => {
-                            openDetails(value)
-                        }}
+                        click={(value) => {}}
                     />
                     <Link
                         to={'/'}

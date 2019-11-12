@@ -5,7 +5,6 @@ import Button from '../../../ui/button/button';
 import ListHead from '../../../containers/listHead/listHead';
 
 import style from '../css/settingCompany.module.css';
-import {openMenu} from "../../../utils/openMenu";
 
 import user from '../../../ui/img/user.png';
 
@@ -20,12 +19,6 @@ class SettingCompany extends Component {
         };
         this.fileValue = this.fileValue.bind(this);
         this.closeFileValue = this.closeFileValue.bind(this);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
     }
 
     fileValue(value) {

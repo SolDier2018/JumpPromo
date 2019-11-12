@@ -9,8 +9,6 @@ import Checkbox from '../../../containers/checkbox/Checkbox';
 import DetailsHead from '../../../containers/detailsHead/detailsHead';
 
 import style from '../css/position.module.css';
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from "../../../utils/openDetails";
 
 class PositionDetails extends React.Component {
 
@@ -18,17 +16,9 @@ class PositionDetails extends React.Component {
         super(props);
         this.state = {
             category: ['Один', 'Два', 'Три'],
-            currency: ['Рубль', 'USD', 'EURO'],
-            menuOpen: false
+            currency: ['Рубль', 'USD', 'EURO']
         }
     }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
-    }
-
 
     render() {
         return (
@@ -38,9 +28,7 @@ class PositionDetails extends React.Component {
                     menuOpen={(value) => {
                         this.setState({menuOpen: value})
                     }}
-                    hideDetails={(value) => {
-                        openDetails(value)
-                    }}
+                    hideDetails={(value) => {}}
                 />
 
                 <div className="item_details-wrap">
@@ -76,9 +64,12 @@ class PositionDetails extends React.Component {
 
                         <div className={style.priceFrom}>
                             <Checkbox
+                                disabled={false}
+                                className={'lolo'}
+                                style={{color:"red"}}
                                 id={'price_from'}
                                 label={'цена от'}
-                                onChange={(value) => this.setState({showParent: value})}
+                                onClick={()=> console.log('---onClick')}
                             />
                         </div>
 

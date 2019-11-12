@@ -3,11 +3,9 @@ import {Router} from 'react-router-dom';
 import {createBrowserHistory} from "history";
 import routes from '../router';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 
 import {Menu} from './menu';
 import '../index.css';
-import {menuOpen} from "../redux/actions";
 
 const history = createBrowserHistory();
 
@@ -15,10 +13,11 @@ class App extends Component {
     render() {
         return (
             <Router history={history}>
-                <div className="wrapper">
-                    <div className={'menu'}>
+                <div className={'wrapper'}>
+                    <div className={this.props.openMenu ? 'menu menu_open' : 'menu'}>
                         <Menu/>
                     </div>
+
                     {routes()}
                 </div>
             </Router>
@@ -26,14 +25,10 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (store) => {
     return {
-        menuOpen: state.menuOpen
+        openMenu: store.menuOpen
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({menuOpen}, dispatch)
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

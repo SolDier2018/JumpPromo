@@ -3,8 +3,6 @@ import React, {Component, Fragment} from 'react';
 import AddCategories from './addCategories';
 import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from '../../../utils/openDetails';
 import {scroll} from "../../../utils/hideListHead";
 
 import style from '../css/categories.module.css';
@@ -20,12 +18,6 @@ class CategoriesList extends Component {
         scroll();
         this.showPopup = this.showPopup.bind(this);
         this.closePopup = this.closePopup.bind(this);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
     }
 
     showPopup() {
@@ -72,9 +64,7 @@ class CategoriesList extends Component {
                                     description={''}
                                     noWrap={true}
                                     fontWeight={false}
-                                    click={(value) => {
-                                        openDetails(value)
-                                    }}
+                                    click={(value) => {}}
                                 />
                             </li>
                             <li className={style.summaryItem}>
@@ -84,9 +74,7 @@ class CategoriesList extends Component {
                                     description={''}
                                     noWrap={true}
                                     fontWeight={false}
-                                    click={(value) => {
-                                        openDetails(value)
-                                    }}
+                                    click={(value) => {}}
                                 />
                             </li>
                         </ul>

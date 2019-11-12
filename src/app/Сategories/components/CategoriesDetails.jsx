@@ -7,15 +7,12 @@ import Select from '../../../containers/select/Select';
 import DetailsHead from '../../../containers/detailsHead/detailsHead';
 
 import style from '../css/categories.module.css';
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from "../../../utils/openDetails";
 
 class CategoriesDetails extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            menuOpen: false,
             category: [
                 'Обслуживание',
                 'Слесарный ремонт',
@@ -24,20 +21,13 @@ class CategoriesDetails extends Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
-    }
-
-
     render() {
         return (
             <Fragment>
                 <DetailsHead
                     title={'Категория'}
                     menuOpen={(value) => {this.setState({menuOpen: value})}}
-                    hideDetails={(value) => {openDetails(value)}}
+                    hideDetails={(value) => {}}
                 />
                 <div className={'item_details-wrap'}>
                     <div className={style.categoriesTitle}>

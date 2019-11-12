@@ -5,24 +5,8 @@ import Tabs from './tabs/tabs';
 
 import style from '../css/cliente.module.css';
 import kit from '../../kit.module.css';
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from "../../../utils/openDetails";
 
 class ClientsDetails extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            menuOpen: false
-        }
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
-    }
-
 
     render() {
         return (
@@ -30,7 +14,7 @@ class ClientsDetails extends Component {
                 <DetailsHead
                     title={'Клиент'}
                     menuOpen={(value) => {this.setState({menuOpen: value})}}
-                    hideDetails={(value) => {openDetails(value)}}
+                    hideDetails={(value) => {}}
                 />
 
                 <div className={'item_details-wrap'}>

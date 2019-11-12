@@ -33,9 +33,11 @@
 }
 
 .search {
-    padding: 8px;
+    padding: 19px;
     border-bottom: 1px solid #E7EAEE;
     background: #FFFFFF;
+    display: grid;
+    grid-template-columns: auto 40px 30px;
 }
 
 .contentMenuFilter {
@@ -65,6 +67,11 @@
 
 .hideHead {
     transform: translateY(-179px);
+}
+
+.btnSearch {
+    background: transparent;
+    border: none;
 }
 
 @media screen and (max-width: 768px) {

@@ -4,25 +4,12 @@ import {Link} from 'react-router-dom';
 import style from './ItemLink.module.css';
 
 class ItemLink extends Component {
-
-    constructor(props) {
-        super(props);
-        this.onClick = this.onClick.bind(this);
-    }
-
-
-    onClick() {
-        return (
-            this.props.click(true)
-        )
-    }
-
     render() {
 
-        const {to, title, description, attr, noWrap, fontWeight} = this.props;
+        const {to, title, description, attr, noWrap, fontWeight, ...attrs} = this.props;
 
         return (
-            <Link to={to} className={style.link} onClick={this.onClick}>
+            <Link to={to} className={style.link} {...attrs}>
 
                 <p
                     className={style.title}

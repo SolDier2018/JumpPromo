@@ -1,6 +1,5 @@
 import React, {Component, Fragment, createRef} from 'react';
 import {Link} from "react-router-dom";
-import {openMenu} from '../../../utils/openMenu';
 
 import style from '../css/menu.module.css';
 
@@ -14,16 +13,14 @@ class MenuItem extends Component {
         this.selectPage = this.selectPage.bind(this);
         this.clickSubMenu = this.clickSubMenu.bind(this);
         this.refLink = createRef();
-        this.refObjectSvg = createRef();
     }
 
     selectPage() {
         this.props.onClick(this.refLink.current.innerText);
-        openMenu(this.state.openMenu);
     }
 
     clickSubMenu() {
-        openMenu(this.state.openMenu);
+        this.props.onClick(this.refLink.current.innerText);
     }
 
     render() {

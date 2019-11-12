@@ -4,9 +4,6 @@ import DetailsHead from '../../../containers/detailsHead/detailsHead';
 import Select from '../../../containers/select/Select';
 import kit from '../../kit.module.css';
 
-import {openMenu} from '../../../utils/openMenu';
-import {openDetails} from '../../../utils/openDetails';
-
 import style from '../css/orders.module.css';
 
 class OrderDetails extends React.Component {
@@ -18,14 +15,7 @@ class OrderDetails extends React.Component {
                 'Не обработан',
                 'Ожидает оплаты'
             ],
-            menuOpen: false,
             details: null
-        }
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
         }
     }
 
@@ -34,12 +24,7 @@ class OrderDetails extends React.Component {
             <Fragment>
                 <DetailsHead
                     title={'Заказ'}
-                    menuOpen={(value) => {
-                        this.setState({menuOpen: value})
-                    }}
-                    hideDetails={(value) => {
-                        openDetails(value)
-                    }}
+                    hideDetails={(value) => {}}
                 />
                 <div className="item_details-wrap">
                     <div className={style.itemTitle}>

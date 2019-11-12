@@ -5,8 +5,6 @@ import style from '../css/position.module.css';
 import IlemLink from '../../../containers/ItemLink/ItemLink';
 import ListHead from '../../../containers/listHead/listHead';
 import AddPosition from './addPosition';
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from "../../../utils/openDetails";
 import {scroll} from '../../../utils/hideListHead';
 
 class PositionList extends React.Component {
@@ -20,12 +18,6 @@ class PositionList extends React.Component {
         };
         scroll();
         this.closePopup = this.closePopup.bind(this);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
     }
 
     closePopup() {
@@ -58,9 +50,7 @@ class PositionList extends React.Component {
                         attr={'01:23'}
                         description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, iste neque. Ab ad architecto eius ipsam laudantium placeat quis suscipit.'}
                         noWrap={true}
-                        click={(value) => {
-                            openDetails(value)
-                        }}
+                        click={(value) => {}}
                     />
 
                 </div>

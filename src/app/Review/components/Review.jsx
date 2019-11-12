@@ -6,26 +6,7 @@ import style from '../css/review.module.css';
 import clienteleImg from '../../../ui/img/clientele_svg.svg';
 import ordersImg from '../../../ui/img/orders_svg.svg';
 
-import {openMenu} from '../../../utils/openMenu';
-
 class Review extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            menuOpen: false
-        };
-        this.openMenu = this.openMenu.bind(this);
-    }
-
-    openMenu() {
-        this.setState({
-            menuOpen: !this.state.menuOpen
-        }, () => {
-            openMenu(this.state.menuOpen)
-        });
-    }
-
 
     render() {
         return (

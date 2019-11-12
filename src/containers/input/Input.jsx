@@ -4,21 +4,6 @@ import style from './input.module.css';
 
 class Input extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: ''
-        };
-        this.Change = this.Change.bind(this);
-    }
-
-    Change(e) {
-        this.setState({
-            value: e.target.value
-        }, () => {this.props.onChange(this.state.value)});
-    }
-
-
     render() {
 
         const {id, label} = this.props;
@@ -30,7 +15,10 @@ class Input extends Component {
                     id={id}
                     className={this.props.error ? style.inputError : style.input}
                     placeholder={this.props.placeholder}
-                    onChange={this.Change}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        this.props.onChange(value);
+                    }}
                     autoComplete={'on'}
                 />
             </div>

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {menuOpen, openDetails} from '../../redux/actions';
 
 import style from './detailsHead.module.css';
-
 
 
 class DetailsHead extends Component {
@@ -13,15 +15,11 @@ class DetailsHead extends Component {
     }
 
     openMenu() {
-        return(
-            this.props.menuOpen(true)
-        )
+        this.props.menuOpen(!this.props.openMenu)
     }
 
     hideDetails() {
-        return(
-            this.props.hideDetails(false)
-        )
+        this.props.openDetails(!this.props.Details)
     }
 
     render() {
@@ -45,4 +43,15 @@ class DetailsHead extends Component {
     }
 }
 
-export default DetailsHead;
+function mapStateToProps(store) {
+    return {
+        openMenu: store.menuOpen,
+        Details: store.openDetails
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({menuOpen, openDetails}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsHead);

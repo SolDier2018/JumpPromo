@@ -5,8 +5,6 @@ import style from '../css/new.module.css';
 import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
 import AddNews from './addNews';
-import {openMenu} from "../../../utils/openMenu";
-import {openDetails} from "../../../utils/openDetails";
 import {scroll} from "../../../utils/hideListHead";
 
 class NewsList extends Component {
@@ -14,18 +12,11 @@ class NewsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            menuOpen: false,
             showPopup: false,
             height: 79
         };
         scroll();
         this.closePopup = this.closePopup.bind(this);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevState.menuOpen !== prevProps.menuOpen) {
-            openMenu(this.state.menuOpen)
-        }
     }
 
     closePopup() {
@@ -57,9 +48,7 @@ class NewsList extends Component {
                         attr={'01:23'}
                         description={'Преимущества бочкового масла перед обычным: - Контроль качества и состав чего то там'}
                         noWrap={false}
-                        click={(value) => {
-                            openDetails(value)
-                        }}
+                        click={(value) => {}}
                     />
                 </div>
                 {this.state.showPopup && <AddNews onClose={this.closePopup}/>}
