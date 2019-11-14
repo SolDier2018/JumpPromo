@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './listHead.module.css';
 
-export default function({label, button, openMenu}) {
+export default function HeaderControls({label, button, openMenu}) {
     return (
         <div className={style.listHead}>
 
@@ -22,5 +22,8 @@ export default function({label, button, openMenu}) {
             </div>
         </div>
     );
+};
 
+HeaderControls.defaultProps = {
+  button: null
 };

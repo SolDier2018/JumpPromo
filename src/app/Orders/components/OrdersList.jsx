@@ -5,7 +5,7 @@ import {showSearch, openDetails} from '../../../redux/actions';
 
 import Head from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
-import {scroll} from '../../../utils/hideListHead';
+// import {scroll} from '../../../utils/hideListHead';
 import Filter from '../../../containers/listHead/Filter';
 
 import style from '../css/orders.module.css';
@@ -15,9 +15,9 @@ class OrdersList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            height: 122
+            heightHead: ''
         };
-        scroll();
+        // scroll();
         this.showSearch = this.showSearch.bind(this);
         this.openDetails = this.openDetails.bind(this);
     }
@@ -57,22 +57,96 @@ class OrdersList extends React.Component {
                 <div className="content_menu-wrap">
                     <Head
                         label={'Заказы'}
-                        toTheHeight={(value) => this.setState({height: value})}
+                        height={(value) => this.setState({heightHead: value})}
                         button={button}
                     />
                 </div>
 
-                <div className={style.orderItems} style={{marginTop: this.state.height}}>
-
+                <div className={style.orderItems} style={{marginTop: this.state.heightHead}}>
                     <Link
                         to={'#'}
                         title={'Заказ #238'}
                         attr={'01:23'}
                         description={`Lorem ipsum dolor sit amet`}
-                        noWrap={true}
                         onClick={this.openDetails}
                     />
-
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
+                    <Link
+                        to={'#'}
+                        title={'Заказ #238'}
+                        attr={'01:23'}
+                        description={`Lorem ipsum dolor sit amet`}
+                        onClick={this.openDetails}
+                    />
                 </div>
             </Fragment>
         )

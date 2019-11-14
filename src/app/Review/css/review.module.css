@@ -17,7 +17,6 @@
 }
 
 .reviewWrapper {
-    margin-top: 72px;
     padding: 0 24px 10px 24px;
 }
 
@@ -69,6 +68,7 @@
 
     width: 56px;
     height: 56px;
+    border-radius: 50%;
 }
 
 .contentItem {

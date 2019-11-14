@@ -43,15 +43,15 @@ class DetailsHead extends Component {
     }
 }
 
-function mapStateToProps(store) {
+const mapStateToProps = (store) => {
     return {
         openMenu: store.menuOpen,
         Details: store.openDetails
     }
-}
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({menuOpen, openDetails}, dispatch)
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailsHead);

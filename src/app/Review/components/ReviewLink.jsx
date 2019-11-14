@@ -1,18 +1,29 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import style from '../css/review.module.css';
 import {Link} from "react-router-dom";
 
-class ReviewLink extends Component {
-    render() {
+export const ReviewLink = ({to, title, count, img}) => {
         return (
-            <Link to={this.props.to}>
-                <p>{this.props.title}</p>
-                <span>{this.props.number}</span>
-                <img src={this.props.img} alt={this.props.title} className={style.reviewIcon}/>
+            <Link to={to}>
+                <p>{title}</p>
+                <span>{count}</span>
+                <img src={img} alt={title} className={style.reviewIcon}/>
             </Link>
         );
-    }
-}
+};
 
-export default ReviewLink;
+ReviewLink.defaultProps = {
+    to: '',
+    title: 'Введите заголовок',
+    count: '',
+    img: 'http://dummyimage.com/56'
+};
+
+ReviewLink.propTypes = {
+  to: PropTypes.string,
+  title: PropTypes.string,
+  count: PropTypes.number,
+  img: PropTypes.string
+};

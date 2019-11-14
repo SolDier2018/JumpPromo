@@ -5,24 +5,25 @@ import {menuOpen, showSearch} from '../../redux/actions';
 
 import HeaderControls from './HeaderControls';
 import SearchPanel from './SearchPanel';
-
-import style from './listHead.module.css';
+import {scroll} from '../../utils/hideListHead';
 
 class ListHead extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            height: 0
-        };
         this.refContainer = createRef();
+        scroll();
+    }
+
+    componentDidMount() {
+        this.props.height(this.refContainer.current.clientHeight)
     }
 
     render() {
+
         const {label, button, isSearch, menuOpen, openMenu, showSearch} = this.props;
         return (
-            <div ref={this.refContainer} className={style.listHeadWrap}>
-
+            <div ref={this.refContainer}>
                 {
                     isSearch ?
                         <SearchPanel
@@ -35,13 +36,18 @@ class ListHead extends Component {
                             openMenu={() => {menuOpen(!openMenu)}}
                         />
                 }
-
                 {button.filter}
-
             </div>
         );
     }
 }
+
+ListHead.defaultProps = {
+    label: 'Заголовок шапки',
+    button: {},
+    height: () => {}
+};
+
 
 function mapStateToProps(store) {
     return {

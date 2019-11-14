@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
 
 export default (ContentList, ContentDetails) => {
     return connect(mapStateToProps)(function (props) {
-        console.log(props);
         return (
             <div className="contentGrid">
                 <div className={props.openDetails ? 'content_menu disabled_scroll' : 'content_menu'}>
