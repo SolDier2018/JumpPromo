@@ -1,9 +1,11 @@
 import React, {Component, Fragment} from 'react';
+import {bindActionCreators} from "redux";
+import {connect} from 'react-redux';
+import {openDetails} from '../../../redux/actions';
 
 import AddCategories from './addCategories';
 import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
-import {scroll} from "../../../utils/hideListHead";
 
 import style from '../css/categories.module.css';
 
@@ -12,26 +14,14 @@ class CategoriesList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showPopup: false,
-            menuOpen: false
+            height: ''
         };
-        scroll();
-        this.showPopup = this.showPopup.bind(this);
-        this.closePopup = this.closePopup.bind(this);
+        this.openDetails = this.openDetails.bind(this);
     }
 
-    showPopup() {
-        this.setState({
-            showPopup: true
-        });
+    openDetails() {
+        this.props.openDetails(!this.props.details)
     }
-
-    closePopup() {
-        this.setState({
-            showPopup: false
-        });
-    }
-
 
     render() {
 
@@ -53,10 +43,11 @@ class CategoriesList extends Component {
                     <ListHead
                         label={'Категории'}
                         button={button}
+                        height={(value) => this.setState({height: value})}
                     />
                 </div>
 
-                <div className={style.categoriesItems}>
+                <div className={style.categoriesItems} style={{marginTop: this.state.height}}>
 
                     <details>
                         <summary className={style.summary}>
@@ -67,31 +58,37 @@ class CategoriesList extends Component {
                                 <Link
                                     to={'#'}
                                     title={'Замена масла'}
-                                    description={''}
-                                    noWrap={true}
-                                    fontWeight={false}
-                                    click={(value) => {}}
+                                    fontWeight={'normal'}
+                                    onClick={this.openDetails}
                                 />
                             </li>
                             <li className={style.summaryItem}>
                                 <Link
                                     to={'#'}
                                     title={'Смена фильтра'}
-                                    description={''}
-                                    noWrap={true}
-                                    fontWeight={false}
-                                    click={(value) => {}}
+                                    fontWeight={'normal'}
+                                    onClick={this.openDetails}
                                 />
                             </li>
                         </ul>
                     </details>
 
                 </div>
-                {this.state.showPopup && <AddCategories closePopup={this.closePopup}/>}
+                {/*{this.state.showPopup && <AddCategories closePopup={this.closePopup}/>}*/}
 
             </Fragment>
         );
     }
 }
 
-export default CategoriesList;
+const mapStateToProps = (state) => {
+  return {
+      details: state.openDetails
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({openDetails}, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoriesList);

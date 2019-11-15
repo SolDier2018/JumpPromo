@@ -225,6 +225,19 @@ span.avatar {
     fill: #258FFB;
 }
 
+.menuItems ul li > div a.activeSub {
+    color: #258FFB;
+}
+
+.link * {
+    pointer-events: none;
+}
+
+.menuItems ul li > img {
+    justify-self: center;
+}
+
+
 @media screen and (max-width: 1280px) {
     .accountPreview div {
         grid-template-columns: 24px 156px;
@@ -286,6 +299,10 @@ span.avatar {
 
     .menuItems ul li:hover > div {
         display: block;
+    }
+
+    .menuItems ul li > div a.activeSub {
+        color: #258FFB;
     }
 }
 
@@ -379,5 +396,9 @@ span.avatar {
         padding-top: 5px;
         align-self: start;
         justify-self: center;
+    }
+
+    .menuItems ul li > div a.activeSub {
+        color: #258FFB;
     }
 }

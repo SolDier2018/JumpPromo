@@ -1,3 +1,10 @@
+export const menu = (menu) => {
+  return {
+      type: 'MENU',
+      menu
+  }
+};
+
 export const menuOpen = (value) => {
     return {
         type: 'MENU_OPEN',

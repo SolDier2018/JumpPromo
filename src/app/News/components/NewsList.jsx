@@ -1,13 +1,13 @@
 import React, {Component, Fragment} from 'react';
+import {bindActionCreators} from "redux";
+import {connect} from 'react-redux';
+import {showSearch, openDetails} from '../../../redux/actions';
 
 import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
 import AddNews from './addNews';
-import {bindActionCreators} from "redux";
-import {connect} from 'react-redux';
-import {showSearch} from '../../../redux/actions';
 
-import {scroll} from "../../../utils/hideListHead";
+
 import style from '../css/new.module.css';
 
 class NewsList extends Component {
@@ -15,22 +15,18 @@ class NewsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showPopup: false,
-            height: 79
+            height: ''
         };
-        scroll();
-        this.closePopup = this.closePopup.bind(this);
         this.showSearch = this.showSearch.bind(this);
-    }
-
-    closePopup() {
-        this.setState({
-            showPopup: false
-        });
+        this.openDetails = this.openDetails.bind(this);
     }
 
     showSearch() {
         this.props.showSearch(!this.props.isSearch)
+    }
+
+    openDetails() {
+        this.props.openDetails(!this.props.details)
     }
 
     render() {
@@ -52,8 +48,6 @@ class NewsList extends Component {
             ]
         };
 
-        console.log(this.props);
-
         return (
             <Fragment>
                 <div className="content_menu-wrap">
@@ -70,7 +64,7 @@ class NewsList extends Component {
                         attr={'01:23'}
                         description={'Преимущества бочкового масла перед обычным: - Контроль качества и состав чего то там'}
                         noWrap={false}
-                        onClick={() => console.log('---')}
+                        onClick={this.openDetails}
                     />
                 </div>
                 {this.state.showPopup && <AddNews onClose={this.closePopup}/>}
@@ -81,12 +75,13 @@ class NewsList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      isSearch: state.showSearch
+      isSearch: state.showSearch,
+      details: state.openDetails
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({showSearch}, dispatch)
+    return bindActionCreators({showSearch, openDetails}, dispatch)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsList);

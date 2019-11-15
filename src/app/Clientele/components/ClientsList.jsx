@@ -1,24 +1,33 @@
 import React, {Component, Fragment} from 'react';
+import {bindActionCreators} from "redux";
+import {connect} from 'react-redux';
+import {showSearch, openDetails} from '../../../redux/actions';
 
 import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
 
 import style from '../css/cliente.module.css';
-import {scroll} from "../../../utils/hideListHead";
 
 class ClientsList extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            menuOpen: false,
-            height: 79
+            height: ''
         };
-        scroll();
+        this.showSearch = this.showSearch.bind(this);
+        this.openDetails = this.openDetails.bind(this);
+    }
+
+    showSearch() {
+        this.props.showSearch(!this.props.search)
+    }
+
+    openDetails() {
+        this.props.openDetails(!this.props.details)
     }
 
     render() {
-
         const button = {
             button: [
                 <button key={'search'} type={'button'} onClick={this.showSearch}><svg width="18" height="18" viewBox="0 0 18 18" fill="#333333"
@@ -36,6 +45,7 @@ class ClientsList extends Component {
                     <ListHead
                         label={'Клиенты'}
                         button={button}
+                        height={(value) => this.setState({height: value})}
                     />
                 </div>
 
@@ -43,24 +53,8 @@ class ClientsList extends Component {
                     <Link
                         to={'#'}
                         title={'Константин Константинопольский'}
-                        attr={''}
                         description={'+7 912 345-67-89 · example@example.ru'}
-                        noWrap={true}
-                        click={(value) => {}}
-                    />
-                    <Link
-                        to={'/'}
-                        title={'+7 912 345-67-89'}
-                        attr={''}
-                        description={'+7 912 345-67-89 · example@example.ru'}
-                        noWrap={true}
-                    />
-                    <Link
-                        to={'/'}
-                        title={'Константин Константинопольский'}
-                        attr={''}
-                        description={'+7 912 345-67-89 · example@example.ru'}
-                        noWrap={true}
+                        onClick={this.openDetails}
                     />
                 </div>
             </Fragment>
@@ -68,4 +62,15 @@ class ClientsList extends Component {
     }
 }
 
-export default ClientsList;
+const mapStateToProps = (state) => {
+    return {
+        search: state.showSearch,
+        details: state.openDetails
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({showSearch, openDetails}, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClientsList);

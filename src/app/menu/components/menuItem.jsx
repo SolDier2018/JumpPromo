@@ -7,9 +7,6 @@ class MenuItem extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-          openMenu: false
-        };
         this.selectPage = this.selectPage.bind(this);
         this.clickSubMenu = this.clickSubMenu.bind(this);
         this.refLink = createRef();
