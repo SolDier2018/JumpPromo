@@ -75,6 +75,13 @@ export const MenuList = ({menu, active, activeSub, onClick}) => {
     )
 };
 
+MenuList.defaultProps = {
+    menu: [],
+    active: '',
+    activeSub: '',
+    onClick: () => console.error('onClick not at props')
+};
+
 MenuList.propTypes = {
     menu: PropTypes.array,
     active: PropTypes.string,

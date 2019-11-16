@@ -1,29 +1,53 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import style from './input.module.css';
 
-class Input extends Component {
+const idFromString = (str) => {
+    let id = 'ch_';
+    for(let i=0; i< str.length; i++) {
+        id += str.charCodeAt(i);
+    }
+    return id;
+};
 
-    render() {
+function Input ({id, label, type, placeholder, onChange}) {
 
-        const {id, label} = this.props;
+    const key = id || idFromString(label);
+
         return (
             <div>
-                {label === '' || label === undefined ? '' : <label htmlFor={id} className={style.label}><b>{label}</b></label>}
+                <label htmlFor={key} className={style.label}><b>{label}</b></label>
                 <input
-                    type={this.props.type === null ? 'text' : this.props.type}
-                    id={id}
-                    className={this.props.error ? style.inputError : style.input}
-                    placeholder={this.props.placeholder}
+                    type={type}
+                    id={key}
+                    className={style.input}
+                    placeholder={placeholder}
                     onChange={(e) => {
                         const value = e.target.value;
-                        this.props.onChange(value);
+                        onChange(value);
                     }}
                     autoComplete={'on'}
                 />
             </div>
         );
-    }
 }
 
+Input.defaultProps = {
+    id: null,
+    label: '',
+    type: 'text',
+    placeholder: '',
+    onChange: () => console.error('onCahnge not at props')
+};
+
+Input.propTypes = {
+    label: PropTypes.string,
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    onChange: PropTypes.func
+};
+
 export default Input;
+
+// this.props.error ? style.inputError :

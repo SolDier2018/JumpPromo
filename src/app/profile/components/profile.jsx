@@ -14,11 +14,6 @@ class Profile extends Component {
                 <div className="content_menu-wrap">
                     <Head
                         label={'Профиль'}
-                        add={false}
-                        search={false}
-                        menuOpen={(value) => {
-                            this.setState({menuOpen: value})
-                        }}
                     />
                 </div>
                 <div className={style.body}>
@@ -26,41 +21,43 @@ class Profile extends Component {
                         <div className={style.fieldWrap}>
                             <Input
                                 label={'Имя'}
-                                id={'name'}
                                 placeholder={'Иван'}
+                                type={'text'}
+                                onChange={(value) => console.log(value)}
                             />
                         </div>
 
                         <div className={style.fieldWrap}>
                             <Input
                                 label={'Фамилия'}
-                                id={'surname'}
                                 placeholder={'Иванов'}
+                                type={'text'}
+                                onChange={(value) => console.log(value)}
                             />
                         </div>
 
                         <div className={style.fieldWrap}>
                             <Input
                                 label={'Эл.почта'}
-                                id={'email'}
                                 type={'email'}
                                 placeholder={'example@example.com'}
+                                onChange={() => {}}
                             />
                         </div>
 
                         <div className={style.fieldWrap}>
                             <Input
                                 label={'Пароль'}
-                                id={'password'}
                                 type={'password'}
+                                onChange={() => {}}
                             />
                         </div>
 
                         <div className={style.fieldWrap}>
                             <Input
                                 label={'Новый пароль'}
-                                id={'password_new'}
                                 type={'password'}
+                                onChange={() => {}}
                             />
                         </div>
 
