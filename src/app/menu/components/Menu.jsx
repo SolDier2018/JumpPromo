@@ -4,22 +4,24 @@ import {connect} from 'react-redux';
 import {menuOpen} from "../../../redux/actions";
 
 import {MenuHead} from './menuHead';
-import MenuList from './menuList';
+import {MenuList} from './menuList';
 
 class Menu extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            selected: 'Заказы'
+            selected: 'Обзор',
+            selectedSub: 'Обзор'
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(text) {
+    handleClick(labelLi, labelA) {
         this.props.menuOpen(!this.props.openMenu);
         this.setState({
-            selected: text
+            selected: labelLi,
+            selectedSub: labelA
         });
     }
 
@@ -39,8 +41,9 @@ class Menu extends React.Component {
                 <MenuList
                     menu={menu}
                     active={this.state.selected}
-                    onClick={(text) => {
-                        this.handleClick(text);
+                    activeSub={this.state.selectedSub}
+                    onClick={(e, s) => {
+                        this.handleClick(e, s);
                     }}
                 />
 
