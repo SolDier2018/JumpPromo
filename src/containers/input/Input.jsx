@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import style from './input.module.css';
@@ -11,17 +11,17 @@ const idFromString = (str) => {
     return id;
 };
 
-function Input ({id, label, type, placeholder, onChange}) {
+function Input ({id, label, type, placeholder, onChange, className}) {
 
     const key = id || idFromString(label);
 
         return (
             <div>
-                <label htmlFor={key} className={style.label}><b>{label}</b></label>
+                {label.length > 1 ? <label htmlFor={key} className={style.label}><b>{label}</b></label> : ''}
                 <input
                     type={type}
                     id={key}
-                    className={style.input}
+                    className={style.input + (className ? ' '+className: '')}
                     placeholder={placeholder}
                     onChange={(e) => {
                         const value = e.target.value;
@@ -38,14 +38,16 @@ Input.defaultProps = {
     label: '',
     type: 'text',
     placeholder: '',
-    onChange: () => console.error('onCahnge not at props')
+    onChange: () => console.error('onCahnge not at props'),
+    className: ''
 };
 
 Input.propTypes = {
     label: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    className: PropTypes.string
 };
 
 export default Input;

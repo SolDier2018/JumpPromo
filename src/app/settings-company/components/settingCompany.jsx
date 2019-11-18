@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
 import Input from '../../../containers/input/Input';
-import Button from '../../../ui/button/button';
+import {Button} from '../../../ui/button/button';
 import ListHead from '../../../containers/listHead/listHead';
 
 import style from '../css/settingCompany.module.css';
+import kit from '../../../app/kit.module.css';
 
 import user from '../../../ui/img/user.png';
 
@@ -13,7 +14,6 @@ class SettingCompany extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            menuOpen: false,
             fileValue: '',
             filePath: ''
         };
@@ -43,11 +43,6 @@ class SettingCompany extends Component {
                 <div className="content_menu-wrap">
                     <ListHead
                         label={'Настройка компании'}
-                        add={false}
-                        search={false}
-                        menuOpen={(value) => {
-                            this.setState({menuOpen: value})
-                        }}
                     />
                 </div>
                 <div className={style.body}>
@@ -98,9 +93,9 @@ class SettingCompany extends Component {
                         </div>
                         <div className={style.fieldWrap}>
                             <Button
-                                type={'submit'}
-                                name={'Сохранить'}
-                                transparent={false}
+                                label={'Сохранить'}
+                                className={kit.button}
+                                onClick={() => console.log('---')}
                             />
                         </div>
                     </form>

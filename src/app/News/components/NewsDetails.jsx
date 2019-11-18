@@ -2,13 +2,15 @@ import React, {Component, Fragment} from 'react';
 
 import NewsTitle from '../../../containers/form-field-title/form-field-title';
 
-import style from '../css/new.module.css';
 import ButtonDelete from "../../../containers/delete-button/delete-button";
 import FormFieldText from "../../../containers/form-field-text/form-field-text";
 import Input from "../../../containers/input/Input";
 import Checkbox from "../../../containers/checkbox/Checkbox";
-import Button from "../../../ui/button/button";
+import {Button} from "../../../ui/button/button";
 import DetailsHead from "../../../containers/detailsHead/detailsHead";
+
+import style from '../css/new.module.css';
+import kit from '../../kit.module.css';
 
 
 class NewsDetails extends Component {
@@ -86,9 +88,9 @@ class NewsDetails extends Component {
                     <div className={style.submit}>
 
                         <Button
-                            type={'submit'}
-                            name={'Сохранить'}
-                            transparent={false}
+                            className={kit.button}
+                            label={'Сохранить'}
+                            onClick={() => console.log('---')}
                         />
 
                     </div>

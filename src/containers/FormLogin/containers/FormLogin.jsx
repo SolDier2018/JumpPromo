@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import style from '../css/formLogin.module.css';
 import Input from "../../input/Input";
-import Button from "../../../ui/button/button";
+import {Button} from "../../../ui/button/button";
 
 class FormLogin extends Component {
 

@@ -11,3 +11,7 @@
     font-size: 15px;
     height: 40px;
 }
+
+.select:focus {
+    outline: 3px solid rgba(37, 143, 251, 0.3);
+}

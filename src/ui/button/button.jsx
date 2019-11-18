@@ -1,31 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import style from './button.module.css';
+export const Button = ({type, label, ...attrs}) => {
+    return (
+        <button
+            type={type}
+            {...attrs}
+        >
+            {label}
+        </button>
+    );
+};
 
-class Button extends Component {
-    constructor(props) {
-        super(props);
-        this.onClick = this.onClick.bind(this);
-    }
+Button.defaultProps ={
+    type: 'button',
+    label: 'Button'
+};
 
-    onClick() {
-        this.props.onClick()
-    }
-
-    render() {
-
-        const {type, name, transparent} = this.props;
-
-        return (
-            <button
-                type={type}
-                className={transparent ? style.transparent : style.button}
-                onClick={this.onClick}
-            >
-                {name}
-            </button>
-        );
-    }
-}
-
-export default Button;
+Button.propTypes = {
+    type: PropTypes.string,
+    label: PropTypes.string
+};

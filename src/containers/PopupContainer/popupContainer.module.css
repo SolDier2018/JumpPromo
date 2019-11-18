@@ -1,0 +1,84 @@
+.shadowPopup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333333;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.popupWrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 720px;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 8px;
+    z-index: 2;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.popupWrapper label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.popupWrapper input {
+    width: 100%;
+    border: 1px solid #E7EAEE;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 24px;
+    padding-left: 10px;
+}
+
+.popupWrapper p {
+    margin-bottom: 24px;
+}
+
+.closePopup {
+    background: transparent;
+    border: none;
+    outline: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.fieldWrap {
+    margin-bottom: 10px;
+}
+
+.fieldWrap * {
+    margin-bottom: 5px;
+}
+
+.buttonWrap {
+    margin-top: 20px;
+}
+
+.buttonWrap button {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .popupWrapper {
+        height: 100vh;
+        border-radius: 0;
+    }
+}

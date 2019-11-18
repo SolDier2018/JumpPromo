@@ -148,97 +148,8 @@
     align-self: center;
 }
 
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 720px;
-    width: 100%;
-    background: #FFFFFF;
-    border-radius: 8px;
-    z-index: 2;
-    padding: 24px;
-    box-sizing: border-box;
-}
-
-.popupShadow {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #333333;
-    opacity: 0.3;
-    z-index: 1;
-}
-
-.popup input, .popup textarea {
-    font-family: 'Helvetica', sans-serif;
-    font-size: 15px;
-    line-height: 19px;
-    border: 1px solid #E7EAEE;
-    box-sizing: border-box;
-    border-radius: 4px;
-    width: 100%;
-    padding: 8px 0 8px 12px;
-}
-
-.popup button {
-    margin-right: 10px;
-}
-
-
-.popup input:focus, .popup textarea:focus {
-    border: 3px solid rgba(37, 143, 251, 0.3);
-    outline: none;
-}
-
-.popup textarea {
-    height: 80px;
-}
-
-.popup p {
-    margin-bottom: 24px;
-}
-
-.popup label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 15px;
-    line-height: 24px;
-}
-
-.fieldWrap {
-    margin-bottom: 14px;
-}
-
 .buttonCreate {
     width: 92px;
-}
-
-.fieldContainer {
-    display: grid;
-    grid-template-columns: 164px 116px;
-    grid-template-rows: repeat(3, auto);
-    grid-column-gap: 8px;
-    grid-row-gap: 15px;
-}
-
-.buttonWrap {
-    margin-top: 40px;
-}
-
-.closePopup {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
 }
 
 .burgerMenu {
@@ -246,32 +157,26 @@
     display: none;
 }
 
+.selectsPopup {
+    display: grid;
+    grid-template-columns: 164px 116px;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 8px;
+    grid-row-gap: 15px;
+}
+
+.popupCategory {
+    grid-column: 1/3;
+}
+
 @media screen and (max-width: 768px) {
-    .positionContent, .fieldContainer {
+    .positionContent, .selectsPopup {
         grid-template-columns: 1fr 116px;
     }
-
-    .popup {
-        height: 100vh;
-        transform: none;
-        top: 0;
-        left: 0;
-        border-radius: 0;
-    }
-
-    .closePopup {
-        padding-top: 24px;
-    }
-
-    .buttonWrap {
-        margin-top: 26px;
-    }
-
     .listHead {
         position: fixed;
         grid-template-columns: 1fr 34px 34px 29px;
     }
-
     .burgerMenu {
         display: block;
     }

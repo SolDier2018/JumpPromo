@@ -1,0 +1,15 @@
+.textarea {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    border: 1px solid #E7EAEE;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+}
+
+.textarea:focus {
+    outline: 3px solid rgba(37, 143, 251, 0.3);
+}

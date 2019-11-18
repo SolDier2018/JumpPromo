@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 
 import Head from '../../../containers/listHead/listHead';
 import Input from '../../../containers/input/Input';
-import Button from '../../../ui/button/button';
+import {Button} from '../../../ui/button/button';
 
 import style from '../css/profile.module.css';
+import kit from '../../../app/kit.module.css';
 
 class Profile extends Component {
 
@@ -63,9 +64,9 @@ class Profile extends Component {
 
                         <div className={style.fieldWrap}>
                             <Button
-                                type={'submit'}
-                                name={'Сохранить'}
-                                transparent={false}
+                                label={'Сохранить'}
+                                className={kit.button}
+                                onClick={() => console.log('---')}
                             />
                         </div>
 

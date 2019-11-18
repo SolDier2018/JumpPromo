@@ -81,6 +81,25 @@
     align-self: end;
 }
 
+.popupSelect {
+    display: grid;
+    grid-template-columns: 132px 132px;
+    grid-column-gap: 8px;
+}
+
+.popupSelect div:first-child {
+    grid-column: 1/2;
+}
+
+.popupSelect div:first-child label {
+    width: calc(100% + 10px);
+}
+
+.popupSelect div:last-child {
+    align-self: end;
+    grid-column: 2/3;
+}
+
 @media screen and (max-width: 768px) {
     .newListHead {
         position: fixed;

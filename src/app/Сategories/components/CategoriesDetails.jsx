@@ -43,7 +43,11 @@ class CategoriesDetails extends Component {
                             onChange={(value) => this.setState({showParent: value})}
                         />
 
-                        {this.state.showParent && <Select option={this.state.category} label={''}/>}
+                        {this.state.showParent &&
+                        <Select
+                            option={this.state.category}
+                            onChange={(e) => console.log(e.target.value)}
+                        />}
 
                     </div>
                 </div>

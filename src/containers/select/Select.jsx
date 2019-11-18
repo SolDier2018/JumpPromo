@@ -1,45 +1,52 @@
-import React, {Component, Fragment} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import style from './select.module.css';
 
-class Select extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            option: props.option,
-            label: props.label
-        }
+const idFromString = (str) => {
+    let id = 'ch_';
+    for(let i=0; i< str.length; i++) {
+        id += str.charCodeAt(i);
     }
 
-    displayLabel() {
-        return(
-            this.state.label === ''
-                ? ''
-                : <label htmlFor="" className={style.label}><b>{this.state.label}</b></label>
-        )
-    }
+    return id;
+};
 
-    render() {
+const Select = ({id, label, option, className, ...attrs}) => {
 
-        const {option} = this.state;
+    const key = label.length > 1 ? idFromString(label) : '';
 
-        return (
-            <Fragment>
-                {this.displayLabel()}
-                <select name="" id="" className={style.select}>
-                    {
-                        option.map((e) => {
-                            return(
-                                <option value="" key={e}>{e}</option>
-                            )
-                        })
-                    }
-                </select>
-            </Fragment>
-        );
-    }
-}
+    return (
+        <div className={className}>
+            <label htmlFor={key} className={style.label}><b>{label}</b></label>
+            <select name={label} id={key} className={style.select} {...attrs}>
+                {
+                    option.map((e) => {
+                        return (
+                            <option value={e} key={e}>{e}</option>
+                        )
+                    })
+                }
+            </select>
+        </div>
+    );
+};
+
+Select.defaultProps = {
+    id: null,
+    label: '',
+    option: [
+        'Рыбный текст 1',
+        'Рыбный текст 2',
+        'Рыбный текст 3'
+    ],
+    className: ''
+};
+
+Select.propTypes = {
+    label: PropTypes.string,
+    option: PropTypes.array,
+    className: PropTypes.string
+};
 
 export default Select;
