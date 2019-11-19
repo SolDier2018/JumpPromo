@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
-
-
+import PropTypes from 'prop-types';
+import {Button} from '../../ui/button/button';
+import Textarea from '../../containers/textarea/TextArea';
 import {nl2br} from '../../utils/formater';
 
 import style from './fieldText.module.css';
@@ -12,7 +13,6 @@ class FormFieldText extends Component {
 
         this.state = {
             editable: false,
-            title: props.title,
             value: props.value,
             prevValue: props.value
         };
@@ -27,7 +27,6 @@ class FormFieldText extends Component {
 
         if (value !== this.state.prevValue) {
             this.props.onChange(value);
-
             this.setState({prevValue: value, editable: false});
         } else {
             this.setState({value: prevValue, editable: false});
@@ -41,32 +40,35 @@ class FormFieldText extends Component {
 
     render() {
 
+        const {label, minHieght} = this.props;
+
         return (
             <Fragment>
                 {
                     this.state.editable
                         ?
                         <Fragment>
-                            <p><b>{this.state.title}</b></p>
+                            <p><b>{label}</b></p>
 
-                            <textarea
-                                name=""
-                                id=""
+                            <Textarea
                                 value={this.state.value}
                                 className={style.textarea}
+                                style={{minHeight: minHieght + 'px'}}
                                 onChange={(e) => this.setState({value: e.target.value})}
-                                style={{minHeight: this.props.minHieght + 'px'}}
                             />
 
                             <div className={style.controlElements}>
-                                <button type={'button'} className={style.save} onClick={this.saveChange}>Сохранить</button>
-                                <button type={'button'} className={style.closeEdit} onClick={this.closeSave}>
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <Button type={'button'} className={style.save} onClick={this.saveChange}
+                                        label={'Сохранить'}/>
+                                <Button type={'button'} className={style.closeEdit} onClick={this.closeSave}
+                                        label={'Сохранить'}>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
                                         <path fillRule="evenodd" clipRule="evenodd"
                                               d="M0.777763 11.6667C0.348208 12.0962 0.348208 12.7927 0.777763 13.2222C1.20732 13.6518 1.90376 13.6518 2.33332 13.2222L6.99998 8.55555L11.6667 13.2222C12.0962 13.6518 12.7927 13.6518 13.2222 13.2222C13.6518 12.7927 13.6518 12.0962 13.2222 11.6667L8.55554 7L13.2222 2.33333C13.6518 1.90378 13.6518 1.20733 13.2222 0.777775C12.7927 0.34822 12.0962 0.348219 11.6667 0.777774L6.99998 5.44444L2.33332 0.777778C1.90376 0.348223 1.20732 0.348225 0.777763 0.777779C0.348208 1.20733 0.348208 1.90378 0.777763 2.33333L5.44443 7L0.777763 11.6667Z"
                                               fill="#333333"/>
                                     </svg>
-                                </button>
+                                </Button>
                             </div>
                         </Fragment>
                         :
@@ -82,5 +84,19 @@ class FormFieldText extends Component {
         );
     }
 }
+
+FormFieldText.defaultProps = {
+    label: '',
+    minHieght: 400,
+    value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium esse excepturi fugiat fugit inventore iure nam natus provident quam quidem?',
+    onChange: () => {}
+};
+
+FormFieldText.propTypes = {
+    label: PropTypes.string,
+    minHeight: PropTypes.number,
+    value: PropTypes.string,
+    onChange: PropTypes.func
+};
 
 export default FormFieldText;

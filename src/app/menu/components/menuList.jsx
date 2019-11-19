@@ -84,7 +84,10 @@ MenuList.defaultProps = {
 
 MenuList.propTypes = {
     menu: PropTypes.array,
-    active: PropTypes.string,
+    active: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object
+    ]),
     activeSub: PropTypes.string,
-    onClick: PropTypes.func
+    onClick: PropTypes.func.isRequired
 };

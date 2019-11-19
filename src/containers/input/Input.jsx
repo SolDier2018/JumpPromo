@@ -11,7 +11,7 @@ const idFromString = (str) => {
     return id;
 };
 
-function Input ({id, label, type, placeholder, onChange, className}) {
+function Input ({id, label, className, onChange, ...attrs}) {
 
     const key = id || idFromString(label);
 
@@ -19,15 +19,13 @@ function Input ({id, label, type, placeholder, onChange, className}) {
             <div>
                 {label.length > 1 ? <label htmlFor={key} className={style.label}><b>{label}</b></label> : ''}
                 <input
-                    type={type}
                     id={key}
                     className={style.input + (className ? ' '+className: '')}
-                    placeholder={placeholder}
                     onChange={(e) => {
                         const value = e.target.value;
-                        onChange(value);
+                        onChange(value)
                     }}
-                    autoComplete={'on'}
+                    {...attrs}
                 />
             </div>
         );
@@ -36,20 +34,14 @@ function Input ({id, label, type, placeholder, onChange, className}) {
 Input.defaultProps = {
     id: null,
     label: '',
-    type: 'text',
-    placeholder: '',
-    onChange: () => console.error('onCahnge not at props'),
-    className: ''
+    className: '',
+    onChange: () => {}
 };
 
 Input.propTypes = {
     label: PropTypes.string,
-    type: PropTypes.string,
-    placeholder: PropTypes.string,
-    onChange: PropTypes.func,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onChange: PropTypes.func
 };
 
 export default Input;
-
-// this.props.error ? style.inputError :

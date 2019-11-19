@@ -18,7 +18,7 @@ const Select = ({id, label, option, className, ...attrs}) => {
 
     return (
         <div className={className}>
-            <label htmlFor={key} className={style.label}><b>{label}</b></label>
+            {label.length > 1 ? <label htmlFor={key} className={style.label}><b>{label}</b></label> : ''}
             <select name={label} id={key} className={style.select} {...attrs}>
                 {
                     option.map((e) => {

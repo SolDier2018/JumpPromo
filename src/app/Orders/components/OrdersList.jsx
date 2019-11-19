@@ -52,6 +52,7 @@ class OrdersList extends React.Component {
                     <Head
                         label={'Заказы'}
                         height={(value) => this.setState({heightHead: value})}
+                        searchText={(value) => console.log(value)}
                         button={button}
                     />
                 </div>

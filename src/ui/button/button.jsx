@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Button = ({type, label, ...attrs}) => {
+export const Button = ({type, label, children, ...attrs}) => {
     return (
         <button
             type={type}
             {...attrs}
         >
-            {label}
+            {children ? children : label}
         </button>
     );
 };

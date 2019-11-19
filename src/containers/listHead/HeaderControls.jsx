@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import style from './listHead.module.css';
 
@@ -25,5 +26,13 @@ export default function HeaderControls({label, button, openMenu}) {
 };
 
 HeaderControls.defaultProps = {
-  button: null
+    label: '',
+    button: {},
+    openMenu: () => {console.log('Передайте функцию в props')}
+};
+
+HeaderControls.propTypes = {
+    label: PropTypes.string,
+    button: PropTypes.object,
+    openMenu: PropTypes.func
 };
