@@ -1,4 +1,5 @@
-import React, {Component, createRef} from 'react';
+import React, {Fragment, Component, createRef} from 'react';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -8,37 +9,55 @@ import HeaderControls from './HeaderControls';
 import SearchPanel from './SearchPanel';
 import {scroll} from '../../utils/hideListHead';
 
+import style from './listHead.module.css';
+
 class ListHead extends Component {
 
     constructor(props) {
         super(props);
         this.refContainer = createRef();
+        this.refContainer2 = createRef();
         scroll();
     }
 
     componentDidMount() {
-        this.props.height(this.refContainer.current.clientHeight)
+        const heightHead = this.refContainer.current.clientHeight;
+        const heightFilter = this.refContainer2.current.clientHeight;
+        this.props.height(heightHead + heightFilter);
     }
 
     render() {
 
         const {label, button, isSearch, menuOpen, openMenu, showSearch, searchText} = this.props;
         return (
-            <div ref={this.refContainer}>
-                {
-                    isSearch ?
-                        <SearchPanel
-                            onSearch={(value) => {searchText(value)}}
-                            onClose={() => {showSearch(!isSearch)}}
-                        /> :
-                        <HeaderControls
-                            label={label}
-                            button={button}
-                            openMenu={() => {menuOpen(!openMenu)}}
-                        />
-                }
-                {button.filter}
-            </div>
+            <Fragment>
+                <div ref={this.refContainer} className={style.headerWrapper}>
+                    <TransitionGroup>
+                        {
+                            isSearch ?
+                                <CSSTransition
+                                    in={isSearch}
+                                    timeout={100}
+                                    classNames="search"
+                                >
+                                    <SearchPanel
+                                        onSearch={(value) => {searchText(value)}}
+                                        onClose={() => {showSearch(!isSearch)}}
+                                    />
+                                </CSSTransition>
+                                :
+                                <HeaderControls
+                                    label={label}
+                                    button={button}
+                                    openMenu={() => {menuOpen(!openMenu)}}
+                                />
+                        }
+                    </TransitionGroup>
+                </div>
+                <div ref={this.refContainer2}>
+                    {button.filter}
+                </div>
+            </Fragment>
         );
     }
 }
@@ -46,8 +65,10 @@ class ListHead extends Component {
 ListHead.defaultProps = {
     label: 'Заголовок шапки',
     button: {},
-    height: () => {},
-    searchText: () => {}
+    height: () => {
+    },
+    searchText: () => {
+    }
 };
 
 ListHead.propTypes = {

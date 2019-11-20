@@ -22,7 +22,7 @@ class SearchPanel extends Component {
     }
 
     render() {
-        const {onSearch,} = this.props;
+        const {onSearch} = this.props;
         const {searchValue} = this.state;
         return (
             <div className={style.search}>
@@ -30,17 +30,13 @@ class SearchPanel extends Component {
                 <Input
                     placeholder={'Найти'}
                     type={'search'}
-                    onChange={(value) => {
-                        this.setState({searchValue: value});
-                    }}
+                    onChange={(value) => {this.setState({searchValue: value});}}
                 />
 
                 <button
                     type={'button'}
                     className={style.btnSearch}
-                    onClick={() => {
-                        onSearch(searchValue)
-                    }}
+                    onClick={() => {onSearch(searchValue)}}
                 >
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="#333333"
                          xmlns="http://www.w3.org/2000/svg">

@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './listHead.module.css';
 
-export default function({onClick}) {
+export default function({...attrs}) {
   return(
       <div className={style.contentMenuFilter}>
-          <button type={'button'} onClick={onClick}>
+          <button type={'button'} {...attrs}>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="#333333"
                    xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd"

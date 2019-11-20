@@ -1,10 +1,13 @@
+.headerWrapper {
+    border-bottom: 1px solid #E7EAEE;
+}
+
 .listHead {
     background: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 24px 25px;
-    border-bottom: 1px solid #E7EAEE;
 }
 
 .listHead p {
@@ -34,7 +37,6 @@
 
 .search {
     padding: 19px;
-    border-bottom: 1px solid #E7EAEE;
     background: #FFFFFF;
     display: grid;
     grid-template-columns: auto 40px 30px;

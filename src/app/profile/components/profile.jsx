@@ -51,6 +51,7 @@ class Profile extends Component {
                                 label={'Пароль'}
                                 type={'password'}
                                 onChange={() => {}}
+                                autoComplete={'off'}
                             />
                         </div>
 
@@ -59,6 +60,7 @@ class Profile extends Component {
                                 label={'Новый пароль'}
                                 type={'password'}
                                 onChange={() => {}}
+                                autoComplete={'off'}
                             />
                         </div>
 

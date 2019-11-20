@@ -114,6 +114,7 @@ class NewsList extends Component {
                         label={'Новости'}
                         toTheHeight={(value) => this.setState({height: value})}
                         button={button}
+                        searchText={(value) => console.log(value)}
                     />
                 </div>
                 <div className={style.newsItems} style={{marginTop: this.state.height}}>
