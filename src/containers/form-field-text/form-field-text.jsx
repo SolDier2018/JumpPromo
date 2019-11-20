@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {Button} from '../../ui/button/button';
-import Textarea from '../../containers/textarea/TextArea';
+import Textarea from '../../ui/textarea/TextArea';
 import {nl2br} from '../../utils/formater';
 
 import style from './fieldText.module.css';
@@ -74,7 +74,11 @@ class FormFieldText extends Component {
                         :
                         <Fragment>
                             <p><b>{this.props.title}</b></p>
-                            <div onClick={() => {this.setState({editable: true})}}>
+                            <div
+                                className={style.text}
+                                onClick={() => {
+                                    this.setState({editable: true})
+                                }}>
                                 {nl2br(this.state.value)}
                             </div>
                         </Fragment>
@@ -89,7 +93,8 @@ FormFieldText.defaultProps = {
     label: '',
     minHieght: 400,
     value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium esse excepturi fugiat fugit inventore iure nam natus provident quam quidem?',
-    onChange: () => {}
+    onChange: () => {
+    }
 };
 
 FormFieldText.propTypes = {

@@ -12,7 +12,7 @@ class Review extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            heightHead: ''
+            height: ''
         }
     }
 
@@ -23,11 +23,11 @@ class Review extends React.Component {
                 <div className="content_menu-wrap">
                     <ListHead
                         label={'Обзор'}
-                        height={(value) => this.setState({heightHead: value})}
+                        height={(value) => this.setState({height: value})}
                     />
                 </div>
 
-                <div className={style.reviewWrapper} style={{marginTop: this.state.heightHead}}>
+                <div className={style.reviewWrapper} style={{marginTop: this.state.height}}>
 
                     <ReviewLink
                         to={'/clientele'}

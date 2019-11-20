@@ -54,10 +54,6 @@
     cursor: pointer;
 }
 
-.description {
-    line-height: 24px;
-}
-
 .delete {
     display: none;
     position: absolute;

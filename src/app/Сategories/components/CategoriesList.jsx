@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import {bindActionCreators} from "redux";
 import {connect} from 'react-redux';
 import {openDetails} from '../../../redux/actions';
@@ -7,9 +8,9 @@ import PopupContainer from '../../../containers/PopupContainer/popupContainer';
 import ListHead from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
 import {Button} from '../../../ui/button/button';
-import Input from '../../../containers/input/Input';
-import CheckBox from '../../../containers/checkbox/Checkbox';
-import Select from '../../../containers/select/Select';
+import Input from '../../../ui/input/Input';
+import CheckBox from '../../../ui/checkbox/Checkbox';
+import Select from '../../../ui/select/Select';
 
 import style from '../css/categories.module.css';
 import kit from '../../kit.module.css';
@@ -67,9 +68,9 @@ class CategoriesList extends Component {
                 />,
                 this.state.showParent &&
                 <Select
-                        key={'category'}
-                        option={this.state.category}
-                        onChange={(e) => console.log(e.target.value)}
+                    key={'category'}
+                    option={this.state.category}
+                    onChange={(e) => console.log(e.target.value)}
                 />
             ],
             button: [
@@ -128,12 +129,20 @@ class CategoriesList extends Component {
                     </details>
 
                 </div>
-                {this.state.showPopup &&
-                <PopupContainer
-                    title={'Создание категории'}
-                    popupContent={popupContent}
-                    onClick={() => this.setState({showPopup: false})}
-                />}
+                <TransitionGroup>
+                    {this.state.showPopup &&
+                    <CSSTransition
+                        timeout={200}
+                        classNames="popup"
+                    >
+                        <PopupContainer
+                            title={'Создание категории'}
+                            popupContent={popupContent}
+                            onClick={() => this.setState({showPopup: false})}
+                        />
+                    </CSSTransition>
+                    }
+                </TransitionGroup>
 
             </Fragment>
         );

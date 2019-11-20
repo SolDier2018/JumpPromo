@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Head from '../../../containers/listHead/listHead';
-import Input from '../../../containers/input/Input';
+import Input from '../../../ui/input/Input';
 import {Button} from '../../../ui/button/button';
 
 import style from '../css/profile.module.css';

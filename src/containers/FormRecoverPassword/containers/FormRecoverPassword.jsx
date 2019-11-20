@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 
 import {Link} from 'react-router-dom';
-import Input from "../../input/Input";
+import Input from "../../../ui/input/Input";
 import {Button} from "../../../ui/button/button";
 
 import style from '../../FormLogin/css/formLogin.module.css';

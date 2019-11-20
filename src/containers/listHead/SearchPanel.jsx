@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Input from "../input/Input";
+import Input from "../../ui/input/Input";
 
 import style from './listHead.module.css';
 

@@ -11,7 +11,6 @@ class Tabs extends Component {
     }
 
     render() {
-
         return (
             <Fragment>
                 <ul className={style.tabsList}>

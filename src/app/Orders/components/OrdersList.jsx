@@ -5,7 +5,6 @@ import {showSearch, openDetails} from '../../../redux/actions';
 
 import Head from '../../../containers/listHead/listHead';
 import Link from '../../../containers/ItemLink/ItemLink';
-// import {scroll} from '../../../utils/hideListHead';
 import Filter from '../../../containers/listHead/Filter';
 
 import style from '../css/orders.module.css';
@@ -17,7 +16,6 @@ class OrdersList extends React.Component {
         this.state = {
             heightHead: ''
         };
-        // scroll();
         this.showSearch = this.showSearch.bind(this);
         this.openDetails = this.openDetails.bind(this);
     }

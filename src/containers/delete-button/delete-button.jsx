@@ -1,4 +1,5 @@
 import React, {Component, Fragment, createRef} from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 import style from "./deleteButton.module.css";
@@ -9,8 +10,7 @@ class DeleteButton extends Component {
         super(props);
 
         this.state = {
-            editable: false,
-            background: props.background
+            editable: false
         };
 
         this.handleClickOut = this.handleClickOut.bind(this);
@@ -25,7 +25,6 @@ class DeleteButton extends Component {
 
     handleClickOut(e) {
         const domNode = ReactDOM.findDOMNode(this);
-
         if (!domNode || !domNode.contains(e.target)) {
             this.setState({
                 editable: false
@@ -34,6 +33,7 @@ class DeleteButton extends Component {
     }
 
     render() {
+        const {background, onClick} = this.props;
         return (
             <Fragment>
                 {
@@ -58,6 +58,7 @@ class DeleteButton extends Component {
                             <button
                                 type={'button'}
                                 className={style.delete}
+                                onClick={onClick}
                                 ref={this.buttonDelete}>
                                 Удалить
                             </button>
@@ -70,7 +71,7 @@ class DeleteButton extends Component {
                                 onClick={() => {
                                     this.setState({editable: true})
                                 }}
-                                style={{'background': this.state.background}}
+                                style={{'background': background}}
                                 ref={this.refButton}>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -85,5 +86,15 @@ class DeleteButton extends Component {
         );
     }
 }
+
+DeleteButton.defaultProps = {
+    background: '#F4F5F7',
+    onClick: () => {}
+};
+
+DeleteButton.propTypes = {
+    background: PropTypes.string,
+    onClick: PropTypes.func
+};
 
 export default DeleteButton;

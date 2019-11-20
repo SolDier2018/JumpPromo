@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Input from '../../../containers/input/Input';
+import Input from '../../../ui/input/Input';
 import {Button} from '../../../ui/button/button';
 import ListHead from '../../../containers/listHead/listHead';
 

@@ -4,8 +4,8 @@ import NewsTitle from '../../../containers/form-field-title/form-field-title';
 
 import ButtonDelete from "../../../containers/delete-button/delete-button";
 import FormFieldText from "../../../containers/form-field-text/form-field-text";
-import Input from "../../../containers/input/Input";
-import Checkbox from "../../../containers/checkbox/Checkbox";
+import Input from "../../../ui/input/Input";
+import Checkbox from "../../../ui/checkbox/Checkbox";
 import {Button} from "../../../ui/button/button";
 import DetailsHead from "../../../containers/detailsHead/detailsHead";
 
@@ -52,6 +52,7 @@ class NewsDetails extends Component {
                         onChange={(text) => console.log('---', text)}
                         minHieght={'400'}
                     />
+
                     <div className={style.timePublication}>
                         <div className={style.date}>
 

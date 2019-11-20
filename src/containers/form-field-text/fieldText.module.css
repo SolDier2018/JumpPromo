@@ -51,6 +51,10 @@
     cursor: pointer;
 }
 
+.text {
+    line-height: 24px;
+}
+
 @media screen and (max-width: 768px) {
     .textarea {
         height: 100px;

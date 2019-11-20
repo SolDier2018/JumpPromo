@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import Textarea from '../../containers/textarea/TextArea';
+import Textarea from '../../ui/textarea/TextArea';
 
 import style from './field.module.css';
 
@@ -40,10 +40,7 @@ class FormFieldTitle extends Component {
                             autoFocus={true}
                         />
                         : <div
-                            onClick={() => {
-                                this.setState({editable: true})
-
-                            }}
+                            onClick={() => {this.setState({editable: true})}}
                             className={style.itemName}>
                             {this.state.value}
                         </div>
