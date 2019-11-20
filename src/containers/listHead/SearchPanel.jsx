@@ -22,10 +22,10 @@ class SearchPanel extends Component {
     }
 
     render() {
-        const {onSearch} = this.props;
+        const {onSearch, className} = this.props;
         const {searchValue} = this.state;
         return (
-            <div className={style.search}>
+            <div className={style.search + ' ' + className}>
 
                 <Input
                     placeholder={'Найти'}

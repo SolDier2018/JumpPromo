@@ -109,28 +109,20 @@ b {
     opacity: 0;
 }
 
-.search-enter {
-    transition: all 100ms linear;
-    transform: translateX(100%);
+.entering {
     opacity: 0;
+    transform: translateX(80%);
 }
-
-.search-enter-active {
-    transition: all 100ms linear;
-    transform: translateX(50%);
-    opacity: 0.5;
-}
-
-.search-enter-done {
-    transition: all 100ms linear;
-    transform: translateX(0%);
+.entered {
     opacity: 1;
-}
-
-.search-exit-active {
-    transition: all 100ms linear;
     transform: translateX(0%);
+}
+.exiting {
     opacity: 1;
+    transform: translateX(100%);
+}
+.exited {
+    opacity: 0;
 }
 
 /*АНИМАЦИЯ*/
