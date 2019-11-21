@@ -32,7 +32,7 @@ b {
 
 .wrapper {
     display: grid;
-    grid-template-columns: minmax(252px, 300px) auto;
+    grid-template-columns: 252px auto;
     height: 100vh;
     overflow: hidden;
 }

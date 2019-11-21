@@ -10,18 +10,22 @@ class FormFieldText extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             editable: false,
+            row: 0,
             value: props.value,
             prevValue: props.value
         };
-
-        this.saveChange = this.saveChange.bind(this);
-        this.closeSave = this.closeSave.bind(this);
     }
 
-    saveChange() {
+    Lines = () => {
+        const numberLines = this.state.value.match(/\n/g).length + 1; //Возвращает количество переносов строк
+        this.setState({
+            row: numberLines
+        });
+    };
+
+    saveChange = () => {
         const value = this.state.value;
         const prevValue = this.state.prevValue;
 
@@ -31,37 +35,45 @@ class FormFieldText extends Component {
         } else {
             this.setState({value: prevValue, editable: false});
         }
-    }
+    };
 
-    closeSave() {
+    closeSave = () => {
         const prevValue = this.state.prevValue;
         this.setState({value: prevValue, editable: false});
-    }
+    };
 
     render() {
-
-        const {label, minHieght} = this.props;
-
+        const {label} = this.props;
         return (
             <Fragment>
                 {
                     this.state.editable
                         ?
                         <Fragment>
-                            <p><b>{label}</b></p>
+                            {label === '' ? null : <p><b>{label}</b></p>}
 
                             <Textarea
+                                rows={this.state.row}
                                 value={this.state.value}
                                 className={style.textarea}
-                                style={{minHeight: minHieght + 'px'}}
                                 onChange={(e) => this.setState({value: e.target.value})}
+                                onFocus={this.Lines}
+                                autoFocus={'on'}
                             />
 
                             <div className={style.controlElements}>
-                                <Button type={'button'} className={style.save} onClick={this.saveChange}
-                                        label={'Сохранить'}/>
-                                <Button type={'button'} className={style.closeEdit} onClick={this.closeSave}
-                                        label={'Сохранить'}>
+                                <Button
+                                    type={'button'}
+                                    className={style.save}
+                                    onClick={this.saveChange}
+                                    label={'Сохранить'}
+                                />
+                                <Button
+                                    type={'button'}
+                                    className={style.closeEdit}
+                                    onClick={this.closeSave}
+                                    label={'Сохранить'}
+                                >
                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path fillRule="evenodd" clipRule="evenodd"
@@ -76,9 +88,7 @@ class FormFieldText extends Component {
                             <p><b>{this.props.title}</b></p>
                             <div
                                 className={style.text}
-                                onClick={() => {
-                                    this.setState({editable: true})
-                                }}>
+                                onClick={() => this.setState({editable: true})}>
                                 {nl2br(this.state.value)}
                             </div>
                         </Fragment>
@@ -91,7 +101,6 @@ class FormFieldText extends Component {
 
 FormFieldText.defaultProps = {
     label: '',
-    minHieght: 400,
     value: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium esse excepturi fugiat fugit inventore iure nam natus provident quam quidem?',
     onChange: () => {
     }
@@ -99,7 +108,6 @@ FormFieldText.defaultProps = {
 
 FormFieldText.propTypes = {
     label: PropTypes.string,
-    minHeight: PropTypes.number,
     value: PropTypes.string,
     onChange: PropTypes.func
 };

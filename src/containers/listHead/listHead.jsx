@@ -56,30 +56,6 @@ class ListHead extends Component {
                         button={button}
                         openMenu={() => {menuOpen(!openMenu)}}
                     />
-
-
-                    {/*<TransitionGroup>*/}
-                    {/*    {*/}
-                    {/*        isSearch ?*/}
-                    {/*            <CSSTransition*/}
-                    {/*                in={isSearch}*/}
-                    {/*                timeout={100}*/}
-                    {/*                classNames="search"*/}
-                    {/*            >*/}
-                    {/*                <SearchPanel*/}
-                    {/*                    */}
-                    {/*                    onSearch={(value) => {searchText(value)}}*/}
-                    {/*                    onClose={() => {showSearch(!isSearch)}}*/}
-                    {/*                />*/}
-                    {/*            </CSSTransition>*/}
-                    {/*            :*/}
-                    {/*            <HeaderControls*/}
-                    {/*                label={label}*/}
-                    {/*                button={button}*/}
-                    {/*                openMenu={() => {menuOpen(!openMenu)}}*/}
-                    {/*            />*/}
-                    {/*    }*/}
-                    {/*</TransitionGroup>*/}
                 </div>
                 <div ref={this.refContainer2}>
                     {button.filter}

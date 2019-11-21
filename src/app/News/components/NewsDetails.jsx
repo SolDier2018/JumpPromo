@@ -50,7 +50,6 @@ class NewsDetails extends Component {
                         
                         Масло из бочки является высшего порядка, а также консультация с широким активом требуют от нас анализа систем массового участия.`}
                         onChange={(text) => console.log('---', text)}
-                        minHieght={'400'}
                     />
 
                     <div className={style.timePublication}>

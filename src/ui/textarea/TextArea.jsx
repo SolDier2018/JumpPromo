@@ -19,7 +19,7 @@ const TextArea = ({id, label, className, ...attrs}) => {
 
     return (
         <Fragment>
-            <label htmlFor={key} className={kit.h3}>{label}</label>
+            {label === '' ? null : <label htmlFor={key} className={kit.h3}>{label}</label>}
             <textarea
                 name={label}
                 id={key}

@@ -15,7 +15,7 @@
     display: grid;
     grid-template-columns: 40px 1fr 25px;
     grid-template-rows: 20px 20px;
-    grid-column-gap: 16px;
+    grid-column-gap: 10px;
 
     position: relative;
     padding: 16px;
@@ -141,6 +141,10 @@ span.avatar {
 
     padding: 5px 16px 5px 16px;
     position: relative;
+}
+
+.menuItems ul li:hover {
+    background: #E7EAEE;
 }
 
 .menuItems ul li > object {
@@ -336,8 +340,8 @@ span.avatar {
 
     .menuItems ul li {
         margin-bottom: 0;
-        height: 26px;
-        padding: 5px 16px 5px 16px;
+        height: 34px;
+        padding: 0 16px 0 16px;
         display: grid;
         align-items: unset;
         justify-content: unset;
@@ -345,6 +349,7 @@ span.avatar {
 
     .menuItems ul li.openSubmenu {
         height: auto;
+        padding-bottom: 10px;
     }
 
     .menuItems ul li > div {
