@@ -18,29 +18,30 @@ class NewsDetails extends Component {
     render() {
         return (
             <Fragment>
-                <DetailsHead
-                    title={'Новость'}
-                    menuOpen={(value) => {
-                        this.setState({menuOpen: value})
-                    }}
-                    hideDetails={(value) => {}}
-                />
+                <form action="">
+                    <DetailsHead
+                        title={'Новость'}
+                        menuOpen={(value) => {
+                            this.setState({menuOpen: value})
+                        }}
+                        hideDetails={(value) => {}}
+                    />
 
-                <div className={'item_details-wrap'}>
+                    <div className={'item_details-wrap'}>
 
-                    <div className={style.newsTitle}>
-                        <NewsTitle
-                            value={`Бочковое моторное масло Shell защитит ваш авто.
+                        <div className={style.newsTitle}>
+                            <NewsTitle
+                                value={`Бочковое моторное масло Shell защитит ваш авто.
                             Перенос строки.`}
-                            onChange={(text) => console.log('---', text)}
-                        />
-                        <ButtonDelete
-                            background={'transparent'}
-                        />
-                    </div>
+                                onChange={(text) => console.log('---', text)}
+                            />
+                            <ButtonDelete
+                                background={'transparent'}
+                            />
+                        </div>
 
-                    <FormFieldText
-                        value={`Преимущества бочкового масла перед обычным:
+                        <FormFieldText
+                            value={`Преимущества бочкового масла перед обычным:
                          - Контроль качества заводом производителем. Проверки торговыми представителями и службой безопасности официальных точек продаж.
                         - Гарантия хорошей цены. Заключен контракт на прямую от производителя, а не от перекупщиков
                         - Точный объём залива. Не нужно переплачивать за всю канистру. Из бочки можно залить любой объём
@@ -50,51 +51,51 @@ class NewsDetails extends Component {
                         - Теряя смазочные свойства, детали двигателя подвергаются повышенному трению, что образует задиры в поршнях, а это в свою очередь может привести к провороту клапанов.
                         
                         Масло из бочки является высшего порядка, а также консультация с широким активом требуют от нас анализа систем массового участия.`}
-                        onChange={(text) => console.log('---', text)}
-                    />
+                            onChange={(text) => console.log('---', text)}
+                        />
 
-                    <div className={style.timePublication}>
-                        <div className={style.date}>
+                        <div className={style.timePublication}>
+                            <div className={style.date}>
 
-                            <Input
-                                id={'date'}
-                                label={'Время публикации'}
-                                type={'date'}
-                                onChange={(value) => console.log(value)}
-                            />
+                                <Input
+                                    id={'date'}
+                                    label={'Время публикации'}
+                                    type={'date'}
+                                    className={kit.input}
+                                    onChange={(value) => console.log(value)}
+                                />
 
+                            </div>
+                            <div className={style.time}>
+
+                                <Input
+                                    id={'time'}
+                                    type={'time'}
+                                    className={kit.input}
+                                    onChange={(value) => console.log(value)}
+                                />
+
+                            </div>
+
+                            <div className={style.push}>
+
+                                <Checkbox
+                                    id={'push'}
+                                    label={'отправить push-уведомления'}
+                                    onChange={(value) => this.setState({showParent: value})}
+                                />
+
+                            </div>
                         </div>
-                        <div className={style.time}>
-
-                            <Input
-                                id={'time'}
-                                label={''}
-                                type={'time'}
-                                onChange={(value) => console.log(value)}
-                            />
-
-                        </div>
-
-                        <div className={style.push}>
-
-                            <Checkbox
-                                id={'push'}
-                                label={'отправить push-уведомления'}
-                                onChange={(value) => this.setState({showParent: value})}
-                            />
-
-                        </div>
-                    </div>
-                    <div className={style.submit}>
 
                         <Button
+                            type={'submit'}
                             className={kit.button}
                             label={'Сохранить'}
                             onClick={() => console.log('---')}
                         />
-
                     </div>
-                </div>
+                </form>
             </Fragment>
         );
     }

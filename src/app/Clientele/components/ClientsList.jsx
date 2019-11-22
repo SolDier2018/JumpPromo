@@ -10,12 +10,9 @@ import style from '../css/cliente.module.css';
 
 class ClientsList extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            height: ''
-        };
-    }
+    state = {
+      height: ''
+    };
 
     render() {
         const {openDetails, details, showSearch, search} = this.props;

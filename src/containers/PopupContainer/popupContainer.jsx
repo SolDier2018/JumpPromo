@@ -18,12 +18,14 @@ const PopupContainer = ({inTransition, popupContent, title, ...attrs}) => {
                     </svg>
                 </button>
                 <p className={kit.h1}>{title}</p>
-                <div className={style.fieldWrap}>
-                    {popupContent.fields}
-                </div>
-                <div className={style.buttonWrap}>
-                    {popupContent.button}
-                </div>
+                <form action="">
+                    <div className={style.fieldWrap}>
+                        {popupContent.fields}
+                    </div>
+                    <div className={style.buttonWrap}>
+                        {popupContent.button}
+                    </div>
+                </form>
             </div>
         </div>
     );

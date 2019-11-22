@@ -16,17 +16,15 @@ class OrdersList extends React.Component {
         this.state = {
             heightHead: ''
         };
-        this.showSearch = this.showSearch.bind(this);
-        this.openDetails = this.openDetails.bind(this);
     }
 
-    showSearch() {
+    showSearch = () => {
         this.props.showSearch(!this.props.isSearch)
-    }
+    };
 
-    openDetails() {
+    openDetails = () => {
         this.props.openDetails(!this.props.Details)
-    }
+    };
 
     render() {
 

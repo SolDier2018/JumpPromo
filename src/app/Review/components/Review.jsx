@@ -9,12 +9,9 @@ import ordersImg from '../../../ui/img/orders_svg.svg';
 
 class Review extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            height: ''
-        }
-    }
+    state = {
+        height: ''
+    };
 
     render() {
         return (

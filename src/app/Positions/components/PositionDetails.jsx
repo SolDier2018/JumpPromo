@@ -9,6 +9,7 @@ import Checkbox from '../../../ui/checkbox/Checkbox';
 import DetailsHead from '../../../containers/detailsHead/detailsHead';
 
 import style from '../css/position.module.css';
+import kit from "../../kit.module.css";
 
 
 const PositionDetails = () => {
@@ -19,49 +20,51 @@ const PositionDetails = () => {
             />
 
             <div className="item_details-wrap">
+                <form action="">
+                    <div className={style.positionDetailsTitle}>
+                        <FormFieldTextarea
+                            value={'Ремонт коммерческого транспорта'}
+                            onChange={(text) => console.log(text)}
+                        />
+                        <DeleteButton
+                            onClick={() => console.log('Delete')}
+                        />
+                    </div>
 
-                <div className={style.positionDetailsTitle}>
-                    <FormFieldTextarea
-                        value={'Ремонт коммерческого транспорта'}
-                        onChange={(text) => console.log(text)}
-                    />
-                    <DeleteButton
-                        onClick={() => console.log('Delete')}
-                    />
-                </div>
-
-                <FormFieldText
-                    title={'Описание'}
-                    value={`Эриксоновский гипноз зеркально вызывает стресс,
+                    <FormFieldText
+                        title={'Описание'}
+                        value={`Эриксоновский гипноз зеркально вызывает стресс,
                             следовательно тенденция к конформизму связана с менее низким интеллектом.
                             Ещё строчка что бы проверить количество строк.
                             Эх раз ещё раз ещё много много раз.`}
-                    onChange={(text) => console.log(text)}/>
+                        onChange={(text) => console.log(text)}/>
 
-                <div className={style.positionContent}>
-                    <div className={style.category}>
-                        <Select
-                            label={'Категория'}
-                        />
+                    <div className={style.positionContent}>
+                        <div className={style.category}>
+                            <Select
+                                label={'Категория'}
+                            />
+                        </div>
+                        <div className={style.price}>
+                            <Input
+                                id={'price'}
+                                label={'Цена'}
+                                className={kit.input}
+                            />
+                        </div>
+                        <div className={style.currency}>
+                            <Select
+                                label={'Валюта'}
+                            />
+                        </div>
+                        <div className={style.priceFrom}>
+                            <Checkbox
+                                label={'цена от'}
+                                onChange={() => console.log('onClick')}
+                            />
+                        </div>
                     </div>
-                    <div className={style.price}>
-                        <Input
-                            id={'price'}
-                            label={'Цена'}
-                        />
-                    </div>
-                    <div className={style.currency}>
-                        <Select
-                            label={'Валюта'}
-                        />
-                    </div>
-                    <div className={style.priceFrom}>
-                        <Checkbox
-                            label={'цена от'}
-                            onChange={() => console.log('onClick')}
-                        />
-                    </div>
-                </div>
+                </form>
             </div>
         </Fragment>
     )

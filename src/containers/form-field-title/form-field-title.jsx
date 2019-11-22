@@ -5,9 +5,9 @@ import Textarea from '../../ui/textarea/TextArea';
 import style from './field.module.css';
 
 class FormFieldTitle extends Component {
+
     constructor(props) {
         super(props);
-
         this.state = {
             editable: false,
             rows: 0,

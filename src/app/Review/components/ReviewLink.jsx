@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 import style from '../css/review.module.css';
 import {Link} from "react-router-dom";
 
-export const ReviewLink = ({to, title, count, img}) => {
+export const ReviewLink = ({to, title, count, img, ...attrs}) => {
         return (
-            <Link to={to}>
+            <Link
+                to={to}
+                {...attrs}
+            >
                 <p>{title}</p>
                 <span>{count}</span>
                 <img src={img} alt={title} className={style.reviewIcon}/>

@@ -11,31 +11,26 @@ import user from '../../../ui/img/user.png';
 
 class SettingCompany extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            fileValue: '',
-            filePath: ''
-        };
-        this.fileValue = this.fileValue.bind(this);
-        this.closeFileValue = this.closeFileValue.bind(this);
-    }
+    state = {
+        fileValue: '',
+        filePath: ''
+    };
 
-    fileValue(value) {
+    fileValue = (value) => {
         const file = value;
-        const filePath = value.split("\\").pop();
+        const filePath = value.split("\\").pop(); //разбивает путь на массив и возвращает последний элемент
         this.setState({
             fileValue: filePath,
             filePath: file
         });
-    }
+    };
 
-    closeFileValue() {
+    closeFileValue = () => {
         this.setState({
             fileValue: '',
             filePath: ''
         });
-    }
+    };
 
     render() {
         return (
@@ -54,9 +49,7 @@ class SettingCompany extends Component {
                                 id={'logo'}
                                 label={this.state.fileValue === '' ? 'Загрузить' : this.state.fileValue}
                                 type={'file'}
-                                onChange={(value) => {
-                                    this.fileValue(value)
-                                }}
+                                onChange={(value) => {this.fileValue(value)}}
                             />
                             {this.state.fileValue === ''
                                 ? ''
@@ -75,7 +68,7 @@ class SettingCompany extends Component {
                             <Input
                                 id={'name_company'}
                                 label={'Название компании'}
-                                type={'text'}
+                                className={kit.input}
                                 onChange={(value) => {
                                     console.log(value)
                                 }}
@@ -85,7 +78,7 @@ class SettingCompany extends Component {
                             <Input
                                 id={'percent'}
                                 label={'Процент кэшбека'}
-                                type={'text'}
+                                className={kit.input}
                                 onChange={(value) => {
                                     console.log(value)
                                 }}
@@ -93,6 +86,7 @@ class SettingCompany extends Component {
                         </div>
                         <div className={style.fieldWrap}>
                             <Button
+                                type={'submit'}
                                 label={'Сохранить'}
                                 className={kit.button}
                                 onClick={() => console.log('---')}

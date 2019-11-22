@@ -1,32 +1,27 @@
 import React, {Component} from 'react';
-
-import style from '../css/formLogin.module.css';
 import Input from "../../../ui/input/Input";
 import {Button} from "../../../ui/button/button";
 
+import style from '../css/formLogin.module.css';
+import kit from '../../../app/kit.module.css';
+
 class FormLogin extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            login: true,
-            email: '',
-            password: '',
-            emailValid: false,
-            passwordValid: false
-        };
-        this.recoverPassword = this.recoverPassword.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-    }
+    state = {
+        login: true,
+        email: '',
+        password: '',
+        emailValid: false,
+        passwordValid: false
+    };
 
-
-    recoverPassword() {
+    recoverPassword = () => {
         this.setState({
             login: false
         }, () => {this.props.onClick(this.state.login)});
-    }
+    };
 
-    onSubmit(e) {
+    onSubmit = (e) => {
         e.preventDefault();
         const regEmail = /^\w+@\w+\.\w{2,4}$/i;
         !regEmail.test(this.state.email)
@@ -45,7 +40,7 @@ class FormLogin extends Component {
                 passwordValid: false
             })
 
-    }
+    };
     
     render() {
 
@@ -58,9 +53,10 @@ class FormLogin extends Component {
                         <h1 className={style.h1}>Войти в Jump Promo</h1>
                         <div className={style.formField}>
                             <Input
-                                error={emailValid}
+                                id={'email'}
                                 placeholder={'Эл. почта'}
                                 type={'text'}
+                                className={kit.input + ' ' + (emailValid ? kit.error : '')}
                                 onChange={(value) => {
                                     this.setState({email: value})
                                 }}
@@ -70,9 +66,10 @@ class FormLogin extends Component {
                         </div>
                         <div className={style.formField}>
                             <Input
-                                error={passwordValid}
+                                id={'password'}
                                 placeholder={'Пароль'}
                                 type={'password'}
+                                className={kit.input  + ' ' + (emailValid ? kit.error : '')}
                                 onChange={(value) => {
                                     this.setState({password: value})
                                 }}
@@ -82,8 +79,9 @@ class FormLogin extends Component {
                         </div>
 
                         <Button
-                            name={'Войти'}
+                            label={'Войти'}
                             type={'submit'}
+                            className={kit.button}
                             onClick={() => {console.log('Отправка формы');}}
                         />
                     </form>

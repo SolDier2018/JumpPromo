@@ -18,6 +18,7 @@ const OrderDetails = () => {
                 title={'Заказ'}
             />
             <div className="item_details-wrap">
+
                 <div className={style.itemTitle}>
                     <p className={style.itemName + ' ' + kit.h1}>Заказ #235</p>
                     <p className={style.itemTime + ' ' + kit.p}>Вчера в 16:33</p>
@@ -56,10 +57,12 @@ const OrderDetails = () => {
                     </div>
 
                     <div className={style.orderStatus}>
-                        <Select
-                            option={option}
-                            label={'Статус'}
-                        />
+                        <form action="">
+                            <Select
+                                option={option}
+                                label={'Статус'}
+                            />
+                        </form>
                     </div>
                 </div>
             </div>

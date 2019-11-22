@@ -30,16 +30,6 @@
     line-height: 24px;
 }
 
-.popupWrapper input {
-    width: 100%;
-    border: 1px solid #E7EAEE;
-    box-sizing: border-box;
-    border-radius: 4px;
-    font-size: 15px;
-    line-height: 24px;
-    padding-left: 10px;
-}
-
 .popupWrapper p {
     margin-bottom: 24px;
 }

@@ -24,6 +24,7 @@ class Profile extends Component {
                                 label={'Имя'}
                                 placeholder={'Иван'}
                                 type={'text'}
+                                className={kit.input}
                                 onChange={(value) => console.log(value)}
                             />
                         </div>
@@ -33,6 +34,7 @@ class Profile extends Component {
                                 label={'Фамилия'}
                                 placeholder={'Иванов'}
                                 type={'text'}
+                                className={kit.input}
                                 onChange={(value) => console.log(value)}
                             />
                         </div>
@@ -41,6 +43,7 @@ class Profile extends Component {
                             <Input
                                 label={'Эл.почта'}
                                 type={'email'}
+                                className={kit.input}
                                 placeholder={'example@example.com'}
                                 onChange={() => {}}
                             />
@@ -50,8 +53,8 @@ class Profile extends Component {
                             <Input
                                 label={'Пароль'}
                                 type={'password'}
+                                className={kit.input}
                                 onChange={() => {}}
-                                autoComplete={'off'}
                             />
                         </div>
 
@@ -59,13 +62,14 @@ class Profile extends Component {
                             <Input
                                 label={'Новый пароль'}
                                 type={'password'}
+                                className={kit.input}
                                 onChange={() => {}}
-                                autoComplete={'off'}
                             />
                         </div>
 
                         <div className={style.fieldWrap}>
                             <Button
+                                type={'submit'}
                                 label={'Сохранить'}
                                 className={kit.button}
                                 onClick={() => console.log('---')}

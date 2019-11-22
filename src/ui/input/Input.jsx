@@ -20,7 +20,8 @@ function Input ({id, label, className, onChange, ...attrs}) {
                 {label.length > 1 ? <label htmlFor={key} className={style.label}><b>{label}</b></label> : ''}
                 <input
                     id={key}
-                    className={style.input + (className ? ' '+className: '')}
+                    className={style.input + (className ? ' ' + className : '')}
+                    autoComplete={attrs.type === 'password' ? 'on' : 'off'}
                     onChange={(e) => {
                         const value = e.target.value;
                         onChange(value)

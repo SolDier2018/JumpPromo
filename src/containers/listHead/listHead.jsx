@@ -11,6 +11,25 @@ import style from './listHead.module.css';
 
 class ListHead extends Component {
 
+    static defaultProps = {
+        label: 'Заголовок шапки',
+        button: {},
+        height: () => {
+        },
+        searchText: () => {
+        }
+    };
+
+    static propTypes = {
+        label: PropTypes.string,
+        button: PropTypes.object,
+        isSearch: PropTypes.bool,
+        menuOpen: PropTypes.func,
+        openMenu: PropTypes.bool,
+        showSearch: PropTypes.func,
+        searchText: PropTypes.func
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +45,7 @@ class ListHead extends Component {
         this.setState({
             height: heightHead
         });
-        this.props.height(heightHead);
+        this.props.height(heightHead - 1);
         window.addEventListener('scroll', this.scroll);
     }
 
@@ -99,26 +118,6 @@ class ListHead extends Component {
         );
     }
 }
-
-ListHead.defaultProps = {
-    label: 'Заголовок шапки',
-    button: {},
-    height: () => {
-    },
-    searchText: () => {
-    }
-};
-
-ListHead.propTypes = {
-    label: PropTypes.string,
-    button: PropTypes.object,
-    isSearch: PropTypes.bool,
-    menuOpen: PropTypes.func,
-    openMenu: PropTypes.bool,
-    showSearch: PropTypes.func,
-    searchText: PropTypes.func
-};
-
 
 function mapStateToProps(store) {
     return {

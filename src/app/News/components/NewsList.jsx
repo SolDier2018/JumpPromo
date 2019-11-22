@@ -23,17 +23,15 @@ class NewsList extends Component {
             height: '',
             showPopup: false
         };
-        this.showSearch = this.showSearch.bind(this);
-        this.openDetails = this.openDetails.bind(this);
     }
 
-    showSearch() {
+    showSearch = () => {
         this.props.showSearch(!this.props.isSearch)
-    }
+    };
 
-    openDetails() {
+    openDetails = () => {
         this.props.openDetails(!this.props.details)
-    }
+    };
 
     render() {
 
@@ -65,6 +63,7 @@ class NewsList extends Component {
                 <Input
                     key={'title'}
                     label={'Заголовок'}
+                    className={kit.input}
                     onChange={(value) => console.log(value)}
                 />,
                 <Textarea
@@ -76,10 +75,12 @@ class NewsList extends Component {
                     <Input
                         label={'Время публикации'}
                         type={'date'}
+                        className={kit.input}
                         onChange={(value) => console.log(value)}
                     />
                     <Input
                         type={'time'}
+                        className={kit.input}
                         onChange={(value) => console.log(value)}
                     />
                 </div>,

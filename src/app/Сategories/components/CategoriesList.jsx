@@ -17,23 +17,19 @@ import kit from '../../kit.module.css';
 
 class CategoriesList extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            height: '',
-            showPopup: false,
-            category: [
-                'Обслуживание',
-                'Слесарный ремонт',
-                'Кузовной ремонт'
-            ]
-        };
-        this.openDetails = this.openDetails.bind(this);
-    }
+    state = {
+        height: '',
+        showPopup: false,
+        category: [
+            'Обслуживание',
+            'Слесарный ремонт',
+            'Кузовной ремонт'
+        ]
+    };
 
-    openDetails() {
+    openDetails = () => {
         this.props.openDetails(!this.props.details)
-    }
+    };
 
     render() {
 
@@ -58,6 +54,7 @@ class CategoriesList extends Component {
                 <Input
                     key={'name'}
                     label={'Название'}
+                    className={kit.input}
                     onChange={(value) => console.log(value)}
                 />,
                 <CheckBox

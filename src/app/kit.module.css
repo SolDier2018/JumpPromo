@@ -26,18 +26,17 @@
 /*BUTTON*/
 
 .button {
-  padding: 8px 16px;
+  padding: 8px;
   background: #258FFB;
   border-radius: 4px;
   font-family: 'Helvetica', sans-serif;
   font-size: 15px;
-  line-height: 18px;
+  line-height: 24px;
   color: #FFFFFF;
   cursor: pointer;
   outline: none;
   box-sizing: border-box;
-  transition: all 0.3s;
-  border: 3px solid transparent;
+  border: none;
 }
 
 .button:hover {
@@ -50,7 +49,6 @@
 
 .button:disabled {
   background: #258FFB;
-  color: #FFFFFF;
   opacity: 0.3;
   cursor: not-allowed;
 }
@@ -71,7 +69,6 @@
   border: none;
   outline: none;
   box-sizing: border-box;
-  border: 3px solid transparent;
   transition: all 0.3s;
 }
 
@@ -89,7 +86,63 @@
 }
 
 .transparent:focus {
-  border: 3px solid rgba(37, 143, 251, 0.3);
+  outline: 3px solid rgba(37, 143, 251, 0.3);
 }
 
 /*BUTTON*/
+
+/*INPUT*/
+
+.input {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+
+  background: #FFFFFF;
+  border: 1px solid #E7EAEE;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 7px 0 7px 12px;
+  width: 100%;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input:focus {
+  outline: 3px solid rgba(37, 143, 251, 0.3);
+}
+
+.input:active {
+  outline: 1px solid #258FFB;
+}
+
+.input:disabled {
+  background: #E7EAEE;
+  outline: 1px solid #E7EAEE;
+}
+
+.error {
+  background: rgba(236, 57, 61, 0.2);
+  outline: none;
+  color: #EC393D;
+  border: none;
+}
+
+.error::-webkit-input-placeholder {
+  color: #EC393D;
+}
+.error::-moz-placeholder {
+  color: #EC393D;
+}
+.error:-moz-placeholder {
+  color: #EC393D;
+}
+.error:-ms-input-placeholder {
+  color: #EC393D;
+}
+
+
+
+/*INPUT*/

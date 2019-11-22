@@ -14,16 +14,15 @@ class Menu extends React.Component {
             selected: 'Обзор',
             selectedSub: 'Обзор'
         };
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(labelLi, labelA) {
+    handleClick = (labelLi, labelA) => {
         this.props.menuOpen(!this.props.openMenu);
         this.setState({
             selected: labelLi,
             selectedSub: labelA
         });
-    }
+    };
 
     render() {
 

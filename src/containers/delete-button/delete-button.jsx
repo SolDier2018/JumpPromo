@@ -12,8 +12,6 @@ class DeleteButton extends Component {
         this.state = {
             editable: false
         };
-
-        this.handleClickOut = this.handleClickOut.bind(this);
         this.refButton = createRef();
         this.buttonDelete = createRef();
         document.addEventListener('click', this.handleClickOut, false);
@@ -23,14 +21,14 @@ class DeleteButton extends Component {
         document.removeEventListener('click', this.handleClickOut, false);
     }
 
-    handleClickOut(e) {
+    handleClickOut = (e) => {
         const domNode = ReactDOM.findDOMNode(this);
         if (!domNode || !domNode.contains(e.target)) {
             this.setState({
                 editable: false
             });
         }
-    }
+    };
 
     render() {
         const {background, onClick} = this.props;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Input from "../../ui/input/Input";
 
 import style from './listHead.module.css';
+import kit from '../../app/kit.module.css';
 
 class SearchPanel extends Component {
 
@@ -11,25 +12,24 @@ class SearchPanel extends Component {
         this.state = {
             searchValue: ''
         };
-        this.hideSearch = this.hideSearch.bind(this);
     }
 
-    hideSearch() {
+    hideSearch = () => {
         this.props.onClose();
         this.setState({
             searchValue: ''
         });
-    }
+    };
 
     render() {
         const {onSearch, className} = this.props;
         const {searchValue} = this.state;
         return (
             <div className={style.search + ' ' + className}>
-
                 <Input
                     placeholder={'Найти'}
                     type={'search'}
+                    className={kit.input}
                     onChange={(value) => {this.setState({searchValue: value});}}
                 />
 

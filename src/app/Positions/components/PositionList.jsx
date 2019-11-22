@@ -24,17 +24,15 @@ class PositionList extends React.Component {
             height: '',
             showPopup: false
         };
-        this.showSearch = this.showSearch.bind(this);
-        this.openDetails = this.openDetails.bind(this);
     }
 
-    showSearch() {
+    showSearch = () => {
         this.props.showSearch(!this.props.search)
     };
 
-    openDetails() {
+    openDetails = () => {
         this.props.openDetails(!this.props.details)
-    }
+    };
 
     render() {
 
@@ -74,6 +72,7 @@ class PositionList extends React.Component {
                 <Input
                     key={'name'}
                     label={'Название'}
+                    className={kit.input}
                     onChange={(value) => console.log(value)}
                 />,
                 <Textarea
