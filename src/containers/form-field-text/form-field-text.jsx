@@ -12,16 +12,17 @@ class FormFieldText extends Component {
         super(props);
         this.state = {
             editable: false,
-            row: 0,
+            rows: 0,
             value: props.value,
             prevValue: props.value
         };
     }
 
     Lines = () => {
-        const numberLines = this.state.value.match(/\n/g).length + 1; //Возвращает количество переносов строк
+        const value = this.state.value.match(/\n/g);
+        const numberLines = value === null ? 1 : value.length + 1; //Возвращает количество переносов строк
         this.setState({
-            row: numberLines
+            rows: numberLines
         });
     };
 
@@ -53,12 +54,12 @@ class FormFieldText extends Component {
                             {label === '' ? null : <p><b>{label}</b></p>}
 
                             <Textarea
-                                rows={this.state.row}
+                                rows={this.state.rows}
                                 value={this.state.value}
                                 className={style.textarea}
                                 onChange={(e) => this.setState({value: e.target.value})}
                                 onFocus={this.Lines}
-                                autoFocus={'on'}
+                                autoFocus={true}
                             />
 
                             <div className={style.controlElements}>

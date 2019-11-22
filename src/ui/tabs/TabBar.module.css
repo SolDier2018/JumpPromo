@@ -1,0 +1,30 @@
+.tabBarItem {
+    display: none
+}
+
+.tabBarItem.active {
+    display: block
+}
+
+.tabContainer {
+    padding-top: 16px;
+}
+
+.tabBarNav {
+    border-bottom: 1px solid #E7EAEE;
+}
+
+.navItem {
+    background: transparent;
+    border: none;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 8px 0;
+    margin-right: 16px;
+}
+
+.navItem.active {
+    color: #258FFB;
+    border-bottom: 3px solid #258FFB;
+}

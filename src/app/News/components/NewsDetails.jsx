@@ -30,7 +30,8 @@ class NewsDetails extends Component {
 
                     <div className={style.newsTitle}>
                         <NewsTitle
-                            value={'Бочковое моторное масло Shell защитит ваш авто'}
+                            value={`Бочковое моторное масло Shell защитит ваш авто.
+                            Перенос строки.`}
                             onChange={(text) => console.log('---', text)}
                         />
                         <ButtonDelete

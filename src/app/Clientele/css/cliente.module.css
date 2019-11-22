@@ -6,6 +6,38 @@
     padding-bottom: 19px;
 }
 
-.clientInfoTabs {
+.item {
+    display: grid;
+    grid-template-columns: 1fr minmax(38px, 100px);
+    grid-template-rows: 24px auto;
+    margin-bottom: 16px;
+}
 
+.title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.attribute {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: end;
+
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.name {
+    grid-column: 1/3;
+    grid-row: 2;
+    align-self: center;
+
+    font-size: 15px;
+    line-height: 24px;
 }

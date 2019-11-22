@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
-
 import DetailsHead from '../../../containers/detailsHead/detailsHead';
-import Tabs from './tabs/tabs';
+import TabBar from '../../../ui/tabs/TabBar';
+import TabBarItem from '../../../ui/tabs/TabBarItem'
 
 import style from '../css/cliente.module.css';
 import kit from '../../kit.module.css';
@@ -27,7 +27,61 @@ const ClientsDetails = () => {
                 </div>
 
                 <div className={style.clientInfoTabs}>
-                    <Tabs/>
+                    <TabBar>
+                        <TabBarItem label='Кэшбек'>
+                            <article>
+                                <div className={style.item}>
+                                    <p className={style.title}>+10 баллов · 1000 ₽</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Анна Семенова</p>
+                                </div>
+                                <div className={style.item}>
+                                    <p className={style.title}>+10 баллов · 1000 ₽</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Константин Константинопольский</p>
+                                </div>
+                                <div className={style.item}>
+                                    <p className={style.title}>+10 баллов · 1000 ₽</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Константин Константинопольский</p>
+                                </div>
+                                <div className={style.item}>
+                                    <p className={style.title}>+10 баллов · 1000 ₽</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Константин Константинопольский</p>
+                                </div>
+                                <div className={style.item}>
+                                    <p className={style.title}>+10 баллов · 1000 ₽</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Константин Константинопольский</p>
+                                </div>
+                                <div className={style.item}>
+                                    <p className={style.title}>+10 баллов · 1000 ₽</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Константин Константинопольский</p>
+                                </div>
+                                <div className={style.item}>
+                                    <p className={style.title}>+10 баллов · 1000 ₽</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Константин Константинопольский</p>
+                                </div>
+                            </article>
+                        </TabBarItem>
+                        <TabBarItem label='Заказы'>
+                            <article>
+                                <div className={style.item}>
+                                    <p className={style.title}>Заказ #233</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Диагностика ходовой</p>
+                                </div>
+                                <div className={style.item}>
+                                    <p className={style.title}>Заказ #232</p>
+                                    <span className={style.attribute}>03 сен</span>
+                                    <p className={style.name}>Диагностика ходовой. Автомойка и монтаж карбюратора</p>
+                                </div>
+                            </article>
+                        </TabBarItem>
+                    </TabBar>
                 </div>
             </div>
         </Fragment>

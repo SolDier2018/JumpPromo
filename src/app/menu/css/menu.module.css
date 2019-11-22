@@ -308,6 +308,11 @@ span.avatar {
     .menuItems ul li > div a.activeSub {
         color: #258FFB;
     }
+
+    .menuItems ul li > div a span {
+        margin-left: 10px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -405,5 +410,9 @@ span.avatar {
 
     .menuItems ul li > div a.activeSub {
         color: #258FFB;
+    }
+
+    .menuItems ul li > div a span {
+        margin-left: 0;
     }
 }

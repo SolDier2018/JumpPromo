@@ -10,10 +10,19 @@ class FormFieldTitle extends Component {
 
         this.state = {
             editable: false,
+            rows: 0,
             value: props.value,
             prevValue: props.value
         };
     }
+
+    onFocus = () => {
+        const value = this.state.value.match(/\n/g);
+        const numberLines = value === null ? 1 : value.length + 1; //Возвращает количество переносов строк
+        this.setState({
+            rows: numberLines
+        });
+    };
 
     onBlur = () => {
         const value = this.state.value;
@@ -33,6 +42,8 @@ class FormFieldTitle extends Component {
                 {
                     this.state.editable
                         ? <Textarea
+                            rows={this.state.rows}
+                            onFocus={this.onFocus}
                             onBlur={this.onBlur}
                             value={this.state.value}
                             onChange={(e) => this.setState({value: e.target.value})}

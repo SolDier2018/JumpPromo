@@ -13,13 +13,6 @@
     box-sizing: border-box;
     border-radius: 4px;
     padding: 7px;
-    height: 42px;
     outline: none;
     width: 100%;
-}
-
-@media screen and (max-width: 768px) {
-    .textarea {
-        min-height: 90px;
-    }
 }
