@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import style from './listHead.module.css';
+import kit from '../../app/kit.module.css';
 
 export default function HeaderControls({label, button, openMenu}) {
     return (
         <div className={style.listHead}>
 
-            <p>{label}</p>
+            <h1 className={kit.h1}>{label}</h1>
 
             <div className={style.wrapButton}>
 

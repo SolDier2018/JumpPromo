@@ -46,14 +46,12 @@ class OrdersList extends React.Component {
 
         return (
             <Fragment>
-                <div className="content_menu-wrap">
-                    <Head
-                        label={'Заказы'}
-                        height={(value) => this.setState({heightHead: value})}
-                        searchText={(value) => console.log(value)}
-                        button={button}
-                    />
-                </div>
+                <Head
+                    label={'Заказы'}
+                    height={(value) => this.setState({heightHead: value})}
+                    searchText={(value) => console.log(value)}
+                    button={button}
+                />
 
                 <div className={style.orderItems} style={{marginTop: this.state.heightHead}}>
                     <Link

@@ -81,14 +81,6 @@ b {
     height: 100vh;
 }
 
-.content_menu-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #FFFFFF;
-}
-
 /*АНИМАЦИЯ*/
 
 .popup-enter {
@@ -232,10 +224,6 @@ b {
         overflow: auto;
     }
 
-    .hidden_head {
-        transform: translateY(-179px);
-    }
-
     .content_menu {
         overflow: unset;
     }
@@ -246,14 +234,6 @@ b {
 
     .wrapper {
         height: auto;
-    }
-
-    .content_menu-wrap {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        transition: all 0.3s;
     }
 
     .disabled_scroll {

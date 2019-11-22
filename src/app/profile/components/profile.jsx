@@ -12,11 +12,11 @@ class Profile extends Component {
     render() {
         return (
             <div className={style.contentItem}>
-                <div className="content_menu-wrap">
-                    <Head
-                        label={'Профиль'}
-                    />
-                </div>
+
+                <Head
+                    label={'Профиль'}
+                />
+
                 <div className={style.body}>
                     <form action="">
                         <div className={style.fieldWrap}>

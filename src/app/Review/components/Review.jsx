@@ -20,12 +20,10 @@ class Review extends React.Component {
         return (
             <div className={style.contentItem}>
 
-                <div className="content_menu-wrap">
-                    <ListHead
-                        label={'Обзор'}
-                        height={(value) => this.setState({height: value})}
-                    />
-                </div>
+                <ListHead
+                    label={'Обзор'}
+                    height={(value) => this.setState({height: value})}
+                />
 
                 <div className={style.reviewWrapper} style={{marginTop: this.state.height}}>
 

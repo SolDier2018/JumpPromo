@@ -94,13 +94,11 @@ class CategoriesList extends Component {
         return (
             <Fragment>
 
-                <div className="content_menu-wrap">
-                    <ListHead
-                        label={'Категории'}
-                        button={button}
-                        height={(value) => this.setState({height: value})}
-                    />
-                </div>
+                <ListHead
+                    label={'Категории'}
+                    button={button}
+                    height={(value) => this.setState({height: value})}
+                />
 
                 <div className={style.categoriesItems} style={{marginTop: this.state.height}}>
 

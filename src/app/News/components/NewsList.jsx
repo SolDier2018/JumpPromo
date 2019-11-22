@@ -109,14 +109,14 @@ class NewsList extends Component {
 
         return (
             <Fragment>
-                <div className="content_menu-wrap">
-                    <ListHead
-                        label={'Новости'}
-                        toTheHeight={(value) => this.setState({height: value})}
-                        button={button}
-                        searchText={(value) => console.log(value)}
-                    />
-                </div>
+
+                <ListHead
+                    label={'Новости'}
+                    toTheHeight={(value) => this.setState({height: value})}
+                    button={button}
+                    searchText={(value) => console.log(value)}
+                />
+
                 <div className={style.newsItems} style={{marginTop: this.state.height}}>
                     <Link
                         to={'#'}

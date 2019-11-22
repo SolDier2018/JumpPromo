@@ -40,11 +40,11 @@ class SettingCompany extends Component {
     render() {
         return (
             <div className={style.contentItem}>
-                <div className="content_menu-wrap">
-                    <ListHead
-                        label={'Настройка компании'}
-                    />
-                </div>
+
+                <ListHead
+                    label={'Настройка компании'}
+                />
+
                 <div className={style.body}>
                     <form action="">
                         <div className={style.fieldWrap + ' ' + style.fileInput}>

@@ -1,4 +1,4 @@
-import React, {Fragment, Component, createRef} from 'react';
+import React, {Component, createRef} from 'react';
 import {Transition} from 'react-transition-group';
 import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
@@ -7,31 +7,66 @@ import {menuOpen, showSearch} from '../../redux/actions';
 
 import HeaderControls from './HeaderControls';
 import SearchPanel from './SearchPanel';
-import {scroll} from '../../utils/hideListHead';
-
 import style from './listHead.module.css';
 
 class ListHead extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            prevPos: window.scrollY,
+            hiddenScroll: false,
+            height: 0
+        };
         this.refContainer = createRef();
-        this.refContainer2 = createRef();
-        scroll();
     }
 
     componentDidMount() {
-        const heightHead = this.refContainer.current.clientHeight;
-        const heightFilter = this.refContainer2.current.clientHeight;
-        this.props.height(heightHead + heightFilter)
+        const heightHead = this.refContainer.current.clientHeight + 1;
+        this.setState({
+            height: heightHead
+        });
+        this.props.height(heightHead);
+        window.addEventListener('scroll', this.scroll);
     }
 
-    render() {
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.scroll);
+    }
 
+    scroll = () => {
+        const scrollTop = window.scrollY;
+        const direction = this.state.prevPos - scrollTop > 0 ? 'up' : 'down';
+        // eslint-disable-next-line react/no-direct-mutation-state
+        this.state.prevPos = scrollTop;
+        switch (direction) {
+            case "down":
+                if (scrollTop > 100) {
+                    this.setState({
+                        hiddenScroll: true
+                    });
+                }
+                break;
+            case "up":
+                this.setState({
+                    hiddenScroll: false
+                });
+                break;
+            default:
+                break;
+        }
+    };
+
+    render() {
+        const {hiddenScroll} = this.state;
         const {label, button, isSearch, menuOpen, openMenu, showSearch, searchText} = this.props;
         return (
-            <Fragment>
-                <div ref={this.refContainer} className={style.headerWrapper}>
+            <header
+                ref={this.refContainer}
+                className={style.contentMenuWrap}
+                style={hiddenScroll ? {transform: `translateY(-${this.state.height}px)`} : {transform: `translateY(0px)`}}
+            >
+                <div className={style.headerWrapper}>
 
                     <Transition
                         in={isSearch}
@@ -57,10 +92,10 @@ class ListHead extends Component {
                         openMenu={() => {menuOpen(!openMenu)}}
                     />
                 </div>
-                <div ref={this.refContainer2}>
+                <div>
                     {button.filter}
                 </div>
-            </Fragment>
+            </header>
         );
     }
 }

@@ -124,13 +124,11 @@ class PositionList extends React.Component {
 
         return (
             <Fragment>
-                <div className="content_menu-wrap">
-                    <ListHead
-                        label={'Позиции'}
-                        height={(value) => this.setState({height: value})}
-                        button={button}
-                    />
-                </div>
+                <ListHead
+                    label={'Позиции'}
+                    height={(value) => this.setState({height: value})}
+                    button={button}
+                />
 
                 <div className={style.positionItems} style={{marginTop: this.state.height}}>
                     <IlemLink

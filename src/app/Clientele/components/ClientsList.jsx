@@ -32,13 +32,12 @@ class ClientsList extends Component {
 
         return (
             <Fragment>
-                <div className='content_menu-wrap'>
-                    <ListHead
-                        label={'Клиенты'}
-                        button={button}
-                        height={(value) => this.setState({height: value})}
-                    />
-                </div>
+
+                <ListHead
+                    label={'Клиенты'}
+                    button={button}
+                    height={(value) => this.setState({height: value})}
+                />
 
                 <div className={style.clientsItem} style={{marginTop: this.state.height}}>
                     <Link
