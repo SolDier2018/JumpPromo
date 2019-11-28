@@ -79,6 +79,13 @@ class Review extends React.Component {
                         img={ordersImg}
                     />
 
+                    <ReviewLink
+                        to={'/positions'}
+                        title={'Позиции'}
+                        count={24}
+                        img={ordersImg}
+                    />
+
                 </div>
             </div>
         )
