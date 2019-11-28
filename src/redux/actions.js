@@ -25,3 +25,10 @@ export const openDetails = (details) => {
         openDetails: details
     }
 };
+
+export const pathName = (path) => {
+    return {
+        type: 'PATH_NAME',
+        pathName: path
+    }
+};

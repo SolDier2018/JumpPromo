@@ -13,6 +13,7 @@ export const DEFAULT_STATE = {
         {
             label: 'Обзор',
             path: '/review',
+            pathContain: '/review', //нужен для определения причастности вложеных элементов меню к родителю
             icon: review,
             iconActive: reviewActive,
             submenu: [],
@@ -21,17 +22,20 @@ export const DEFAULT_STATE = {
         {
             label: 'Заказы',
             path: '/orders',
+            pathContain: '/orders',
             icon: orders,
             iconActive: ordersActive,
             submenu: [
                 {
                     label: 'Позиции',
                     path: '/positions',
+                    pathContain: '/orders',
                     count: 3
                 },
                 {
                     label: 'Категории',
                     path: '/categories',
+                    pathContain: '/orders',
                     count: 4
                 }
             ],
@@ -40,6 +44,7 @@ export const DEFAULT_STATE = {
         {
             label: 'Новости',
             path: '/news',
+            pathContain: '/news',
             icon: news,
             iconActive: newsActive,
             submenu: [],
@@ -48,6 +53,7 @@ export const DEFAULT_STATE = {
         {
             label: 'Клиенты',
             path: '/clientele',
+            pathContain: '/clientele',
             icon: clients,
             iconActive: clientsActive,
             submenu: [],
@@ -56,5 +62,6 @@ export const DEFAULT_STATE = {
     ],
     menuOpen: false,
     showSearch: false,
-    openDetails: false
+    openDetails: false,
+    pathName: ''
 };

@@ -238,6 +238,7 @@ span.avatar {
 }
 
 .menuItems ul li > img {
+    padding-top: 5px;
     justify-self: center;
 }
 
@@ -254,10 +255,6 @@ span.avatar {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .menuItems ul li > img {
-        padding-top: 8px;
     }
 
     .menuItems ul li > div {
@@ -403,8 +400,7 @@ span.avatar {
     }
 
     .menuItems ul li > img {
-        padding-top: 5px;
-        align-self: start;
+        padding-top: 7px;
         justify-self: center;
     }
 

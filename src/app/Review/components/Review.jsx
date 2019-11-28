@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PageContainer from '../../../core/HOC/pageContainer';
 import ListHead from '../../../containers/listHead/listHead';
 import {ReviewLink} from './ReviewLink';
 
@@ -85,4 +85,4 @@ class Review extends React.Component {
     }
 }
 
-export default Review;
+export default PageContainer(Review);

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import PageContainer from '../../../core/HOC/pageContainer';
 import Head from '../../../containers/listHead/listHead';
 import Input from '../../../ui/input/Input';
 import {Button} from '../../../ui/button/button';
@@ -83,4 +83,4 @@ class Profile extends Component {
     }
 }
 
-export default Profile;
+export default PageContainer(Profile);

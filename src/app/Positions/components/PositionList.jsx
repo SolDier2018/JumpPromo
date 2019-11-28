@@ -126,6 +126,7 @@ class PositionList extends React.Component {
                 <ListHead
                     label={'Позиции'}
                     height={(value) => this.setState({height: value})}
+                    searchText={(value) => console.log(value)}
                     button={button}
                 />
 

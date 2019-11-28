@@ -113,7 +113,7 @@ class NewsList extends Component {
 
                 <ListHead
                     label={'Новости'}
-                    toTheHeight={(value) => this.setState({height: value})}
+                    height={(value) => this.setState({height: value})}
                     button={button}
                     searchText={(value) => console.log(value)}
                 />

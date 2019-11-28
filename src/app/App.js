@@ -17,7 +17,6 @@ class App extends Component {
                     <div className={this.props.openMenu ? 'menu menu_open' : 'menu'}>
                         <Menu/>
                     </div>
-
                     {routes()}
                 </div>
             </Router>

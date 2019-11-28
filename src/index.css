@@ -39,7 +39,6 @@ b {
 
 .contentGrid {
     height: 100vh;
-    display: grid;
     grid-template-columns: 335px auto;
 }
 
@@ -73,7 +72,7 @@ b {
 .item_details-wrap {
     overflow-y: auto;
     height: 100vh;
-    padding: 0 24px;
+    padding: 0 24px 24px 24px;
 }
 
 .scroll-wrapper {

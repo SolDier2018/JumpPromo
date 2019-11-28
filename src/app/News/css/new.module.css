@@ -26,10 +26,6 @@
     display: none;
 }
 
-.newsItems {
-    margin-top: 79px;
-}
-
 .newsTitle {
     display: grid;
     grid-template-columns: 1fr 40px;

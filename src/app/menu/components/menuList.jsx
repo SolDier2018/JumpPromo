@@ -12,17 +12,19 @@ export const MenuList = ({menu, active, activeSub, onClick}) => {
                     {
                         menu.map((e) =>
 
-                            <li key={e.label} className={e.label === active ? style.openSubmenu : ''}
-                                aria-label={e.label}>
+                            <li key={e.label}
+                                className={'nav-li ' + (e.path === active ? style.openSubmenu : '')}
+                                aria-label={e.path}>
 
-                                <img src={e.label === active ? e.iconActive : e.icon} alt={e.label}/>
+                                <img src={e.path === active ? e.iconActive : e.icon} alt={e.label}/>
 
-                                <div>
+                                <div className={'block'}>
 
                                     <Link
                                         to={e.path}
-                                        className={e.label === activeSub ? style.link + ' ' + style.badgest : style.link}
-                                        aria-label={e.label}
+                                        className={e.path === activeSub ? style.badgest + ' ' + style.link : style.link}
+                                        name={e.pathContain}
+                                        aria-label={e.path}
                                         onClick={(e) => {
                                             onClick(
                                                 e.currentTarget.closest('li').getAttribute('aria-label'),
@@ -33,8 +35,7 @@ export const MenuList = ({menu, active, activeSub, onClick}) => {
                                         <p>{e.label}</p>
                                         <span>{e.count}</span>
 
-                                        {e.submenu.length > 0 ?
-                                            <svg width="10" height="6" viewBox="0 0 10 6" fill="#333333"
+                                        {e.submenu.length > 0 ? <svg width="10" height="6" viewBox="0 0 10 6" fill="#333333"
                                                  xmlns="http://www.w3.org/2000/svg" className={style.dropdown}>
                                                 <path fillRule="evenodd" clipRule="evenodd"
                                                       d="M0.303855 0.2821C0.70034 -0.10237 1.33343 -0.0926305 1.7179 0.303855L4.90022 3.58562L8.30352 0.28242C8.69983 -0.102233 9.33293 -0.0927836 9.71758 0.303525C10.1022 0.699834 10.0928 1.33293 9.69648 1.71758L5.57526 5.71758C5.38489 5.90235 5.1289 6.00391 4.86364 5.99989C4.59837 5.99587 4.34557 5.8866 4.16089 5.69615L0.2821 1.69615C-0.10237 1.29966 -0.0926305 0.666571 0.303855 0.2821Z"
@@ -49,8 +50,9 @@ export const MenuList = ({menu, active, activeSub, onClick}) => {
                                                 <Link
                                                     key={e.path}
                                                     to={e.path}
-                                                    className={e.label === activeSub ? style.link + ' ' + style.badgest : style.link}
-                                                    aria-label={e.label}
+                                                    className={e.path === activeSub ? style.badgest + ' ' + style.link : style.link}
+                                                    name={e.pathContain}
+                                                    aria-label={e.path}
                                                     onClick={(e) => {
                                                         onClick(
                                                             e.currentTarget.closest('li').getAttribute('aria-label'),

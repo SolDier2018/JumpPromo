@@ -71,13 +71,17 @@
     border-radius: 50%;
 }
 
-.contentItem {
-    position: relative;
-}
+/*.contentItem {*/
+/*    position: relative;*/
+/*}*/
 
 @media screen and (max-width: 768px) {
     .item_time {
         display: block;
+    }
+
+    .reviewWrapper {
+        overflow-x: hidden;
     }
 
     .reviewWrapper a {
