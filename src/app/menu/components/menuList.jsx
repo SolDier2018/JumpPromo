@@ -12,9 +12,11 @@ export const MenuList = ({menu, active, activeSub, onClick}) => {
                     {
                         menu.map((e) =>
 
-                            <li key={e.label}
+                            <li
+                                key={e.label}
                                 className={'nav-li ' + (e.path === active ? style.openSubmenu : '')}
-                                aria-label={e.path}>
+                                aria-label={e.path}
+                            >
 
                                 <img src={e.path === active ? e.iconActive : e.icon} alt={e.label}/>
 

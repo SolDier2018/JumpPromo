@@ -7,6 +7,18 @@
     text-decoration: none;
     color: #333333;
     transition: all 0.2s;
+    position: relative;
+}
+
+.newPost:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #258FFB;
+    border-radius: 50%;
+    position: absolute;
+    left: 8px;
+    top: 16px;
 }
 
 .link:hover {

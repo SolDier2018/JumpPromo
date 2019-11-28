@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 
 import style from './ItemLink.module.css';
 
-export default function ItemLink({to, title, description, attr, noWrap, fontWeight, ...attrs}) {
+export default function ItemLink({to, title, description, attr, noWrap, fontWeight, newPost, ...attrs}) {
     return (
-        <Link to={to} className={style.link} {...attrs}>
+        <Link to={to} className={style.link + ' ' + (newPost ? style.newPost : '')} {...attrs}>
 
             <p
                 className={style.title}

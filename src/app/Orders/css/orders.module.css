@@ -1,7 +1,3 @@
-/*.orderItems {*/
-/*    margin-top: 128px;*/
-/*}*/
-
 .itemTitle {
     display: grid;
     grid-template-columns: 1fr 1fr;

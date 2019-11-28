@@ -3,7 +3,7 @@ import {menuOpen} from './menuOpen';
 import {showSearch} from './showSearch';
 import {openDetails} from './openDetails';
 import {menu} from './menu';
-import {pathName} from './pathName'
+import {pathName} from './pathName';
 
 const AllReducers = combineReducers({
    menu,

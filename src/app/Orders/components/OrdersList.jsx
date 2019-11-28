@@ -62,8 +62,10 @@ class OrdersList extends React.Component {
                 />
 
                 <div className={style.orderItems} style={{marginTop: this.state.heightHead}}>
+
                     <Link
                         to={'#'}
+                        newPost={true}
                         title={'Заказ #238'}
                         attr={'01:23'}
                         description={`Lorem ipsum dolor sit amet`}
@@ -71,6 +73,7 @@ class OrdersList extends React.Component {
                     />
                     <Link
                         to={'#'}
+                        newPost={true}
                         title={'Заказ #238'}
                         attr={'01:23'}
                         description={`Lorem ipsum dolor sit amet`}
